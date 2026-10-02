@@ -46,4 +46,5 @@ jobs:
 
       - name: Odeslání změn na GitHub
         run: |
+          git pull --rebase origin main
           git push
