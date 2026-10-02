@@ -1,0 +1,432 @@
+/* =========================================================
+   ZÁKLAD
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    background: #eeeeee;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+}
+
+
+/* =========================================================
+   HLAVNÍ KONTEJNER
+   ========================================================= */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HLAVIČKA
+   ========================================================= */
+
+header {
+    background: white;
+    padding: 20px 24px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+header h1 {
+    margin: 0 0 6px 0;
+    font-size: 28px;
+}
+
+#date {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#updated {
+    margin-top: 8px;
+    color: #777;
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   RESTAURACE
+   ========================================================= */
+
+#restaurants {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.restaurant {
+    position: relative;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    overflow: visible;
+}
+
+
+/* =========================================================
+   HLAVIČKA RESTAURACE
+   ========================================================= */
+
+.restaurant-header {
+    background: #3a3a3a;
+    padding: 14px 18px;
+    border-radius: 8px 8px 0 0;
+}
+
+.restaurant-header h2 {
+    margin: 0;
+    font-size: 21px;
+}
+
+.restaurant-header a {
+    color: white;
+    text-decoration: none;
+}
+
+.restaurant-header a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   OBSAH RESTAURACE
+   ========================================================= */
+
+.restaurant-content {
+    padding: 18px;
+}
+
+
+/* =========================================================
+   SEKCE MENU
+   ========================================================= */
+
+.menu-section {
+    margin-bottom: 20px;
+}
+
+.menu-section:last-child {
+    margin-bottom: 0;
+}
+
+.menu-section h3 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 6px;
+}
+
+
+/* =========================================================
+   HLAVNÍ JÍDLA – NADPIS A CENOVÉ SLOUPCE
+   ========================================================= */
+
+.main-dishes-heading {
+    display: flex;
+    align-items: baseline;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+}
+
+.main-dishes-heading h3 {
+    flex: 1;
+    margin: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.main-dishes-price-headers {
+    display: flex;
+    width: 200px;
+    flex-shrink: 0;
+}
+
+.main-dishes-price-headers span {
+    width: 100px;
+    text-align: right;
+    color: #666;
+    font-size: 12px;
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   TABULKA
+   ========================================================= */
+
+.restaurant table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+/* Hlavička tabulky */
+
+.restaurant th {
+    padding: 8px 6px;
+    border-bottom: 1px solid #cccccc;
+    color: #666;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.dish-header {
+    text-align: left;
+}
+
+.price-header {
+    width: 100px;
+    text-align: right;
+    white-space: nowrap;
+}
+
+
+/* Řádky */
+
+.restaurant tr {
+    border-bottom: 1px solid #eeeeee;
+}
+
+.restaurant tr:last-child {
+    border-bottom: none;
+}
+
+
+/* Buňky */
+
+.restaurant td {
+    padding: 9px 6px;
+    vertical-align: top;
+}
+
+
+/* Název jídla */
+
+.restaurant td:first-child {
+    width: 100%;
+}
+
+.restaurant td strong {
+    text-transform: uppercase;
+}
+
+
+/* Cena */
+
+.price {
+    white-space: nowrap;
+    text-align: right;
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   ALERGENY
+   ========================================================= */
+
+.allergen-label {
+    margin-right: 4px;
+    color: #777;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.allergen {
+    position: relative;
+    display: inline-block;
+    margin-right: 2px;
+    padding: 1px 1px;
+    border-radius: 4px;
+    color: #555;
+    font-weight: bold;
+    font-size: 12px;
+    cursor: help;
+}
+
+.allergen:hover,
+.allergen.active {
+    background: #e8e8e8;
+    color: #222;
+}
+
+
+/* =========================================================
+   TOOLTIP ALERGENU
+   ========================================================= */
+
+.allergen-tooltip {
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    bottom: calc(100% + 8px);
+    width: 260px;
+    padding: 10px 12px;
+    background: #333;
+    color: white;
+    border-radius: 7px;
+    font-size: 13px;
+    line-height: 1.4;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    visibility: hidden;
+    opacity: 0;
+    transition:
+        opacity 0.15s ease,
+        visibility 0.15s ease;
+    pointer-events: none;
+}
+
+
+/* Šipka */
+
+.allergen-tooltip::after {
+    content: "";
+    position: absolute;
+    left: 18px;
+    bottom: -6px;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #333;
+}
+
+
+/* Zobrazení */
+
+.allergen:hover .allergen-tooltip,
+.allergen.active .allergen-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* Tooltip při pravém okraji */
+
+.allergen-tooltip.tooltip-right {
+    left: auto;
+    right: 0;
+}
+
+.allergen-tooltip.tooltip-right::after {
+    left: auto;
+    right: 18px;
+}
+
+
+/* =========================================================
+   POZNÁMKA U JÍDLA
+   ========================================================= */
+
+.dish-note {
+    margin-top: 4px;
+    color: #a33;
+    font-size: 12px;
+    font-style: italic;
+}
+
+
+/* =========================================================
+   UPOZORNĚNÍ STALE
+   ========================================================= */
+
+.stale-warning {
+    margin-bottom: 15px;
+    padding: 10px 12px;
+    background: #fff3cd;
+    border: 1px solid #ffe69c;
+    border-radius: 6px;
+    color: #664d03;
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   ŽÁDNÉ MENU
+   ========================================================= */
+
+.no-menu {
+    padding: 15px;
+    color: #777;
+    font-style: italic;
+}
+
+
+/* =========================================================
+   MOBIL
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 10px;
+    }
+
+    header {
+        padding: 16px;
+        margin-bottom: 12px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    #date {
+        font-size: 16px;
+    }
+
+    .restaurant-content {
+        padding: 12px;
+    }
+
+    .restaurant td {
+        padding: 8px 4px;
+    }
+
+    .restaurant th {
+        padding: 7px 4px;
+    }
+
+    .restaurant-header {
+        padding: 12px 14px;
+    }
+
+    .restaurant-header h2 {
+        font-size: 19px;
+    }
+
+    .menu-section h3 {
+        font-size: 17px;
+    }
+
+    .price-header {
+        width: 85px;
+    }
+
+    .main-dishes-price-headers {
+        width: 170px;
+    }
+
+    .main-dishes-price-headers span {
+        width: 85px;
+        font-size: 12px;
+    }
+
+    .allergen-tooltip {
+        width: min(260px, calc(100vw - 30px));
+    }
+}
