@@ -1,49 +1,49 @@
 {
-  "date": "2026-10-02",
-  "updated_at": "2026-10-02T12:40:15Z",
+  "date": "2026-10-05",
+  "updated_at": "2026-10-03T19:49:58Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
-      "date": "2026-10-02",
+      "date": "2026-10-05",
       "soups": [
         {
-          "name": "DRŮBEŽÍ VÝVAR S MASEM A ZELENINOU, JÁTROVÁ RÝŽE",
+          "name": "HOVĚZÍ VÝVAR S MASEM A ZELENINOU, VLASOVÉ NUDLE",
           "price": 49,
-          "allergens": "1a,7,9,12",
+          "allergens": "1a,7,9,12,3",
           "note": null
         },
         {
-          "name": "HRACHOVÁ S PÁRKEM, KRUTONY",
-          "price": 49,
+          "name": "FRANKFURTSKÁ S PÁRKEM A BRAMBOREM (podáváme s pečivem)",
+          "price": 55,
           "allergens": "1a,7,9,12,8",
           "note": null
         }
       ],
       "main_dishes": [
         {
-          "name": "SMAŽENÝ KUŘECÍ ŘÍZEK, BRAMBOROVÝ SALÁT, CITRON",
+          "name": "GRILOVANÉ KUŘECÍ PRSO ZAPEČENÉ ŠUNKOU A HERMELÍNEM, PEČENÝ BRAMBOR, TATARSKÁ OMÁČKA, SALÁTEK COLESLAW",
           "price_single": 195,
           "price_menu": 225,
-          "allergens": "7,12,1a,10,3,9",
+          "allergens": "7,12,1a,10,3",
           "note": null
         },
         {
-          "name": "KRŮTÍ STEAK, RESTOVANÉ FAZOLKY S ANGLICKOU SLANINOU, BRAMBORY GRENAILLE SE ZAKYSANOU SMETANOU",
-          "price_single": 200,
-          "price_menu": 230,
-          "allergens": "1a,7,12",
+          "name": "HOVĚZÍ KOSTKY NA ČESNEKU, ŠPENÁT, BRAMBOROVÝ KNEDLÍK",
+          "price_single": 195,
+          "price_menu": 225,
+          "allergens": "1a,7,12,3,9",
           "note": null
         },
         {
-          "name": "SRBSKÉ VEPŘOVÉ RIZOTO, STROUHANÝ SÝR, KYSELÁ OKURKA",
+          "name": "KACHNÍ JÁTRA NA CIBULCE, JASMÍNOVÁ RÝŽE",
           "price_single": 190,
           "price_menu": null,
-          "allergens": "7,12,10,9",
+          "allergens": "1a",
           "note": null
         },
         {
-          "name": "HOVĚZÍ ZNOJEMSKÁ PEČENĚ, HOUSKOVÝ KNEDLÍK",
-          "price_single": 200,
+          "name": "ČOČKA NA KYSELO, UZENÁ VEPŘOVÁ KRKOVICE, SÁZENÉ VEJCE, KYSELÁ OKURKA",
+          "price_single": 190,
           "price_menu": null,
           "allergens": "1a,3,7,12,10,9",
           "note": null
@@ -105,7 +105,7 @@
           "note": null
         }
       ],
-      "status": "fresh"
+      "status": "stale"
     }
   ]
 }
