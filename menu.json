@@ -1,6 +1,6 @@
 {
   "date": "2026-10-05",
-  "updated_at": "2026-10-04T08:01:11Z",
+  "updated_at": "2026-10-05T05:01:09Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
@@ -53,9 +53,58 @@
     },
     {
       "restaurant": "Holešovická Kozlovna",
-      "date": "2026-10-04",
-      "soups": [],
-      "main_dishes": [],
+      "date": "2026-10-05",
+      "soups": [
+        {
+          "name": "Čočková s uzeninou",
+          "price": 49,
+          "allergens": "1",
+          "note": null
+        },
+        {
+          "name": "Kuřecí vývar s masem, zeleninou a nudlemi",
+          "price": 49,
+          "allergens": "1,3,7,9",
+          "note": null
+        }
+      ],
+      "main_dishes": [
+        {
+          "name": "Hovězí pečeně s hříbkovou omáčkou, jasmínová rýže",
+          "price_single": 205,
+          "price_menu": 235,
+          "allergens": "1,7",
+          "note": null
+        },
+        {
+          "name": "Pečená kuřecí křídla,,SWEET CHILLI\" salát coleslaw, nivový dresink, rozpečená bageta",
+          "price_single": 195,
+          "price_menu": 225,
+          "allergens": "1,3,7,10",
+          "note": null
+        },
+        {
+          "name": "Kuřecí steak v pivním těstíčku, bramborová kaše, rajčatový salátek",
+          "price_single": 199,
+          "price_menu": 229,
+          "allergens": "1,3,7",
+          "note": null
+        },
+        {
+          "name": "Tagliatelle,,Bolognese\" s masovým ragů, sypané sýrem Gran moravia, rukola, olivový olej",
+          "price_single": 189,
+          "price_menu": 219,
+          "allergens": "1,3,7,9",
+          "note": null
+        },
+        {
+          "name": "Argentinský hovězí rumpsteak, na grilu / úprava medium /, lyonské brambory s cibulí a slaninou, omáčka ze zeleného pepře, variace trhaných salátů",
+          "price_single": 239,
+          "price_menu": null,
+          "allergens": "1,7",
+          "note": null
+        }
+      ],
       "status": "fresh"
     }
   ]
