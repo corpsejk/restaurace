@@ -1,51 +1,51 @@
 {
-  "date": "2026-10-06",
-  "updated_at": "2026-10-06T13:11:07Z",
+  "date": "2026-10-07",
+  "updated_at": "2026-10-07T09:01:08Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
-      "date": "2026-10-06",
+      "date": "2026-10-07",
       "soups": [
         {
           "name": "HOVĚZÍ VÝVAR S MASEM A ZELENINOU, VLASOVÉ NUDLE",
           "price": 49,
-          "allergens": "1a,7,9,3,12",
+          "allergens": "1a,7,9,12,3",
           "note": null
         },
         {
-          "name": "ČESNEKOVÁ S UZENÝM MASEM, VEJCEM A SÝREM, CHLEBOVÉ KRUTONY",
-          "price": 49,
-          "allergens": "7,9,1a,3",
+          "name": "GULÁŠOVÁ S MLETÝM MASEM A BRAMBOREM (podáváme s pečivem)",
+          "price": 55,
+          "allergens": "1a,7,9,12,8",
           "note": null
         }
       ],
       "main_dishes": [
         {
-          "name": "HOVĚZÍ ROZLÍTANÝ PTÁČEK, JASMÍNOVÁ RÝŽE/HOUSKOVÝ KNEDLÍK",
-          "price_single": 195,
-          "price_menu": 225,
-          "allergens": "1a,3,7,9,10",
-          "note": null
-        },
-        {
-          "name": "HOLANDSKÝ ŘÍZEK SE SÝREM GOUDA, BRAMBOROVÁ KAŠE, ZELNÝ SALÁTEK S MRKVÍ",
+          "name": "SMAŽENÉ FILÉ Z TRESKY, HRÁŠEK NA MÁSLE, VAŘENÝ BRAMBOR, PEČENÝ CITRON, TATARSKÁ OMÁČKA",
           "price_single": 190,
           "price_menu": 220,
-          "allergens": "1a,3,7,10",
+          "allergens": "7,12,1a,3,4",
           "note": null
         },
         {
-          "name": "KUŘECÍ SUPREME, PEČENÝ BRAMBOR, BYLINKOVÁ OMÁČKA",
+          "name": "VEPŘOVÁ LÍČKA NA ČERVENÉM VÍNĚ, BATÁTOVO-BRAMBOROVÉ PYRÉ, PEČENÁ KOŘENOVÁ ZELENINA",
+          "price_single": 195,
+          "price_menu": 225,
+          "allergens": "1a,7,12,3,9",
+          "note": null
+        },
+        {
+          "name": "KUŘECÍ NUDLIČKY NA ŽLUTÉM CURRY (kokosové mléko, cherry rajčata, císařský hrášek), JASMÍNOVÁ RÝŽE",
+          "price_single": 190,
+          "price_menu": null,
+          "allergens": "1a,3,4,6,7,9,11,12",
+          "note": null
+        },
+        {
+          "name": "MEDAILONKY Z VEPŘOVÉ PANENKY, ČERSTVÉ ŠPAGETY S RUKOLOVO-BAZALKOVÝM PESTEM, CHERRY RAJČATY A PINIOVÝMI OŘÍŠKY, SÝR GRAN REGALE",
           "price_single": 200,
           "price_menu": null,
-          "allergens": "1a,3,7",
-          "note": null
-        },
-        {
-          "name": "ŠUNKOFLEKY S UZENÝM MASEM, KYSELÁ OKURKA",
-          "price_single": 185,
-          "price_menu": null,
-          "allergens": "1a,3,7,10,12",
+          "allergens": "1a,3,7,8",
           "note": null
         }
       ],
@@ -53,16 +53,16 @@
     },
     {
       "restaurant": "Holešovická Kozlovna",
-      "date": "2026-10-05",
+      "date": "2026-10-07",
       "soups": [
         {
           "name": "Čočková s uzeninou",
           "price": 49,
-          "allergens": "1",
+          "allergens": "1,9",
           "note": null
         },
         {
-          "name": "Kuřecí vývar s masem, zeleninou a nudlemi",
+          "name": "Kuřecí vývar s masem, zeleninou a celstýnskými nudlemi",
           "price": 49,
           "allergens": "1,3,7,9",
           "note": null
@@ -70,42 +70,42 @@
       ],
       "main_dishes": [
         {
-          "name": "Hovězí pečeně s hříbkovou omáčkou, jasmínová rýže",
-          "price_single": 205,
-          "price_menu": 235,
-          "allergens": "1,7",
+          "name": "Svíčková na smetaně, houskové knedlíky, brusinky",
+          "price_single": 209,
+          "price_menu": 239,
+          "allergens": "1,3,7,9,10",
           "note": null
         },
         {
-          "name": "Pečená kuřecí křídla,,SWEET CHILLI\" salát coleslaw, nivový dresink, rozpečená bageta",
-          "price_single": 195,
-          "price_menu": 225,
+          "name": "Vepřový steak ,,DUROC\" zapečený s jalapeňos a čedarem, americké brambory, tymiánová omáčka, majonéza z pečeného česneku",
+          "price_single": 199,
+          "price_menu": 229,
           "allergens": "1,3,7,10",
           "note": null
         },
         {
-          "name": "Kuřecí steak v pivním těstíčku, bramborová kaše, rajčatový salátek",
-          "price_single": 199,
-          "price_menu": 229,
-          "allergens": "1,3,7",
+          "name": "Smažený holandský řízek, bramborová kaše, okurkový salátek (1,3,7",
+          "price_single": 195,
+          "price_menu": 225,
+          "allergens": null,
           "note": null
         },
         {
-          "name": "Tagliatelle,,Bolognese\" s masovým ragů, sypané sýrem Gran moravia, rukola, olivový olej",
+          "name": "Kuřecí rolka ve slanině na italském krémovém rizotu s cuketou, sýr Gran Moravia",
           "price_single": 189,
           "price_menu": 219,
-          "allergens": "1,3,7,9",
+          "allergens": "1,7",
           "note": null
         },
         {
-          "name": "Argentinský hovězí rumpsteak, na grilu / úprava medium /, lyonské brambory s cibulí a slaninou, omáčka ze zeleného pepře, variace trhaných salátů",
+          "name": "Argentinský hovězí rumpsteak na grilu / úprava medium /, lyonské brambory s cibulí a slaninou, omáčka ze zeleného pepře, variace trhaných salátů",
           "price_single": 239,
           "price_menu": null,
           "allergens": "1,7",
           "note": null
         }
       ],
-      "status": "stale"
+      "status": "fresh"
     }
   ]
 }

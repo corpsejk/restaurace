@@ -1,47 +1,47 @@
 {
   "restaurant": "U Holiše",
-  "date": "6.10.2026",
+  "date": "7.10.2026",
   "soups": [
     {
       "name": "HOVĚZÍ VÝVAR S MASEM A ZELENINOU, VLASOVÉ NUDLE",
       "price": 49,
-      "allergens": "1a,7,9,3,12",
+      "allergens": "1a,7,9,12,3",
       "note": null
     },
     {
-      "name": "ČESNEKOVÁ S UZENÝM MASEM, VEJCEM A SÝREM, CHLEBOVÉ KRUTONY",
-      "price": 49,
-      "allergens": "7,9,1a,3",
+      "name": "GULÁŠOVÁ S MLETÝM MASEM A BRAMBOREM (podáváme s pečivem)",
+      "price": 55,
+      "allergens": "1a,7,9,12,8",
       "note": null
     }
   ],
   "main_dishes": [
     {
-      "name": "HOVĚZÍ ROZLÍTANÝ PTÁČEK, JASMÍNOVÁ RÝŽE/HOUSKOVÝ KNEDLÍK",
-      "price_single": 195,
-      "price_menu": 225,
-      "allergens": "1a,3,7,9,10",
-      "note": null
-    },
-    {
-      "name": "HOLANDSKÝ ŘÍZEK SE SÝREM GOUDA, BRAMBOROVÁ KAŠE, ZELNÝ SALÁTEK S MRKVÍ",
+      "name": "SMAŽENÉ FILÉ Z TRESKY, HRÁŠEK NA MÁSLE, VAŘENÝ BRAMBOR, PEČENÝ CITRON, TATARSKÁ OMÁČKA",
       "price_single": 190,
       "price_menu": 220,
-      "allergens": "1a,3,7,10",
+      "allergens": "7,12,1a,3,4",
       "note": null
     },
     {
-      "name": "KUŘECÍ SUPREME, PEČENÝ BRAMBOR, BYLINKOVÁ OMÁČKA",
+      "name": "VEPŘOVÁ LÍČKA NA ČERVENÉM VÍNĚ, BATÁTOVO-BRAMBOROVÉ PYRÉ, PEČENÁ KOŘENOVÁ ZELENINA",
+      "price_single": 195,
+      "price_menu": 225,
+      "allergens": "1a,7,12,3,9",
+      "note": null
+    },
+    {
+      "name": "KUŘECÍ NUDLIČKY NA ŽLUTÉM CURRY (kokosové mléko, cherry rajčata, císařský hrášek), JASMÍNOVÁ RÝŽE",
+      "price_single": 190,
+      "price_menu": null,
+      "allergens": "1a,3,4,6,7,9,11,12",
+      "note": null
+    },
+    {
+      "name": "MEDAILONKY Z VEPŘOVÉ PANENKY, ČERSTVÉ ŠPAGETY S RUKOLOVO-BAZALKOVÝM PESTEM, CHERRY RAJČATY A PINIOVÝMI OŘÍŠKY, SÝR GRAN REGALE",
       "price_single": 200,
       "price_menu": null,
-      "allergens": "1a,3,7",
-      "note": null
-    },
-    {
-      "name": "ŠUNKOFLEKY S UZENÝM MASEM, KYSELÁ OKURKA",
-      "price_single": 185,
-      "price_menu": null,
-      "allergens": "1a,3,7,10,12",
+      "allergens": "1a,3,7,8",
       "note": null
     }
   ]
