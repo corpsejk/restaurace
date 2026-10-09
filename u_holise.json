@@ -1,60 +1,54 @@
 {
   "restaurant": "U Holiše",
-  "date": "8.10.2026",
+  "date": "9.10.2026",
   "soups": [
     {
       "name": "HOVĚZÍ VÝVAR S MASEM A ZELENINOU, VLASOVÉ NUDLE",
       "price": 49,
-      "allergens": "1a,7,9,3,12",
+      "allergens": "1a,7,9,12,3",
       "note": null
     },
     {
-      "name": "HRÁŠKOVÝ KRÉM S KRUTONY",
+      "name": "ČOČKOVÁ S PÁRKEM",
       "price": 49,
-      "allergens": "7,9,1a,3",
-      "note": null
-    },
-    {
-      "name": "GULÁŠOVÁ S MLETÝM MASEM A BRAMBOREM (podáváme s pečivem)",
-      "price": 55,
-      "allergens": null,
+      "allergens": "1a,7,9,12,8",
       "note": null
     }
   ],
   "main_dishes": [
     {
-      "name": "BIFTEČKY Z MLETÉHO MASA S FETOU A PAPRIKOU, ŠŤOUCHANÉ BRAMBORY S JARNÍ CIBULKOU, SALÁTEK COLESLAW",
-      "price_single": 190,
-      "price_menu": 220,
-      "allergens": "1a,3,7,9,10",
+      "name": "SMAŽENÝ KUŘECÍ ŘÍZEK, BRAMBOROVÝ SALÁT, CITRON",
+      "price_single": 195,
+      "price_menu": 225,
+      "allergens": "7,12,1a,3,10",
       "note": null
     },
     {
-      "name": "FILÍROVANÁ VEPŘOVÁ PANENKA, BRUSINKOVÁ OMÁČKA S PORTSKÝM VÍNEM, PEČENÝ BRAMBOR",
+      "name": "KRŮTÍ PRSO NA ROZMARÝNU, FAZOLKY SE SLANINOU, PEČENÉ BRAMBORY",
       "price_single": 200,
       "price_menu": 230,
-      "allergens": "1a,3,7,10,9,12",
+      "allergens": "1a,7,9,12",
       "note": null
     },
     {
-      "name": "SMAŽENÉ FILÉ Z TRESKY, HRÁŠEK NA MÁSLE, VAŘENÝ BRAMBOR, PEČENÝ CITRON, TATARSKÁ OMÁČKA",
+      "name": "HOVĚZÍ GULÁŠ, ČERVENÁ CIBULE, FEFERONKA, HOUSKOVÝ KNEDLÍK",
+      "price_single": 195,
+      "price_menu": null,
+      "allergens": "1a,7,12,3,9,10",
+      "note": null
+    },
+    {
+      "name": "HOVĚZÍ ŠTĚPÁNSKÁ PEČENĚ, JASMÍNOVÁ RÝŽE/HOUSKOVÝ KNEDLÍK",
+      "price_single": 200,
+      "price_menu": null,
+      "allergens": "1a,3,7,9",
+      "note": null
+    },
+    {
+      "name": "BIFTEČKY Z MLETÉHO MASA S FETOU A PAPRIKOU, HRANOLKY, ČESNEKOVÝ DIP, SALÁTEK COLESLAW",
       "price_single": 190,
       "price_menu": null,
-      "allergens": "1a,3,7,4,12",
-      "note": null
-    },
-    {
-      "name": "Z NAŠEHO GRILU: PŮLKA KUŘETE, SALÁT CAESAR (římský salát, ančovičkový dresink, krutony, sýr parm. typu), ROZPEČENÁ BAGETA",
-      "price_single": 190,
-      "price_menu": null,
-      "allergens": "1a,3,7,10,12,4",
-      "note": null
-    },
-    {
-      "name": "Z NAŠEHO GRILU: CELÉ KUŘE, SALÁT CAESAR (římský salát, ančovičkový dresink, krutony, sýr parm. typu), ROZPEČENÁ BAGETA",
-      "price_single": 245,
-      "price_menu": null,
-      "allergens": "1a,3,4,7,10,12",
+      "allergens": "1a,3,7,9,10",
       "note": null
     }
   ]

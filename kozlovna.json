@@ -1,15 +1,15 @@
 {
   "restaurant": "Holešovická Kozlovna",
-  "date": "Čtvrtek 8.10.2026",
+  "date": "Pátek 9.10.2026",
   "soups": [
     {
-      "name": "Česnečka s uzeným masem a kroupami",
+      "name": "Bramborový krém s restovanou slaninou a řapíkatým celerem",
       "price": 49,
-      "allergens": "1,3",
+      "allergens": "1,7,9",
       "note": null
     },
     {
-      "name": "Hovězí vývar s masem, zeleninou a nudlemi",
+      "name": "Kuřecí vývar s masem, zeleninou a nudlemi",
       "price": 49,
       "allergens": "1,3,7,9",
       "note": null
@@ -17,9 +17,9 @@
   ],
   "main_dishes": [
     {
-      "name": "Selský pečený vepřový bok, bílé zelí, bramborové knedlíky, šťáva z výpeku",
-      "price_single": 189,
-      "price_menu": 219,
+      "name": "Řecké grilované biftečky plněné sýrem feta, pita chleba, tzatziki, ledový salát s rajčaty, opečené brambory ve slupce",
+      "price_single": 199,
+      "price_menu": 229,
       "allergens": "1,3,7",
       "note": null
     },
@@ -38,10 +38,10 @@
       "note": null
     },
     {
-      "name": "Bryndzové halušky s restovanou oravskou slaninou, cibulka, petrželka",
-      "price_single": 185,
-      "price_menu": 215,
-      "allergens": "1,3,7",
+      "name": "Kuřecí rolka ve slanině na italském krémovém rizotu s cuketou, sýr Gran Moravia",
+      "price_single": 189,
+      "price_menu": 219,
+      "allergens": "1,7",
       "note": null
     },
     {
