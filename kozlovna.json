@@ -1,15 +1,15 @@
 {
   "restaurant": "Holešovická Kozlovna",
-  "date": "Pátek 9.10.2026",
+  "date": "Pondělí 12.10.2026",
   "soups": [
     {
-      "name": "Bramborový krém s restovanou slaninou a řapíkatým celerem",
+      "name": "Gulášová s masem a bramborami",
       "price": 49,
-      "allergens": "1,7,9",
+      "allergens": "1",
       "note": null
     },
     {
-      "name": "Kuřecí vývar s masem, zeleninou a nudlemi",
+      "name": "Hovězí vývar s masem, zeleninou a nudlemi",
       "price": 49,
       "allergens": "1,3,7,9",
       "note": null
@@ -17,38 +17,38 @@
   ],
   "main_dishes": [
     {
-      "name": "Řecké grilované biftečky plněné sýrem feta, pita chleba, tzatziki, ledový salát s rajčaty, opečené brambory ve slupce",
-      "price_single": 199,
-      "price_menu": 229,
-      "allergens": "1,3,7",
+      "name": "Hovězí ořech v rajské omáčce, houskové knedlíky",
+      "price_single": 205,
+      "price_menu": 235,
+      "allergens": "1,3,7,9",
       "note": null
     },
     {
-      "name": "Ražničí z vepřové panenky na grilu, mačkané brambory s máslem a pažitkou,masová šťáva, tatarská omáčka",
-      "price_single": 199,
-      "price_menu": 229,
+      "name": "Filírovaná vepřová panenka, omáčka z pečených paprik, zeleninový kuskus, variace trhaných salátů",
+      "price_single": 205,
+      "price_menu": 235,
+      "allergens": "1,7",
+      "note": null
+    },
+    {
+      "name": "Smažený karbanátek, bramborová kaše, kyselá okurka",
+      "price_single": 189,
+      "price_menu": 219,
       "allergens": "1,3,7,10",
       "note": null
     },
     {
-      "name": "Smažené kuřecí stripsy, bramborová kaše, coleslaw",
+      "name": "Caesar salát s grilovaným kuřecím prsem, slaninou, ančovičkovým dresinkem a krutony, Gran Moravia",
       "price_single": 195,
       "price_menu": 225,
       "allergens": "1,3,7,10",
       "note": null
     },
     {
-      "name": "Kuřecí rolka ve slanině na italském krémovém rizotu s cuketou, sýr Gran Moravia",
-      "price_single": 189,
-      "price_menu": 219,
-      "allergens": "1,7",
-      "note": null
-    },
-    {
-      "name": "Argentinský hovězí rumpsteak na grilu / úprava medium /, lyonské brambory s cibulí a slaninou, omáčka ze zeleného pepře, variace trhaných salátů",
-      "price_single": 239,
+      "name": "Grilovaný losos na dýňovém pyré, restovaná zelenina, pečený citron",
+      "price_single": 229,
       "price_menu": null,
-      "allergens": "1,7",
+      "allergens": "4,7",
       "note": null
     }
   ]
