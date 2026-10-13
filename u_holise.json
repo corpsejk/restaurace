@@ -1,47 +1,47 @@
 {
   "restaurant": "U Holiše",
-  "date": "12.10.2026",
+  "date": "13.10.2026",
   "soups": [
     {
       "name": "DRŮBEŽÍ VÝVAR S MASEM A ZELENINOU, VLASOVÉ NUDLE",
       "price": 49,
-      "allergens": "1a,7,9,3,12",
+      "allergens": "1a,7,9,12,3",
       "note": null
     },
     {
-      "name": "FRANKFURTSKÁ S BRAMBOREM A PÁRKEM (podáváme s pečivem)",
-      "price": 55,
-      "allergens": "7,9,1a,3",
+      "name": "KRÉMOVÁ ČESNEKOVÁ, KRUTONY",
+      "price": 49,
+      "allergens": "1a,7,3",
       "note": null
     }
   ],
   "main_dishes": [
     {
-      "name": "SVÍČKOVÁ HOVĚZÍ PEČENĚ, HOUSKOVÝ KNEDLÍK, BRUSINKOVÝ TERČ",
-      "price_single": 200,
-      "price_menu": 230,
-      "allergens": "1a,3,7,9,10",
+      "name": "ŠPANĚLSKÝ PTÁČEK Z HOVĚZÍ ROŠTĚNÉ, JASMÍNOVÁ RÝŽE/HOUSKOVÝ KNEDLÍK",
+      "price_single": 205,
+      "price_menu": 235,
+      "allergens": "7,12,1a,3,10,9",
       "note": null
     },
     {
-      "name": "TWISTER S KUŘECÍM MASEM V BBQ OMÁČCE (čedar, kukuřice, rajčata), HRANOLKY, PARMAZÁNOVÝ DIP",
+      "name": "HOLANDSKÝ ŘÍZEK SE SÝREM GOUDA, BRAMBOROVÁ KAŠE, RAJČATOVÝ SALÁTEK S MAJONÉZOU",
       "price_single": 190,
       "price_menu": 220,
-      "allergens": "1a,3,7,12",
+      "allergens": "1a,3,7,10,12",
       "note": null
     },
     {
-      "name": "GRILOVANÝ KRŮTÍ STEAK, PEPŘOVÁ OMÁČKA S KOŇAKEM, PEČENÝ BRAMBOR",
-      "price_single": 200,
+      "name": "ŠPÍZ Z VEPŘOVÉ PANENKY (anglická slanina, cibule, paprika), PEČENÝ BRAMBOR, BYLINKOVÝ DIP",
+      "price_single": 195,
       "price_menu": null,
-      "allergens": "1a,3,7,12",
+      "allergens": "1a,3,7",
       "note": null
     },
     {
-      "name": "SRBSKÉ VEPŘOVÉ RIZOTO, STROUHANÝ SÝR, KYSELÁ OKURKA",
-      "price_single": 185,
+      "name": "KUŘECÍ MEDAILONKY, ČERSTVÉ ŠPAGETY AGLIO OLIO, SÝR PARMAZÁNOVÉHO TYPU",
+      "price_single": 195,
       "price_menu": null,
-      "allergens": "7,10,12",
+      "allergens": "1a,3,7",
       "note": null
     }
   ]
