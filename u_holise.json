@@ -1,47 +1,47 @@
 {
   "restaurant": "U Holiše",
-  "date": "13.10.2026",
+  "date": "14.10.2026",
   "soups": [
     {
       "name": "DRŮBEŽÍ VÝVAR S MASEM A ZELENINOU, VLASOVÉ NUDLE",
       "price": 49,
-      "allergens": "1a,7,9,12,3",
+      "allergens": "1a,7,9,3,12",
       "note": null
     },
     {
-      "name": "KRÉMOVÁ ČESNEKOVÁ, KRUTONY",
-      "price": 49,
-      "allergens": "1a,7,3",
+      "name": "ZELNÁ S KLOBÁSOU (podáváme s pečivem)",
+      "price": 55,
+      "allergens": "7,9,1a,3",
       "note": null
     }
   ],
   "main_dishes": [
     {
-      "name": "ŠPANĚLSKÝ PTÁČEK Z HOVĚZÍ ROŠTĚNÉ, JASMÍNOVÁ RÝŽE/HOUSKOVÝ KNEDLÍK",
-      "price_single": 205,
-      "price_menu": 235,
-      "allergens": "7,12,1a,3,10,9",
+      "name": "KANČÍ GULÁŠ NA DIVOKÉM KOŘENÍ S PORTSKÝM VÍNEM, KARLOVARSKÝ KNEDLÍK",
+      "price_single": 200,
+      "price_menu": 230,
+      "allergens": "1a,3,7,9,10,12",
       "note": null
     },
     {
-      "name": "HOLANDSKÝ ŘÍZEK SE SÝREM GOUDA, BRAMBOROVÁ KAŠE, RAJČATOVÝ SALÁTEK S MAJONÉZOU",
-      "price_single": 190,
-      "price_menu": 220,
-      "allergens": "1a,3,7,10,12",
+      "name": "KUŘECÍ STEAK ZAPEČENÝ ŠUNKOU A NIVOU, ŠŤOUCHANÝ BRAMBOR S JARNÍ CIBULKOU, ŠŤÁVA Z VÝPEKU, BYLINKOVÝ DIP",
+      "price_single": 195,
+      "price_menu": 225,
+      "allergens": "1a,3,7,10",
       "note": null
     },
     {
-      "name": "ŠPÍZ Z VEPŘOVÉ PANENKY (anglická slanina, cibule, paprika), PEČENÝ BRAMBOR, BYLINKOVÝ DIP",
+      "name": "STROGANOV Z VEPŘOVÉ PANENKY, JASMÍNOVÁ RÝŽE",
       "price_single": 195,
       "price_menu": null,
-      "allergens": "1a,3,7",
+      "allergens": "1a,3,7,9",
       "note": null
     },
     {
-      "name": "KUŘECÍ MEDAILONKY, ČERSTVÉ ŠPAGETY AGLIO OLIO, SÝR PARMAZÁNOVÉHO TYPU",
-      "price_single": 195,
+      "name": "SMAŽENÝ KVĚTÁK, VAŘENÝ BRAMBOR S PAŽITKOU, TATARSKÁ OMÁČKA",
+      "price_single": 185,
       "price_menu": null,
-      "allergens": "1a,3,7",
+      "allergens": "7,10,12,1a,3",
       "note": null
     }
   ]
