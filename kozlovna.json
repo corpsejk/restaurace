@@ -1,11 +1,11 @@
 {
   "restaurant": "Holešovická Kozlovna",
-  "date": "Pátek 2.10.2026",
+  "date": "Středa 14.10.2026",
   "soups": [
     {
-      "name": "Zelňačka s klobásou",
+      "name": "Kulajda s hříbky",
       "price": 49,
-      "allergens": "1,9",
+      "allergens": "1,3,7,9",
       "note": null
     },
     {
@@ -17,38 +17,38 @@
   ],
   "main_dishes": [
     {
-      "name": "Segedínský vepřový guláš, houskové knedlíky",
+      "name": "Staročeská bašta s plátkem vepřové plece, uzeného masa a klobásy, červené zelí, houskové a bramborové knedlíky, šťáva z výpeku",
       "price_single": 195,
       "price_menu": 225,
-      "allergens": "1,3,7,9",
+      "allergens": "1,3,9",
       "note": null
     },
     {
-      "name": "Grilovaný kuřecí steak, zeleninová ratatouille, pečené brambory s bylinkami, masová šťáva",
+      "name": "Krůtí medailonky na grilu s omáčkou z červeného curry a kokosovým mlékem, jasmínová rýže, grilovaný Pak choi",
       "price_single": 199,
       "price_menu": 229,
-      "allergens": "1,7",
+      "allergens": "7",
       "note": null
     },
     {
-      "name": "Vepřová játra na roštu po Anglicku, restovaná slanina, sázené vejce, hranolky, tatarská omáčka",
+      "name": "Smažený kuřecí Cordon bleu plněný šunkou a sýrem, bramborová kaše, rajčatový salátek",
+      "price_single": 195,
+      "price_menu": 225,
+      "allergens": "1,3,7",
+      "note": null
+    },
+    {
+      "name": "Grilované mleté biftečky, šťouchané brambory s cibulkou, gratinované papriky s balkánským sýrem, masová šťáva",
       "price_single": 189,
       "price_menu": 219,
-      "allergens": "1,3,10",
+      "allergens": "1,3,7",
       "note": null
     },
     {
-      "name": "Smažené řízečky z vepřové panenky, bramborový salát s majonézou, citron",
-      "price_single": 199,
-      "price_menu": 229,
-      "allergens": "1,3,7,9,10",
-      "note": "Omezený počet"
-    },
-    {
-      "name": "Chicken burger v máslové bulce- Kuřecí prso smažené v cornflakes, anglická slanina, ledový salát, rajče, koktejlový dresink, kořeněné americké brambory",
-      "price_single": 209,
+      "name": "Grilovaný norský losos na dýňovém pyré s restovanou zeleninou, opečený citron",
+      "price_single": 229,
       "price_menu": null,
-      "allergens": "1,3,7,10",
+      "allergens": "4,7",
       "note": null
     }
   ]
