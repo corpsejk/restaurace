@@ -1,47 +1,60 @@
 {
   "restaurant": "U Holiše",
-  "date": "14.10.2026",
+  "date": "15.10.2026",
   "soups": [
     {
       "name": "DRŮBEŽÍ VÝVAR S MASEM A ZELENINOU, VLASOVÉ NUDLE",
       "price": 49,
-      "allergens": "1a,7,9,3,12",
+      "allergens": "1a,7,9,12,3",
       "note": null
     },
     {
-      "name": "ZELNÁ S KLOBÁSOU (podáváme s pečivem)",
+      "name": "ŽAMPIONOVÝ KRÉM, KRUTONY",
+      "price": 49,
+      "allergens": "1a,7,3",
+      "note": null
+    },
+    {
+      "name": "FRANKFURTSKÁ S BRAMBOREM (podáváme s pečivem)",
       "price": 55,
-      "allergens": "7,9,1a,3",
+      "allergens": "1a,3,7,9",
       "note": null
     }
   ],
   "main_dishes": [
     {
-      "name": "KANČÍ GULÁŠ NA DIVOKÉM KOŘENÍ S PORTSKÝM VÍNEM, KARLOVARSKÝ KNEDLÍK",
-      "price_single": 200,
-      "price_menu": 230,
-      "allergens": "1a,3,7,9,10,12",
+      "name": "PLÁTEK HOVĚZÍ FALEŠNÉ SVÍČKOVÉ NA CIBULI, VÍDEŇSKÁ CIBULKA, JASMÍNOVÁ RÝŽE/PEČENÉ BRAMBORY, TATARSKÁ OMÁČKA",
+      "price_single": 205,
+      "price_menu": 235,
+      "allergens": "7,1a,3,9",
       "note": null
     },
     {
-      "name": "KUŘECÍ STEAK ZAPEČENÝ ŠUNKOU A NIVOU, ŠŤOUCHANÝ BRAMBOR S JARNÍ CIBULKOU, ŠŤÁVA Z VÝPEKU, BYLINKOVÝ DIP",
-      "price_single": 195,
-      "price_menu": 225,
-      "allergens": "1a,3,7,10",
-      "note": null
-    },
-    {
-      "name": "STROGANOV Z VEPŘOVÉ PANENKY, JASMÍNOVÁ RÝŽE",
-      "price_single": 195,
-      "price_menu": null,
-      "allergens": "1a,3,7,9",
-      "note": null
-    },
-    {
-      "name": "SMAŽENÝ KVĚTÁK, VAŘENÝ BRAMBOR S PAŽITKOU, TATARSKÁ OMÁČKA",
+      "name": "SMAŽENÝ KARBANÁTEK, BRAMBOROVÁ KAŠE, ZELENINOVÝ SALÁTEK S FETA SÝREM",
       "price_single": 185,
+      "price_menu": 215,
+      "allergens": "1a,3,7,10,12",
+      "note": null
+    },
+    {
+      "name": "NUDLIČKY Z KUŘECÍCH PRSOU NA PAPRICE, KOLÍNKA",
+      "price_single": 190,
       "price_menu": null,
-      "allergens": "7,10,12,1a,3",
+      "allergens": "1a,3,7",
+      "note": null
+    },
+    {
+      "name": "Z NAŠEHO GRILU: PŮLKA KUŘETE, KUSKUS SE ZELENINOU, STUDENÁ BYLINKOVÁ OMÁČKA",
+      "price_single": 190,
+      "price_menu": null,
+      "allergens": "1a,3,7",
+      "note": null
+    },
+    {
+      "name": "Z NAŠEHO GRILU: CELÉ KUŘE, KUSKUS SE ZELENINOU, STUDENÁ BYLINKOVÁ OMÁČKA",
+      "price_single": 245,
+      "price_menu": null,
+      "allergens": "1a,3,7",
       "note": null
     }
   ]
