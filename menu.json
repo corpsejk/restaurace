@@ -1,6 +1,6 @@
 {
   "date": "2026-10-15",
-  "updated_at": "2026-10-15T07:49:02Z",
+  "updated_at": "2026-10-15T08:18:05Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
@@ -41,7 +41,7 @@
           "note": null
         },
         {
-          "name": "NUDLIČKY Z KUŘECÍCH PRSOU NA PAPRICE, KOLÍNKA",
+          "name": "NUDLIČKY Z KUŘECÍCH PRSOU NA PAPRICE, TĚSTOVINY",
           "price_single": 190,
           "price_menu": null,
           "allergens": "1a,3,7",
@@ -66,16 +66,16 @@
     },
     {
       "restaurant": "Holešovická Kozlovna",
-      "date": "2026-10-14",
+      "date": "2026-10-15",
       "soups": [
         {
-          "name": "Kulajda s hříbky",
+          "name": "Špenátový krém s krutony",
           "price": 49,
-          "allergens": "1,3,7,9",
+          "allergens": "1,3,7",
           "note": null
         },
         {
-          "name": "Hovězí vývar s masem, zeleninou a nudlemi",
+          "name": "Kuřecí vývar s masem, zeleninou a nudlemi",
           "price": 49,
           "allergens": "1,3,7,9",
           "note": null
@@ -83,31 +83,31 @@
       ],
       "main_dishes": [
         {
-          "name": "Staročeská bašta s plátkem vepřové plece, uzeného masa a klobásy, červené zelí, houskové a bramborové knedlíky, šťáva z výpeku",
-          "price_single": 195,
-          "price_menu": 225,
-          "allergens": "1,3,9",
+          "name": "Maďarský guláš s paprikou a cibulkou, bramboráčky",
+          "price_single": 205,
+          "price_menu": 235,
+          "allergens": "1,3,7",
           "note": null
         },
         {
-          "name": "Krůtí medailonky na grilu s omáčkou z červeného curry a kokosovým mlékem, jasmínová rýže, grilovaný Pak choi",
+          "name": "Penne s nudličkami z vepřové panenky se smetanovou omáčkou s liškami, Gran Moravia",
           "price_single": 199,
           "price_menu": 229,
-          "allergens": "7",
+          "allergens": "1,3,7",
           "note": null
         },
         {
-          "name": "Smažený kuřecí Cordon bleu plněný šunkou a sýrem, bramborová kaše, rajčatový salátek",
+          "name": "Kuřecí špíz s cuketou a paprikou,pečené brambory na olivovém oleji s bylinkami, variace trhaných salátů, bazalkový dip, masová šťáva",
           "price_single": 195,
           "price_menu": 225,
-          "allergens": "1,3,7",
+          "allergens": "1,3,10",
           "note": null
         },
         {
-          "name": "Grilované mleté biftečky, šťouchané brambory s cibulkou, gratinované papriky s balkánským sýrem, masová šťáva",
-          "price_single": 189,
-          "price_menu": 219,
-          "allergens": "1,3,7",
+          "name": "Smažené řízečky z vepřové panenky, tradiční bramborový salát, citron",
+          "price_single": 199,
+          "price_menu": 229,
+          "allergens": "1,3,7,9,10",
           "note": null
         },
         {
@@ -118,7 +118,7 @@
           "note": null
         }
       ],
-      "status": "stale"
+      "status": "fresh"
     }
   ]
 }
