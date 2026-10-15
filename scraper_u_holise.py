@@ -3,11 +3,17 @@ import re
 from pathlib import Path
 
 from bs4 import BeautifulSoup
+from playwright.sync_api import TimeoutError as PlaywrightTimeout
 from playwright.sync_api import sync_playwright
-
 
 URL = "https://restauraceuholise.cz/cs/denni-menu/lacarte"
 OUTPUT = Path("u_holise.json")
+
+ALLOWED_ALLERGENS = {
+    "1", "1a", "1b", "1c", "1d", "1e", "1f", "1g",
+    "2", "3", "4", "5", "6", "7",
+    "8", "9", "10", "11", "12", "13", "14",
+}
 
 
 def clean_text(text):
@@ -25,368 +31,165 @@ def normalize_name(name):
 
 
 def extract_price(text):
-    text = clean_text(text)
-
-    match = re.search(r"(\d+)\s*Kč", text)
-
-    if match:
-        return int(match.group(1))
-
-    return None
+    match = re.search(r"(\d+)\s*Kč", clean_text(text))
+    return int(match.group(1)) if match else None
 
 
 def extract_allergens(wrapper):
-    """
-    Získá alergeny z textu wrapperu.
-
-    Cena (např. 49, 195, 200) se ignoruje.
-    Podporované kódy jsou např.:
-    1, 1a, 3, 7, 8, 9, 10, 12
-    """
-
-    text = wrapper.get_text(" ", strip=True)
-    text = clean_text(text)
-
-    # Odstraníme ceny z textu.
+    """Získá kódy alergenů z textu bloku (ceny se ignorují)."""
+    text = clean_text(wrapper.get_text(" ", strip=True))
     text = re.sub(r"\b\d+\s*Kč\b", "", text)
-
-    # Alergeny.
-    matches = re.findall(
-        r"\b\d+[a-z]?\b",
-        text,
-        flags=re.IGNORECASE
-    )
 
     result = []
 
-    for item in matches:
-
+    for item in re.findall(r"\b\d+[a-z]?\b", text, flags=re.IGNORECASE):
         item = item.lower()
 
-        # Povolené kódy alergenů.
-        if item not in (
-            "1",
-            "1a",
-            "1b",
-            "1c",
-            "1d",
-            "1e",
-            "1f",
-            "1g",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-        ):
-            continue
-
-        if item not in result:
+        if item in ALLOWED_ALLERGENS and item not in result:
             result.append(item)
 
     return ",".join(result) if result else None
 
 
-def main():
-
-    # =========================================================
-    # NAČTENÍ STRÁNKY PŘES PLAYWRIGHT
-    # =========================================================
-
+def download_html():
+    """Načte stránku přes Playwright a vrátí HTML s vykresleným menu."""
     with sync_playwright() as p:
-
         browser = p.chromium.launch(headless=True)
 
-        page = browser.new_page()
+        try:
+            page = browser.new_page()
 
-        response = page.goto(
-            URL,
-            wait_until="networkidle"
-        )
-
-        if not response:
-            raise RuntimeError(
-                "Stránka nevrátila žádnou odpověď."
+            response = page.goto(
+                URL,
+                wait_until="domcontentloaded",
+                timeout=30000,
             )
 
-        if response.status != 200:
-            raise RuntimeError(
-                f"U Holiše vrátilo HTTP {response.status}"
-            )
+            if response is None or not response.ok:
+                status = response.status if response else "žádná odpověď"
+                raise RuntimeError(f"U Holiše: HTTP {status}")
 
-        html = page.content()
+            # Menu se doplňuje JavaScriptem, počkáme na první blok.
+            try:
+                page.wait_for_selector(".lc_block_wrapper", timeout=20000)
+            except PlaywrightTimeout:
+                raise RuntimeError(
+                    "U Holiše: menu se na stránce neobjevilo."
+                )
 
-        browser.close()
+            return page.content()
+        finally:
+            browser.close()
 
-    # =========================================================
-    # PARSOVÁNÍ HTML
-    # =========================================================
 
-    soup = BeautifulSoup(html, "html.parser")
+def scrape():
+    """Vrátí slovník s menu U Holiše. Při problému vyhodí výjimku."""
+    soup = BeautifulSoup(download_html(), "html.parser")
 
-    # =========================================================
-    # DATUM
-    # =========================================================
-
+    # ---- Datum
     date = None
-
     heading = soup.find("h3")
 
     if heading:
-
-        heading_text = clean_text(
-            heading.get_text(" ", strip=True)
-        )
-
         match = re.search(
-            r"(\d{1,2}\.\d{1,2}\.\d{4})",
-            heading_text
+            r"(\d{1,2}\.\s*\d{1,2}\.\s*\d{4})",
+            clean_text(heading.get_text(" ", strip=True)),
         )
-
         if match:
             date = match.group(1)
 
-    # =========================================================
-    # MENU BLOKY
-    # =========================================================
-
+    # ---- Bloky menu
     wrappers = soup.select(".lc_block_wrapper")
 
     if not wrappers:
-        raise RuntimeError(
-            "Nebyly nalezeny žádné .lc_block_wrapper bloky."
-        )
+        raise RuntimeError("U Holiše: nenalezeny žádné bloky menu.")
 
     soups = []
     main_dishes = []
-
-    # Cena zvýhodněného menu podle názvu jídla
-    menu_prices = {}
-
+    menu_prices = {}          # cena zvýhodněného menu podle názvu jídla
     current_category = None
-
-    # =========================================================
-    # ZPRACOVÁNÍ BLOKŮ
-    # =========================================================
+    menu_dish = None          # poslední hlavní jídlo ze zvýhodněného menu
 
     for wrapper in wrappers:
+        category_el = wrapper.select_one(".lc_block_line_category_text")
+        item_el = wrapper.select_one(".lc_block_line_item_text")
+        price_el = wrapper.select_one(".lc_block_line_price_text")
 
-        category_el = wrapper.select_one(
-            ".lc_block_line_category_text"
-        )
-
-        item_el = wrapper.select_one(
-            ".lc_block_line_item_text"
-        )
-
-        price_el = wrapper.select_one(
-            ".lc_block_line_price_text"
-        )
-
-        category = None
-
-        if category_el:
-
-            category = clean_text(
-                category_el.get_text(" ", strip=True)
-            )
-
-        item = None
-
-        if item_el:
-
-            item = clean_text(
-                item_el.get_text(" ", strip=True)
-            )
-
-        price = None
-
-        if price_el:
-
-            price = extract_price(
-                price_el.get_text(" ", strip=True)
-            )
-
-        # -----------------------------------------------------
-        # NOVÁ KATEGORIE
-        # -----------------------------------------------------
+        category = clean_text(category_el.get_text(" ", strip=True)) if category_el else None
+        item = clean_text(item_el.get_text(" ", strip=True)) if item_el else None
+        price = extract_price(price_el.get_text(" ", strip=True)) if price_el else None
 
         if category and category != "-":
             current_category = category.upper()
 
-        # -----------------------------------------------------
-        # POLÉVKY
-        # -----------------------------------------------------
-
         if current_category == "POLÉVKA":
-
             if item:
-
                 soups.append({
                     "name": item,
                     "price": price,
                     "allergens": extract_allergens(wrapper),
-                    "note": None
+                    "note": None,
                 })
-
-        # -----------------------------------------------------
-        # ZVÝHODNĚNÉ MENU
-        # -----------------------------------------------------
 
         elif current_category in (
             "ZVÝHODNĚNÉ MENU JEDNA",
-            "ZVÝHODNĚNÉ MENU DVA"
+            "ZVÝHODNĚNÉ MENU DVA",
         ):
-
             if not item:
                 continue
 
             normalized = normalize_name(item)
 
-            # POLÉVKA DLE VÝBĚRU ignorujeme
             if normalized == "POLÉVKA DLE VÝBĚRU":
                 continue
 
-            # Limonádu ignorujeme
             if "TOČENÁ LIMONÁDA" in normalized:
-
-                # Cena v tomto bloku patří
-                # předchozímu jídlu zvýhodněného menu.
-
-                if price is not None:
-                    if "menu_dish" in locals() and menu_dish:
-                        menu_prices[
-                            normalize_name(menu_dish)
-                        ] = price
-
-                        menu_dish = None
-
+                # Cena v tomto bloku patří předchozímu jídlu menu.
+                if price is not None and menu_dish:
+                    menu_prices[normalize_name(menu_dish)] = price
+                    menu_dish = None
                 continue
 
-            # Toto je hlavní jídlo zvýhodněného menu.
             menu_dish = item
 
-        # -----------------------------------------------------
-        # HLAVNÍ CHODY
-        # -----------------------------------------------------
-
         elif current_category == "HLAVNÍ CHODY":
-
             if item:
-
                 main_dishes.append({
                     "name": item,
                     "price_single": price,
                     "price_menu": None,
                     "allergens": extract_allergens(wrapper),
-                    "note": None
+                    "note": None,
                 })
 
-    # =========================================================
-    # PŘIŘAZENÍ CEN MENU K HLAVNÍM JÍDLŮM
-    # =========================================================
-
+    # ---- Přiřazení cen menu k hlavním jídlům
     for dish in main_dishes:
-
         key = normalize_name(dish["name"])
 
         if key in menu_prices:
             dish["price_menu"] = menu_prices[key]
 
-    # =========================================================
-    # VÝSLEDNÝ JSON
-    # =========================================================
+    # ---- Kontroly
+    if not date:
+        raise RuntimeError("U Holiše: nenalezeno datum menu.")
+    if not soups:
+        raise RuntimeError("U Holiše: nenalezeny žádné polévky.")
+    if not main_dishes:
+        raise RuntimeError("U Holiše: nenalezena žádná hlavní jídla.")
 
-    result = {
+    return {
         "restaurant": "U Holiše",
         "date": date,
         "soups": soups,
-        "main_dishes": main_dishes
+        "main_dishes": main_dishes,
     }
-
-    # =========================================================
-    # KONTROLY
-    # =========================================================
-
-    if not soups:
-        raise RuntimeError(
-            "Nepodařilo se najít žádné polévky."
-        )
-
-    if not main_dishes:
-        raise RuntimeError(
-            "Nepodařilo se najít žádná hlavní jídla."
-        )
-
-    # =========================================================
-    # ULOŽENÍ
-    # =========================================================
-
-    OUTPUT.write_text(
-        json.dumps(
-            result,
-            ensure_ascii=False,
-            indent=2
-        ),
-        encoding="utf-8"
-    )
-
-    # =========================================================
-    # VÝPIS
-    # =========================================================
-
-    print()
-    print("===================================")
-    print("U HOLIŠE – MENU NALEZENO")
-    print("===================================")
-    print(f"Datum: {date}")
-    print()
-
-    print("POLÉVKY:")
-
-    for soup in soups:
-
-        print(
-            f"  {soup['name']} — "
-            f"{soup['price']} Kč"
-        )
-
-    print()
-
-    print("HLAVNÍ CHODY:")
-
-    for dish in main_dishes:
-
-        print(f"  {dish['name']}")
-
-        print(
-            f"    samostatně: "
-            f"{dish['price_single']} Kč"
-        )
-
-        menu_price = dish["price_menu"]
-
-        if menu_price is None:
-            menu_text = "—"
-        else:
-            menu_text = f"{menu_price} Kč"
-
-        print(
-            f"    menu: {menu_text}"
-        )
-
-    print()
-    print(f"Uloženo do: {OUTPUT}")
-    print()
 
 
 if __name__ == "__main__":
-    main()
+    # Samostatné spuštění pro ladění: vypíše menu a uloží u_holise.json
+    menu = scrape()
+    print(json.dumps(menu, ensure_ascii=False, indent=2))
+    OUTPUT.write_text(
+        json.dumps(menu, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )

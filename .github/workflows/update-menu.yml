@@ -2,49 +2,79 @@ name: Aktualizace menu
 
 on:
   schedule:
-    - cron: "0 6 * * 1-5"
+    # Každých 30 minut od 05:00 do 10:30 UTC, pondělí–pátek.
+    # To pokryje 7:00–11:00 jak v letním (UTC+2), tak v zimním (UTC+1) čase.
+    # Přesné okno 7:00–11:00 pražského času hlídá první krok níže.
+    - cron: "0,30 5-10 * * 1-5"
 
   workflow_dispatch:
 
 permissions:
   contents: write
 
+# Dva běhy nikdy neběží současně (zabrání konfliktům při pushi).
+concurrency:
+  group: update-menu
+  cancel-in-progress: false
+
 jobs:
   update-menu:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
+      - name: Kontrola času (pražský čas)
+        id: window
+        run: |
+          now=$(TZ=Europe/Prague date +%H%M)
+          echo "Pražský čas: $now"
+          # Ruční spuštění běží vždy. Plánované jen v okně 7:00–11:29
+          # (rezerva, protože GitHub plánované běhy občas zpozdí).
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] \
+             || { [ $((10#$now)) -ge 700 ] && [ $((10#$now)) -le 1129 ]; }; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "Mimo časové okno, nic se neděje."
+          fi
+
       - name: Stažení repozitáře
+        if: steps.window.outputs.run == 'true'
         uses: actions/checkout@v5
 
       - name: Nastavení Pythonu
+        if: steps.window.outputs.run == 'true'
         uses: actions/setup-python@v6
         with:
           python-version: "3.12"
+          cache: pip
 
       - name: Instalace Python knihoven
+        if: steps.window.outputs.run == 'true'
         run: |
           python -m pip install --upgrade pip
-          pip install beautifulsoup4 requests playwright
+          pip install -r requirements.txt
 
       - name: Instalace Chromium
-        run: |
-          python -m playwright install --with-deps chromium
+        if: steps.window.outputs.run == 'true'
+        run: python -m playwright install --with-deps chromium
 
       - name: Spuštění scraperu
-        run: |
-          python scraper.py
+        if: steps.window.outputs.run == 'true'
+        run: python scraper.py
 
-      - name: Uložení aktualizovaného menu
+      - name: Uložení a odeslání změn
+        if: steps.window.outputs.run == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add menu.json u_holise.json kozlovna.json
+          git add menu.json
 
-          git diff --cached --quiet || git commit -m "Aktualizace menu"
-
-      - name: Odeslání změn na GitHub
-        run: |
-          git pull --rebase origin main
-          git push
+          if git diff --cached --quiet; then
+            echo "Menu se nezměnilo, není co commitovat."
+          else
+            git commit -m "Aktualizace menu $(TZ=Europe/Prague date +%Y-%m-%d\ %H:%M)"
+            git pull --rebase --autostash origin "${{ github.ref_name }}"
+            git push origin "HEAD:${{ github.ref_name }}"
+          fi

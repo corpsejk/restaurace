@@ -156,6 +156,7 @@ header h1 {
 
 .main-dishes-price-headers span {
     width: 100px;
+    padding-right: 6px;
     text-align: right;
     color: #666;
     font-size: 12px;
@@ -228,6 +229,7 @@ header h1 {
 /* Cena */
 
 .price {
+    width: 100px;
     white-space: nowrap;
     text-align: right;
     font-weight: bold;
@@ -413,7 +415,8 @@ header h1 {
         font-size: 17px;
     }
 
-    .price-header {
+    .price-header,
+    .price {
         width: 85px;
     }
 

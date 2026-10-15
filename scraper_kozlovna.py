@@ -1,28 +1,44 @@
-import re
 import json
+import re
+import time
+from pathlib import Path
+
 import requests
 from bs4 import BeautifulSoup
 
 URL = "https://www.holesovickakozlovna.cz/"
+OUTPUT = Path("kozlovna.json")
 
-response = requests.get(URL, timeout=20)
-response.raise_for_status()
+HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+    ),
+    "Accept-Language": "cs-CZ,cs;q=0.9",
+}
 
-soup = BeautifulSoup(response.text, "html.parser")
+DAYS = "Pondělí|Úterý|Středa|Čtvrtek|Pátek|Sobota|Neděle"
 
-text = soup.get_text("\n", strip=True)
-lines = [line.strip() for line in text.splitlines() if line.strip()]
 
-# ---------------------------------------------------------
-# Pomocné funkce
-# ---------------------------------------------------------
+def fetch_html(retries=3):
+    """Stáhne stránku, při chybě to zkusí znovu."""
+    last_error = None
+
+    for attempt in range(1, retries + 1):
+        try:
+            response = requests.get(URL, headers=HEADERS, timeout=20)
+            response.raise_for_status()
+            return response.text
+        except requests.RequestException as e:
+            last_error = e
+            if attempt < retries:
+                time.sleep(3 * attempt)
+
+    raise RuntimeError(f"Kozlovnu se nepodařilo stáhnout: {last_error}")
+
 
 def parse_price(price_text):
-    """
-    Převod:
-        195/225 Kč -> 195, 225
-        209 Kč     -> 209, None
-    """
+    """195/225 Kč -> (195, 225); 209 Kč -> (209, None)."""
     match = re.search(r"(\d+)\s*(?:/\s*(\d+))?\s*Kč", price_text)
 
     if not match:
@@ -35,10 +51,7 @@ def parse_price(price_text):
 
 
 def parse_dish_name(name):
-    """
-    Oddělí alergeny a poznámku od názvu jídla.
-    """
-
+    """Oddělí alergeny a poznámku od názvu jídla."""
     note = None
 
     if "Omezený počet" in name:
@@ -46,136 +59,106 @@ def parse_dish_name(name):
         name = re.sub(r"\(\s*Omezený počet\s*\)", "", name)
 
     allergens = None
-
-    # Alergeny jsou poslední závorka ve tvaru např. (1,3,7,9)
-    match = re.search(r"\(([\d,\s]+)\)\s*$", name)
+    match = re.search(r"\(([\d,\s]+)\)\s*$", name.strip())
 
     if match:
         allergens = match.group(1).replace(" ", "")
-        name = name[:match.start()].strip()
+        name = name.strip()[:match.start()]
 
     return name.strip(), allergens, note
 
 
-# ---------------------------------------------------------
-# Datum
-# ---------------------------------------------------------
+def scrape():
+    """Vrátí slovník s menu Kozlovny. Při problému vyhodí výjimku."""
+    html = fetch_html()
+    soup = BeautifulSoup(html, "html.parser")
 
-date = None
+    text = soup.get_text("\n", strip=True)
+    lines = [line.strip() for line in text.splitlines() if line.strip()]
 
-for line in lines:
-    if re.match(
-        r"^(Pondělí|Úterý|Středa|Čtvrtek|Pátek|Sobota|Neděle)",
-        line
-    ):
-        date = line
-        break
+    # ---- Datum (musí obsahovat i číslo, aby se nespletlo s otevírací dobou)
+    date = None
+    date_re = re.compile(rf"^({DAYS})\s+\d{{1,2}}\.\s*\d{{1,2}}\.\s*\d{{4}}")
 
-
-# ---------------------------------------------------------
-# Polévky
-# ---------------------------------------------------------
-
-soups = []
-
-try:
-    soup_start = lines.index("Polévky :") + 1
-except ValueError:
-    soup_start = None
-
-if soup_start is not None:
-    i = soup_start
-
-    while i < len(lines):
-        line = lines[i]
-
-        if line == "Hlavní jídla :":
+    for line in lines:
+        if date_re.match(line):
+            date = line
             break
 
-        # cena je vždy na následujícím řádku
-        if i + 1 < len(lines) and re.fullmatch(r"\d+\s*Kč", lines[i + 1]):
-            name = line
-            price = int(re.search(r"\d+", lines[i + 1]).group())
+    # ---- Polévky
+    soups = []
 
-            soup_name, allergens, note = parse_dish_name(name)
+    if "Polévky :" in lines:
+        i = lines.index("Polévky :") + 1
 
-            soups.append({
-                "name": soup_name,
-                "price": price,
+        while i < len(lines):
+            line = lines[i]
+
+            if line == "Hlavní jídla :":
+                break
+
+            if i + 1 < len(lines) and re.fullmatch(r"\d+\s*Kč", lines[i + 1]):
+                price = int(re.search(r"\d+", lines[i + 1]).group())
+                soup_name, allergens, note = parse_dish_name(line)
+
+                soups.append({
+                    "name": soup_name,
+                    "price": price,
+                    "allergens": allergens,
+                    "note": note,
+                })
+                i += 2
+            else:
+                i += 1
+
+    # ---- Hlavní jídla
+    main_dishes = []
+
+    if "Hlavní jídla :" in lines:
+        start = lines.index("Hlavní jídla :") + 1
+
+        for i in range(start, len(lines)):
+            line = lines[i]
+
+            if line == "Holešovická Kozlovna využívá služby":
+                break
+
+            price_single, price_menu = parse_price(line)
+
+            if price_single is None or i - 1 < start:
+                continue
+
+            dish_name, allergens, note = parse_dish_name(lines[i - 1])
+
+            main_dishes.append({
+                "name": dish_name,
+                "price_single": price_single,
+                "price_menu": price_menu,
                 "allergens": allergens,
-                "note": note
+                "note": note,
             })
 
-            i += 2
-        else:
-            i += 1
+    # ---- Kontroly
+    if not date:
+        raise RuntimeError("Kozlovna: nenalezeno datum menu.")
+    if not soups:
+        raise RuntimeError("Kozlovna: nenalezeny žádné polévky.")
+    if not main_dishes:
+        raise RuntimeError("Kozlovna: nenalezena žádná hlavní jídla.")
+
+    return {
+        "restaurant": "Holešovická Kozlovna",
+        "date": date,
+        "soups": soups,
+        "main_dishes": main_dishes,
+    }
 
 
-# ---------------------------------------------------------
-# Hlavní jídla
-# ---------------------------------------------------------
-
-main_dishes = []
-
-try:
-    main_start = lines.index("Hlavní jídla :") + 1
-except ValueError:
-    main_start = None
-
-if main_start is not None:
-    i = main_start
-
-    while i < len(lines):
-        line = lines[i]
-
-        # konec hlavních jídel
-        if line == "Holešovická Kozlovna využívá služby":
-            break
-
-        # hledáme řádek s cenou
-        price_single, price_menu = parse_price(line)
-
-        if price_single is not None:
-
-            # název je předchozí řádek
-            if main_dishes or i > main_start:
-                name = lines[i - 1]
-
-                dish_name, allergens, note = parse_dish_name(name)
-
-                main_dishes.append({
-                    "name": dish_name,
-                    "price_single": price_single,
-                    "price_menu": price_menu,
-                    "allergens": allergens,
-                    "note": note
-                })
-
-        i += 1
-
-
-# ---------------------------------------------------------
-# Výsledná struktura
-# ---------------------------------------------------------
-
-menu = {
-    "restaurant": "Holešovická Kozlovna",
-    "date": date,
-    "soups": soups,
-    "main_dishes": main_dishes
-}
-
-
-# ---------------------------------------------------------
-# Výpis
-# ---------------------------------------------------------
-
-print(json.dumps(menu, ensure_ascii=False, indent=2))
-
-
-# ---------------------------------------------------------
-# Uložení do souboru
-# ---------------------------------------------------------
-
-with open("kozlovna.json", "w", encoding="utf-8") as f:
-    json.dump(menu, f, ensure_ascii=False, indent=2)
+if __name__ == "__main__":
+    # Samostatné spuštění pro ladění: vypíše menu a uloží kozlovna.json
+    menu = scrape()
+    print(json.dumps(menu, ensure_ascii=False, indent=2))
+    OUTPUT.write_text(
+        json.dumps(menu, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )

@@ -1,365 +1,171 @@
+"""
+Stáhne menu obou restaurací a uloží menu.json.
+
+Pravidla:
+  * restaurace se zobrazí jako "fresh" jen tehdy, když datum na jejím webu
+    odpovídá dnešnímu dni (pražský čas),
+  * jinak (chyba, prázdná stránka, včerejší menu) je "unavailable",
+  * pokud už dnes menu úspěšně získáno bylo a pozdější běh selže,
+    zůstane dnešní menu zachováno.
+menu.json se přepíše jen když se obsah změnil (méně zbytečných commitů).
+"""
+
 import json
-import subprocess
-import sys
+import re
+import traceback
 from datetime import datetime, timezone
 from pathlib import Path
-import re
+from zoneinfo import ZoneInfo
 
+import scraper_kozlovna
+import scraper_u_holise
 
-HOLISE_SCRIPT = Path("scraper_u_holise.py")
-KOZLOVNA_SCRIPT = Path("scraper_kozlovna.py")
-
-HOLISE_JSON = Path("u_holise.json")
-KOZLOVNA_JSON = Path("kozlovna.json")
-
+PRAGUE = ZoneInfo("Europe/Prague")
 OUTPUT_FILE = Path("menu.json")
+
+RESTAURANTS = [
+    ("U Holiše", scraper_u_holise.scrape),
+    ("Holešovická Kozlovna", scraper_kozlovna.scrape),
+]
 
 
 def convert_date_to_iso(date_text):
-    """Převede např. Pátek 2.10.2026 na 2026-10-02."""
+    """'Pátek 2.10.2026' nebo '2. 10. 2026' -> '2026-10-02'; jinak None."""
+    if not date_text:
+        return None
 
-    match = re.search(
-        r"(\d{1,2})\.(\d{1,2})\.(\d{4})",
-        date_text
-    )
+    match = re.search(r"(\d{1,2})\.\s*(\d{1,2})\.\s*(\d{4})", date_text)
 
     if not match:
-        raise ValueError(
-            f"Nelze převést datum: {date_text}"
-        )
+        return None
 
-    day = int(match.group(1))
-    month = int(match.group(2))
-    year = int(match.group(3))
+    day, month, year = (int(g) for g in match.groups())
 
     return f"{year:04d}-{month:02d}-{day:02d}"
 
 
-def run_scraper(script, json_file, restaurant_name):
-    """Spustí samostatný scraper a načte jeho JSON."""
-
-    print()
-    print("===================================")
-    print(f"STAHUJI: {restaurant_name.upper()}")
-    print("===================================")
-
-    try:
-
-        result = subprocess.run(
-            [sys.executable, str(script)],
-            check=True,
-            capture_output=True,
-            text=True,
-            encoding="utf-8",
-            errors="replace"
-        )
-
-        if result.stdout:
-            print(result.stdout)
-
-        if not json_file.exists():
-            raise RuntimeError(
-                f"Scraper nevytvořil soubor {json_file}"
-            )
-
-        with json_file.open(
-            "r",
-            encoding="utf-8"
-        ) as f:
-
-            data = json.load(f)
-
-        return data
-
-    except subprocess.CalledProcessError as e:
-
-        print()
-        print(f"!!! CHYBA {restaurant_name.upper()} !!!")
-
-        if e.stdout:
-            print(e.stdout)
-
-        if e.stderr:
-            print(e.stderr)
-
-        return None
-
-    except Exception as e:
-
-        print()
-        print(f"!!! CHYBA {restaurant_name.upper()} !!!")
-        print(str(e))
-
-        return None
-
-
 def load_previous_menu():
-    """Načte předchozí menu.json, pokud existuje."""
-
     if not OUTPUT_FILE.exists():
         return None
 
     try:
-
-        with OUTPUT_FILE.open(
-            "r",
-            encoding="utf-8"
-        ) as f:
-
-            return json.load(f)
-
+        return json.loads(OUTPUT_FILE.read_text(encoding="utf-8"))
     except Exception as e:
-
-        print()
-        print("!!! VAROVÁNÍ !!!")
-        print(
-            f"Předchozí menu.json se nepodařilo načíst: {e}"
-        )
-
+        print(f"VAROVÁNÍ: předchozí menu.json nelze načíst: {e}")
         return None
 
 
-def find_previous_restaurant(previous_menu, restaurant_name):
-    """Najde poslední známá data dané restaurace."""
-
+def find_previous_restaurant(previous_menu, name):
     if not previous_menu:
         return None
 
-    for restaurant in previous_menu.get(
-        "restaurants",
-        []
-    ):
-
-        if restaurant.get("restaurant") == restaurant_name:
+    for restaurant in previous_menu.get("restaurants", []):
+        if restaurant.get("restaurant") == name:
             return restaurant
 
     return None
 
 
-# =========================================================
-# HLAVNÍ PROGRAM
-# =========================================================
-
-print()
-print("###################################")
-print("#        RESTAURACE SCRAPER       #")
-print("###################################")
-
-
-previous_menu = load_previous_menu()
-
-restaurants = []
-errors = []
+def unavailable_entry(name, today):
+    return {
+        "restaurant": name,
+        "date": today,
+        "soups": [],
+        "main_dishes": [],
+        "status": "unavailable",
+    }
 
 
-# =========================================================
-# U HOLIŠE
-# =========================================================
+def get_restaurant(name, scrape, today, previous_menu):
+    print()
+    print("=" * 40)
+    print(f"STAHUJI: {name.upper()}")
+    print("=" * 40)
 
-holise = run_scraper(
-    HOLISE_SCRIPT,
-    HOLISE_JSON,
-    "U Holiše"
-)
+    data = None
 
-if holise is not None:
+    try:
+        data = scrape()
+    except Exception as e:
+        print(f"CHYBA: {e}")
+        traceback.print_exc()
 
-    holise["date"] = convert_date_to_iso(
-        holise["date"]
+    if data:
+        iso = convert_date_to_iso(data.get("date"))
+
+        if iso == today:
+            data["restaurant"] = name
+            data["date"] = today
+            data["status"] = "fresh"
+            print(
+                f"OK: {len(data['soups'])} polévek, "
+                f"{len(data['main_dishes'])} hlavních jídel"
+            )
+            return data
+
+        print(f"Menu na webu je z jiného dne ({data.get('date')}), nepoužito.")
+
+    # Dnešní menu jsme už možná získali dřívějším během.
+    previous = find_previous_restaurant(previous_menu, name)
+
+    if (
+        previous
+        and previous.get("date") == today
+        and previous.get("status") == "fresh"
+    ):
+        print("Ponechávám dnešní menu z dřívějšího běhu.")
+        return previous
+
+    print("Dnešní menu zatím není k dispozici.")
+    return unavailable_entry(name, today)
+
+
+def main():
+    today = datetime.now(PRAGUE).date().isoformat()
+    previous_menu = load_previous_menu()
+
+    restaurants = [
+        get_restaurant(name, scrape, today, previous_menu)
+        for name, scrape in RESTAURANTS
+    ]
+
+    # Pokud se nic nezměnilo (kromě času), soubor nepřepisujeme.
+    if (
+        previous_menu
+        and previous_menu.get("date") == today
+        and previous_menu.get("restaurants") == restaurants
+    ):
+        print()
+        print("Menu se nezměnilo, menu.json zůstává beze změny.")
+        return
+
+    updated_at = (
+        datetime.now(timezone.utc)
+        .isoformat(timespec="seconds")
+        .replace("+00:00", "Z")
     )
 
-    holise["status"] = "fresh"
+    menu = {
+        "date": today,
+        "updated_at": updated_at,
+        "restaurants": restaurants,
+    }
 
-    restaurants.append(holise)
-
-else:
-
-    previous = find_previous_restaurant(
-        previous_menu,
-        "U Holiše"
+    OUTPUT_FILE.write_text(
+        json.dumps(menu, ensure_ascii=False, indent=2),
+        encoding="utf-8",
     )
-
-    if previous:
-
-        previous = previous.copy()
-        previous["status"] = "stale"
-
-        restaurants.append(previous)
-
-        errors.append(
-            "U Holiše – použita poslední známá data"
-        )
-
-    else:
-
-        errors.append(
-            "U Holiše – data nejsou dostupná"
-        )
-
-
-# =========================================================
-# KOZLOVNA
-# =========================================================
-
-kozlovna = run_scraper(
-    KOZLOVNA_SCRIPT,
-    KOZLOVNA_JSON,
-    "Holešovická Kozlovna"
-)
-
-if kozlovna is not None:
-
-    kozlovna["date"] = convert_date_to_iso(
-        kozlovna["date"]
-    )
-
-    kozlovna["status"] = "fresh"
-
-    restaurants.append(kozlovna)
-
-else:
-
-    previous = find_previous_restaurant(
-        previous_menu,
-        "Holešovická Kozlovna"
-    )
-
-    if previous:
-
-        previous = previous.copy()
-        previous["status"] = "stale"
-
-        restaurants.append(previous)
-
-        errors.append(
-            "Holešovická Kozlovna – "
-            "použita poslední známá data"
-        )
-
-    else:
-
-        errors.append(
-            "Holešovická Kozlovna – data nejsou dostupná"
-        )
-
-
-# =========================================================
-# KONTROLA
-# =========================================================
-
-if not restaurants:
-
-    raise RuntimeError(
-        "Nejsou dostupná žádná data."
-    )
-
-
-# =========================================================
-# DATUM
-# =========================================================
-
-fresh_dates = {
-    restaurant["date"]
-    for restaurant in restaurants
-    if restaurant.get("status") == "fresh"
-}
-
-
-if fresh_dates:
-
-    menu_date = max(fresh_dates)
-
-else:
-
-    # Pokud dnes nefunguje ani jeden scraper,
-    # zachováme datum z předchozího menu.
-
-    if previous_menu and previous_menu.get("date"):
-
-        menu_date = previous_menu["date"]
-
-    else:
-
-        raise RuntimeError(
-            "Nelze určit datum menu."
-        )
-
-
-# =========================================================
-# AKTUALIZACE
-# =========================================================
-
-updated_at = datetime.now(
-    timezone.utc
-).isoformat(
-    timespec="seconds"
-).replace(
-    "+00:00",
-    "Z"
-)
-
-
-# =========================================================
-# VÝSLEDNÝ JSON
-# =========================================================
-
-menu = {
-    "date": menu_date,
-    "updated_at": updated_at,
-    "restaurants": restaurants
-}
-
-
-# =========================================================
-# ULOŽENÍ
-# =========================================================
-
-with OUTPUT_FILE.open(
-    "w",
-    encoding="utf-8"
-) as f:
-
-    json.dump(
-        menu,
-        f,
-        ensure_ascii=False,
-        indent=2
-    )
-
-
-# =========================================================
-# VÝPIS
-# =========================================================
-
-print()
-print("===================================")
-print("MENU.JSON VYTVOŘENO")
-print("===================================")
-
-print(f"Datum: {menu_date}")
-print(f"Aktualizováno: {updated_at}")
-print(f"Restaurace: {len(restaurants)}")
-print(f"Soubor: {OUTPUT_FILE}")
-
-print()
-print("STAV:")
-
-for restaurant in restaurants:
-
-    status = restaurant.get(
-        "status",
-        "unknown"
-    )
-
-    print(
-        f"  {restaurant['restaurant']}: {status}"
-    )
-
-
-if errors:
 
     print()
-    print("VAROVÁNÍ:")
+    print("=" * 40)
+    print("MENU.JSON ULOŽENO")
+    print("=" * 40)
+    print(f"Datum: {today}")
+    print(f"Aktualizováno: {updated_at}")
 
-    for error in errors:
-        print(f"  - {error}")
+    for restaurant in restaurants:
+        print(f"  {restaurant['restaurant']}: {restaurant['status']}")
+
+
+if __name__ == "__main__":
+    main()

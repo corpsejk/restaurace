@@ -213,7 +213,8 @@ async function loadMenu() {
     try {
 
         const response = await fetch(
-            "menu.json?" + Date.now()
+            "menu.json?" + Date.now(),
+            { cache: "no-store" }
         );
 
         if (!response.ok) {
@@ -226,8 +227,13 @@ async function loadMenu() {
             await response.json();
 
 
+        const today = getTodayIso();
+
+        // Když je menu.json ze včerejška (víkend, svátek), nezobrazujeme ho jako dnešní.
+        const isToday = menu.date === today;
+
         dateElement.textContent =
-            formatDate(menu.date);
+            formatDate(today);
 
 
         if (menu.updated_at) {
@@ -261,7 +267,7 @@ async function loadMenu() {
         for (const restaurant of menu.restaurants) {
 
             const card =
-                createRestaurantCard(restaurant);
+                createRestaurantCard(restaurant, isToday);
 
             restaurantsElement.appendChild(card);
         }
@@ -293,7 +299,7 @@ async function loadMenu() {
    KARTA RESTAURACE
    ========================================================= */
 
-function createRestaurantCard(restaurant) {
+function createRestaurantCard(restaurant, isToday) {
 
     const card =
         document.createElement("section");
@@ -344,18 +350,25 @@ function createRestaurantCard(restaurant) {
         "restaurant-content";
 
 
-    if (restaurant.stale) {
+    if (
+        !isToday ||
+        restaurant.status === "unavailable"
+    ) {
 
-        const warning =
+        const empty =
             document.createElement("div");
 
-        warning.className =
-            "stale-warning";
+        empty.className =
+            "no-menu";
 
-        warning.textContent =
-            "Upozornění: menu se nepodařilo aktuálně načíst. Zobrazuji poslední známé údaje.";
+        empty.textContent =
+            "Menu na dnešek zatím není k dispozici.";
 
-        content.appendChild(warning);
+        content.appendChild(empty);
+
+        card.appendChild(content);
+
+        return card;
     }
 
 
@@ -1128,6 +1141,19 @@ function formatDateTime(dateTimeString) {
             minute: "2-digit"
         }
     );
+}
+
+
+/* =========================================================
+   DNEŠNÍ DATUM (PRAŽSKÝ ČAS) VE TVARU RRRR-MM-DD
+   ========================================================= */
+
+function getTodayIso() {
+
+    return new Intl.DateTimeFormat(
+        "sv-SE",
+        { timeZone: "Europe/Prague" }
+    ).format(new Date());
 }
 
 
