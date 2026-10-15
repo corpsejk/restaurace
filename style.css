@@ -154,9 +154,16 @@ header h1 {
     flex-shrink: 0;
 }
 
+.main-dishes-price-headers span:last-child {
+    color: #2a6b2a;
+    font-weight: bold;
+}
+
 .main-dishes-price-headers span {
     width: 100px;
     padding-right: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
     text-align: right;
     color: #666;
     font-size: 12px;
@@ -233,6 +240,26 @@ header h1 {
     white-space: nowrap;
     text-align: right;
     font-weight: bold;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Prázdná cena (jídlo není v menu) -> pomlčka */
+.restaurant td.price:empty::before {
+    content: "–";
+    color: #bbb;
+    font-weight: normal;
+}
+
+/* Sloupec s cenou v menu: jemně zvýrazněný */
+.restaurant td.price-menu {
+    background: #f1f7ef;
+    color: #2a6b2a;
+    border-left: 1px solid #dfeadb;
+}
+
+/* Jemné podbarvení řádku po najetí myší */
+.restaurant tbody tr:hover td:not(.price-menu) {
+    background: #fafafa;
 }
 
 
@@ -431,5 +458,24 @@ header h1 {
 
     .allergen-tooltip {
         width: min(260px, calc(100vw - 30px));
+    }
+}
+
+@media (max-width: 480px) {
+
+    .price,
+    .price-header {
+        width: 72px;
+        font-size: 14px;
+    }
+
+    .main-dishes-price-headers {
+        width: 144px;
+    }
+
+    .main-dishes-price-headers span {
+        width: 72px;
+        font-size: 11px;
+        letter-spacing: 0;
     }
 }

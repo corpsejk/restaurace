@@ -689,7 +689,7 @@ function createMainDishesSection(dishes) {
             document.createElement("td");
 
         menuPriceCell.className =
-            "price";
+            "price price-menu";
 
 
         if (dish.price_menu != null) {
