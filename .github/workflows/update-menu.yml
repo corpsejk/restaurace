@@ -2,10 +2,12 @@ name: Aktualizace menu
 
 on:
   schedule:
-    # Každých 30 minut od 05:00 do 10:30 UTC, pondělí–pátek.
+    # Každých 30 minut (v :07 a :37) od 05:00 do 10:59 UTC, pondělí–pátek.
+    # Minuty :00 a :30 bývají na GitHubu přetížené a běhy se tam zpožďují
+    # nebo vynechávají, proto jsou zvoleny méně vytížené minuty.
     # To pokryje 7:00–11:00 jak v letním (UTC+2), tak v zimním (UTC+1) čase.
-    # Přesné okno 7:00–11:00 pražského času hlídá první krok níže.
-    - cron: "0,30 5-10 * * 1-5"
+    # Přesné okno pražského času hlídá první krok níže.
+    - cron: "7,37 5-10 * * 1-5"
 
   workflow_dispatch:
 
