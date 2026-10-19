@@ -1,13 +1,13 @@
 {
   "date": "2026-10-19",
-  "updated_at": "2026-10-19T08:37:58Z",
+  "updated_at": "2026-10-19T09:00:45Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
       "date": "2026-10-19",
       "soups": [
         {
-          "name": "HOVĚZÍ VÝVAR S MASEM A ZELENINOU, VLASOVÉ NUDLE",
+          "name": "HOVĚZÍ VÝVAR S MASEM A ZELENINOU, VAJEČNÝ SVÍTEK",
           "price": 49,
           "allergens": "1a,7,9,12,3",
           "note": null
