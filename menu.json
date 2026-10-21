@@ -1,6 +1,6 @@
 {
   "date": "2026-10-21",
-  "updated_at": "2026-10-21T07:41:01Z",
+  "updated_at": "2026-10-21T08:21:04Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
@@ -14,7 +14,7 @@
         },
         {
           "name": "ČOČKOVÁ S PÁRKEM",
-          "price": 55,
+          "price": 49,
           "allergens": "1a,7,3",
           "note": null
         }
