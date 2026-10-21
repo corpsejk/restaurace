@@ -1,51 +1,51 @@
 {
-  "date": "2026-10-20",
-  "updated_at": "2026-10-20T07:41:04Z",
+  "date": "2026-10-21",
+  "updated_at": "2026-10-21T05:01:24Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
-      "date": "2026-10-20",
+      "date": "2026-10-21",
       "soups": [
         {
           "name": "HOVĚZÍ VÝVAR S MASEM A ZELENINOU, VAJEČNÝ SVÍTEK",
           "price": 49,
-          "allergens": "1a,7,9,3",
+          "allergens": "1a,7,9,12,3",
           "note": null
         },
         {
-          "name": "BROKOLICOVÁ S KRUTONY",
-          "price": 49,
-          "allergens": "7,9,1a,3",
+          "name": "ČOČKOVÁ S PÁRKEM",
+          "price": 55,
+          "allergens": "1a,7,3",
           "note": null
         }
       ],
       "main_dishes": [
         {
-          "name": "HOLANDSKÝ ŘÍZEK SE SÝREM GOUDA, SMETANOVÉ ŠŤOUCHANÉ BRAMBORY S JARNÍ CIBULKOU, OKURKOVÝ SALÁTEK SE ZAKYSANOU SMETANOU",
-          "price_single": 190,
-          "price_menu": 220,
-          "allergens": "1a,3,7,10,12",
-          "note": null
-        },
-        {
-          "name": "KANČÍ KOSTKY SE ŠÍPKOVOU OMÁČKOU, KARLOVARSKÝ KNEDLÍK",
+          "name": "HOVĚZÍ RAJSKÁ PEČENĚ, HOUSKOVÝ KNEDLÍK/JASMÍNOVÁ RÝŽE",
           "price_single": 200,
           "price_menu": 230,
-          "allergens": "7,10,12,1a,3,9",
+          "allergens": "7,1a,3",
           "note": null
         },
         {
-          "name": "KRŮTÍ STEAK, KUKUŘICE NA MÁSLE, KUKUŘIČNÝ KLAS, PEČENÉ GRENAILLE, ZAKYSANÁ SMETANA",
-          "price_single": 200,
+          "name": "KUŘECÍ STEAK, ČEDAROVÁ OMÁČKA, KROKETY",
+          "price_single": 195,
+          "price_menu": 225,
+          "allergens": "1a,7,12",
+          "note": null
+        },
+        {
+          "name": "ŠUNKA OD KOSTI, WASABI-BRAMBOROVÁ KAŠE, NAKLÁDANÁ CIBULKA",
+          "price_single": 190,
           "price_menu": null,
           "allergens": "1a,7",
           "note": null
         },
         {
-          "name": "KUŘECÍ RIZOTO, STROUHANÝ SÝR, NAKLÁDANÁ OKURKA",
+          "name": "ČERSTVÉ ŠPAGETY ARRABIATA S PARMSKOU ŠUNKOU, RAJČATY A BAZALKOU, HOBLINY GRANY REGALE",
           "price_single": 185,
           "price_menu": null,
-          "allergens": "7,10,12",
+          "allergens": "1a,3,7",
           "note": null
         }
       ],
@@ -53,59 +53,10 @@
     },
     {
       "restaurant": "Holešovická Kozlovna",
-      "date": "2026-10-20",
-      "soups": [
-        {
-          "name": "Květáková s bramborem a vejci",
-          "price": 49,
-          "allergens": "1,3",
-          "note": null
-        },
-        {
-          "name": "Kuřecí vývar s masem, zeleninou a nudlemi",
-          "price": 49,
-          "allergens": "1,3,7,9",
-          "note": null
-        }
-      ],
-      "main_dishes": [
-        {
-          "name": "Vídeňská hovězí roštěná, křupavá cibulka, hranolky, sliná šťáva, tatarská omáčka",
-          "price_single": 219,
-          "price_menu": 249,
-          "allergens": "1,3,9,10",
-          "note": null
-        },
-        {
-          "name": "Pečená vepřová žebra BBQ, zapečená brambora ve slupce se zakysanou smetanou, salát z nakládané zeleniny",
-          "price_single": 205,
-          "price_menu": 235,
-          "allergens": "7",
-          "note": null
-        },
-        {
-          "name": "Kuřecí nudličky Kung Pao s jasmínovou rýží",
-          "price_single": 189,
-          "price_menu": 219,
-          "allergens": "1,5,6",
-          "note": null
-        },
-        {
-          "name": "Francouzské zapečené brambory s uzeným masem, okurkový salát",
-          "price_single": 185,
-          "price_menu": 215,
-          "allergens": "1,3,7",
-          "note": null
-        },
-        {
-          "name": "Filírovaná vepřová panenka na grilu s omáčkou blue cheese, pečené tomaty, bramborové krokety",
-          "price_single": 229,
-          "price_menu": null,
-          "allergens": "1,7",
-          "note": null
-        }
-      ],
-      "status": "fresh"
+      "date": "2026-10-21",
+      "soups": [],
+      "main_dishes": [],
+      "status": "unavailable"
     }
   ]
 }
