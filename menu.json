@@ -1,6 +1,6 @@
 {
   "date": "2026-10-23",
-  "updated_at": "2026-10-23T05:01:35Z",
+  "updated_at": "2026-10-23T07:38:01Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
@@ -54,9 +54,58 @@
     {
       "restaurant": "Holešovická Kozlovna",
       "date": "2026-10-23",
-      "soups": [],
-      "main_dishes": [],
-      "status": "unavailable"
+      "soups": [
+        {
+          "name": "Boršč se zakysanou smetanou",
+          "price": 49,
+          "allergens": "1,7,9",
+          "note": null
+        },
+        {
+          "name": "Hovězí vývar s masem, zeleninou a nudlemi",
+          "price": 49,
+          "allergens": "1,3,7,9",
+          "note": null
+        }
+      ],
+      "main_dishes": [
+        {
+          "name": "Bramborový,,BLBOUN\" plněný uzeným masem, červené zelí, masová šťáva, křupavá cibulka",
+          "price_single": 195,
+          "price_menu": 225,
+          "allergens": "1,3",
+          "note": null
+        },
+        {
+          "name": "Vepřový řízek Tonkatsu s jasmínovou rýží, salát Pak choi",
+          "price_single": 199,
+          "price_menu": 229,
+          "allergens": "1,3,6",
+          "note": null
+        },
+        {
+          "name": "Burrito s mletým masem, červenými fazolemi, kukuřicí, chilli papričkami, rýží, čedarem a koriandrem, zakysaná smetana",
+          "price_single": 199,
+          "price_menu": 229,
+          "allergens": "1,7,9",
+          "note": null
+        },
+        {
+          "name": "Kuřecí stehno na paprice s houskovými knedlíky (1,3,7) (omezený počet)",
+          "price_single": 189,
+          "price_menu": 219,
+          "allergens": null,
+          "note": null
+        },
+        {
+          "name": "Filírovaná vepřová panenka na grilu s omáčkou blue cheese, pečené tomaty, bramborové krokety",
+          "price_single": 229,
+          "price_menu": null,
+          "allergens": "1,7",
+          "note": null
+        }
+      ],
+      "status": "fresh"
     }
   ]
 }
