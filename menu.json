@@ -1,44 +1,51 @@
 {
-  "date": "2026-10-22",
-  "updated_at": "2026-10-22T07:03:42Z",
+  "date": "2026-10-23",
+  "updated_at": "2026-10-23T05:01:35Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
-      "date": "2026-10-22",
+      "date": "2026-10-23",
       "soups": [
         {
           "name": "HOVĚZÍ VÝVAR S MASEM A ZELENINOU, VAJEČNÝ SVÍTEK",
           "price": 49,
-          "allergens": "1a,7,9,3",
+          "allergens": "1a,7,9,12,3",
           "note": null
         },
         {
-          "name": "PÓRKOVÁ S VEJCI A BRAMBOREM",
+          "name": "BROKOLICOVÝ KRÉM, KRUTONY",
           "price": 49,
-          "allergens": "7,9,1a,3",
+          "allergens": "1a,7,3",
           "note": null
         }
       ],
       "main_dishes": [
         {
-          "name": "SMAŽENÉ KUŘECÍ STRIPSY V CORNFLAKES, BRAMBOROVÁ KAŠE, OKURKOVÝ SALÁTEK",
+          "name": "SMAŽENÝ KUŘECÍ ŘÍZEK, BRAMBOROVÝ SALÁT, CITRON",
           "price_single": 195,
           "price_menu": 225,
-          "allergens": "1a,3,7,10,12",
+          "allergens": "7,1a,3,10,12",
           "note": null
         },
         {
-          "name": "PŘÍRODNÍ VEPŘOVÁ KOTLETA NA HOUBÁCH, JASMÍNOVÁ RÝŽE/HOUSKOVÝ KNEDLÍK",
+          "name": "300g MIX GRIL - VEPŘOVÁ PANENKA, KUŘECÍ PRS0, KRŮTÍ PRSO, GRILOVANÉ PAPRIČKY PADRONE, PEČENÉ BRAMBORY, ZAKYSANÁ SMETANA",
+          "price_single": 210,
+          "price_menu": 240,
+          "allergens": "1a,7,12",
+          "note": null
+        },
+        {
+          "name": "VEPŘOVÉ VÝPEČKY, BÍLÉ ZELÍ, BRAMBOROVÝ KNEDLÍK",
           "price_single": 190,
-          "price_menu": 220,
-          "allergens": "7,12,1a,3,9",
+          "price_menu": null,
+          "allergens": "1a,7,3,10",
           "note": null
         },
         {
-          "name": "NAŠE HALUŠKY S UZENÝM MASEM, BÍLÉ ZELÍ, CIBULKA NA SÁDLE",
-          "price_single": 185,
+          "name": "PŘÍRODNÍ VEPŘOVÁ KOTLETA NA HOUBÁCH, JASMÍNOVÁ RÝŽE",
+          "price_single": 190,
           "price_menu": null,
-          "allergens": "1a,3,7,10,12",
+          "allergens": "1a,7,12",
           "note": null
         }
       ],
@@ -46,59 +53,10 @@
     },
     {
       "restaurant": "Holešovická Kozlovna",
-      "date": "2026-10-22",
-      "soups": [
-        {
-          "name": "Hráškový krém s krutóny",
-          "price": 49,
-          "allergens": "1,7",
-          "note": null
-        },
-        {
-          "name": "Hovězí vývar s masem, zeleninou a nudlemi",
-          "price": 49,
-          "allergens": "1,3,7,9",
-          "note": null
-        }
-      ],
-      "main_dishes": [
-        {
-          "name": "Hovězí burger v máslové bulce se slaninou a sýrem ementál, rukola,rajče, jalapeňos majonéza, hranolky",
-          "price_single": 205,
-          "price_menu": 235,
-          "allergens": "1,3,7,10",
-          "note": null
-        },
-        {
-          "name": "Vepřové výpečky s červeným zelím a bramborovými knedlíky, šťáva z výpeku",
-          "price_single": 195,
-          "price_menu": 225,
-          "allergens": "1,3,7",
-          "note": null
-        },
-        {
-          "name": "Smažený kuřecí řízek s bramborovou kaší, okurkový salátek",
-          "price_single": 195,
-          "price_menu": 225,
-          "allergens": "1,3,7",
-          "note": null
-        },
-        {
-          "name": "Asijský vepřový bok s hoisin omáčkou, wasabi bramborové pyré, restovaná zelenina",
-          "price_single": 195,
-          "price_menu": 225,
-          "allergens": "1,7,9",
-          "note": null
-        },
-        {
-          "name": "Filírovaná vepřová panenka na grilu s omáčkou blue cheese, pečené tomaty, bramborové krokety",
-          "price_single": 229,
-          "price_menu": null,
-          "allergens": "1,7",
-          "note": null
-        }
-      ],
-      "status": "fresh"
+      "date": "2026-10-23",
+      "soups": [],
+      "main_dishes": [],
+      "status": "unavailable"
     }
   ]
 }
