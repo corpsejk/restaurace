@@ -1,46 +1,17 @@
 {
-  "date": "2026-10-24",
-  "updated_at": "2026-10-24T07:15:58Z",
+  "date": "2026-10-25",
+  "updated_at": "2026-10-25T05:15:59Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
-      "date": "2026-10-24",
-      "soups": [
-        {
-          "name": "DÝŇOVÝ KRÉM",
-          "price": 49,
-          "allergens": "1a,7",
-          "note": null
-        }
-      ],
-      "main_dishes": [
-        {
-          "name": "SMAŽENÝ KUŘECÍ ŘÍZEK, BRAMBOROVÝ SALÁT CITRON",
-          "price_single": 195,
-          "price_menu": null,
-          "allergens": "1a,3,7,10,12,9",
-          "note": null
-        },
-        {
-          "name": "NAŠE HALUŠKY S UZENÝM MASEM, BÍLÉ ZELÍ, CIBULKA NA SÁDLE",
-          "price_single": 190,
-          "price_menu": null,
-          "allergens": "7,1a,3",
-          "note": null
-        },
-        {
-          "name": "KANČÍ KOSTKY, ŠÍPKOVÁ OMÁČKA, ŠPEKOVÝ KNEDLÍK",
-          "price_single": 205,
-          "price_menu": null,
-          "allergens": "1a,3,7,12,9",
-          "note": null
-        }
-      ],
-      "status": "fresh"
+      "date": "2026-10-25",
+      "soups": [],
+      "main_dishes": [],
+      "status": "unavailable"
     },
     {
       "restaurant": "Holešovická Kozlovna",
-      "date": "2026-10-24",
+      "date": "2026-10-25",
       "soups": [],
       "main_dishes": [],
       "status": "unavailable"
