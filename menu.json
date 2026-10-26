@@ -1,6 +1,6 @@
 {
   "date": "2026-10-26",
-  "updated_at": "2026-10-26T05:16:03Z",
+  "updated_at": "2026-10-26T08:31:18Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
@@ -35,14 +35,14 @@
           "note": null
         },
         {
-          "name": "STROGANOV Z VEPŘOVÉ PANENKY (okurky, žampiony, červená cibule), JASMÍNOVÁ RÝŽE",
+          "name": "STROGANOV Z VEPŘOVÉ PANENKY (okurky, žampiony, červená cibule), DIVOKÁ RÝŽE",
           "price_single": 195,
           "price_menu": null,
           "allergens": "1a,7,3,12",
           "note": null
         },
         {
-          "name": "GRILOVANÝ HERMELÍN, ČERVENÁ ŘEPA, CHERRY RAJČATA, VLAŠSKÉ OŘECHY, MIX LISTOVÝCH SALÁTŮ, VINAIGRETTE",
+          "name": "GRILOVANÝ HERMELÍN, ČERVENÁ ŘEPA, CHERRY RAJČATA, VLAŠSKÉ OŘECHY, MIX LISTOVÝCH SALÁTŮ, VINAIGRETTE, PEČIVO",
           "price_single": 190,
           "price_menu": null,
           "allergens": "1a,7,12,8",
