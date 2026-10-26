@@ -1,17 +1,59 @@
 {
-  "date": "2026-10-25",
-  "updated_at": "2026-10-25T05:15:59Z",
+  "date": "2026-10-26",
+  "updated_at": "2026-10-26T05:16:03Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
-      "date": "2026-10-25",
-      "soups": [],
-      "main_dishes": [],
-      "status": "unavailable"
+      "date": "2026-10-26",
+      "soups": [
+        {
+          "name": "DRŮBEŽÍ VÝVAR S MASEM A ZELENINOU, VLASOVÉ NUDLE",
+          "price": 49,
+          "allergens": "1a,7,9,12,3",
+          "note": null
+        },
+        {
+          "name": "KRÉMOVÁ ČESNEKOVÁ, KRUTONY",
+          "price": 49,
+          "allergens": "1a,7,3",
+          "note": null
+        }
+      ],
+      "main_dishes": [
+        {
+          "name": "SMAŽENÝ KUŘECÍ CORDON BLEU, BRAMBOROVÁ KAŠE, RAJČATOVÝ SALÁTEK S MAJONÉZOU",
+          "price_single": 195,
+          "price_menu": 225,
+          "allergens": "7,1a,3,10,12",
+          "note": null
+        },
+        {
+          "name": "PLNĚNÉ BRAMBOROVÉ KNEDLÍKY UZENÝM MASEM, ČERVENÉ ZELÍ, CIBULKA NA SÁDLE",
+          "price_single": 195,
+          "price_menu": 225,
+          "allergens": "1a,7,3",
+          "note": null
+        },
+        {
+          "name": "STROGANOV Z VEPŘOVÉ PANENKY (okurky, žampiony, červená cibule), JASMÍNOVÁ RÝŽE",
+          "price_single": 195,
+          "price_menu": null,
+          "allergens": "1a,7,3,12",
+          "note": null
+        },
+        {
+          "name": "GRILOVANÝ HERMELÍN, ČERVENÁ ŘEPA, CHERRY RAJČATA, VLAŠSKÉ OŘECHY, MIX LISTOVÝCH SALÁTŮ, VINAIGRETTE",
+          "price_single": 190,
+          "price_menu": null,
+          "allergens": "1a,7,12,8",
+          "note": null
+        }
+      ],
+      "status": "fresh"
     },
     {
       "restaurant": "Holešovická Kozlovna",
-      "date": "2026-10-25",
+      "date": "2026-10-26",
       "soups": [],
       "main_dishes": [],
       "status": "unavailable"
