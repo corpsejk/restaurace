@@ -198,6 +198,9 @@ const restaurantUrls = {
    NAČTENÍ MENU
    ========================================================= */
 
+const NO_MENU_TEXT = "Menu na dnešek zatím není k dispozici.";
+
+
 async function loadMenu() {
 
     const restaurantsElement =
@@ -208,6 +211,11 @@ async function loadMenu() {
 
     const updatedElement =
         document.getElementById("updated");
+
+
+    // Datum v hlavičce je vždy dnešní, ať se menu načte, nebo ne.
+    dateElement.textContent =
+        formatDate(getTodayIso());
 
 
     try {
@@ -227,15 +235,6 @@ async function loadMenu() {
             await response.json();
 
 
-        const today = getTodayIso();
-
-        // Když je menu.json ze včerejška (víkend, svátek), nezobrazujeme ho jako dnešní.
-        const isToday = menu.date === today;
-
-        dateElement.textContent =
-            formatDate(today);
-
-
         if (menu.updated_at) {
 
             updatedElement.textContent =
@@ -245,35 +244,10 @@ async function loadMenu() {
         } else {
 
             updatedElement.textContent = "";
-
         }
 
 
-        restaurantsElement.innerHTML = "";
-
-
-        if (
-            !menu.restaurants ||
-            menu.restaurants.length === 0
-        ) {
-
-            restaurantsElement.innerHTML =
-                '<div class="no-menu">Menu není k dispozici.</div>';
-
-            return;
-        }
-
-
-        for (const restaurant of menu.restaurants) {
-
-            const card =
-                createRestaurantCard(restaurant, isToday);
-
-            restaurantsElement.appendChild(card);
-        }
-
-
-        setupAllergenTooltips();
+        renderRestaurants(restaurantsElement, menu);
 
     }
 
@@ -284,14 +258,103 @@ async function loadMenu() {
             error
         );
 
-        dateElement.textContent =
-            "Menu se nepodařilo načíst.";
+        updatedElement.textContent =
+            "Data menu se nepodařilo načíst.";
 
-        updatedElement.textContent = "";
-
-        restaurantsElement.innerHTML =
-            '<div class="no-menu">Nepodařilo se načíst menu.</div>';
+        // Každá restaurace dostane hlášku, že menu není k dispozici.
+        renderRestaurants(restaurantsElement, null);
     }
+}
+
+
+/* =========================================================
+   VYKRESLENÍ VŠECH RESTAURACÍ
+   ========================================================= */
+
+function renderRestaurants(container, menu) {
+
+    const today = getTodayIso();
+
+    // menu.json z jiného dne (víkend, svátek, neběžící workflow)
+    // se nikdy nezobrazuje jako dnešní.
+    const isToday =
+        Boolean(menu) && menu.date === today;
+
+    container.innerHTML = "";
+
+    for (const restaurant of buildRestaurantList(menu)) {
+
+        const available =
+            isToday &&
+            isRestaurantAvailable(restaurant, today);
+
+        container.appendChild(
+            createRestaurantCard(restaurant, available)
+        );
+    }
+
+    // Tooltipy má smysl nastavovat, jen když jsou na stránce alergeny.
+    if (container.querySelector(".allergen")) {
+        setupAllergenTooltips();
+    }
+}
+
+
+/* =========================================================
+   SEZNAM RESTAURACÍ (VŽDY VŠECHNY ZNÁMÉ)
+   ========================================================= */
+
+function buildRestaurantList(menu) {
+
+    const byName = new Map();
+
+    if (menu && Array.isArray(menu.restaurants)) {
+
+        for (const restaurant of menu.restaurants) {
+            byName.set(restaurant.restaurant, restaurant);
+        }
+    }
+
+    // Známé restaurace jsou vždy vidět (i když chybí v menu.json),
+    // restaurace navíc z menu.json se přidají na konec.
+    const names = Object.keys(restaurantUrls);
+
+    for (const name of byName.keys()) {
+
+        if (!names.includes(name)) {
+            names.push(name);
+        }
+    }
+
+    return names.map(name =>
+        byName.get(name) ||
+        { restaurant: name, status: "unavailable" }
+    );
+}
+
+
+/* =========================================================
+   JE MENU RESTAURACE DNES K DISPOZICI?
+   ========================================================= */
+
+function isRestaurantAvailable(restaurant, today) {
+
+    if (
+        restaurant.status !== "fresh" ||
+        restaurant.date !== today
+    ) {
+        return false;
+    }
+
+    const hasSoups =
+        Array.isArray(restaurant.soups) &&
+        restaurant.soups.length > 0;
+
+    const hasDishes =
+        Array.isArray(restaurant.main_dishes) &&
+        restaurant.main_dishes.length > 0;
+
+    return hasSoups || hasDishes;
 }
 
 
@@ -299,7 +362,7 @@ async function loadMenu() {
    KARTA RESTAURACE
    ========================================================= */
 
-function createRestaurantCard(restaurant, isToday) {
+function createRestaurantCard(restaurant, available) {
 
     const card =
         document.createElement("section");
@@ -350,10 +413,7 @@ function createRestaurantCard(restaurant, isToday) {
         "restaurant-content";
 
 
-    if (
-        !isToday ||
-        restaurant.status === "unavailable"
-    ) {
+    if (!available) {
 
         const empty =
             document.createElement("div");
@@ -362,7 +422,7 @@ function createRestaurantCard(restaurant, isToday) {
             "no-menu";
 
         empty.textContent =
-            "Menu na dnešek zatím není k dispozici.";
+            NO_MENU_TEXT;
 
         content.appendChild(empty);
 

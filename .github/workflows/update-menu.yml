@@ -61,8 +61,12 @@ jobs:
         if: steps.window.outputs.run == 'true'
         run: python -m playwright install --with-deps chromium
 
+      # Selhání scraperu neukončí job hned: úspěšná část menu se i tak
+      # uloží a odešle (viz další kroky) a job selže až na úplném konci.
       - name: Spuštění scraperu
+        id: scrape
         if: steps.window.outputs.run == 'true'
+        continue-on-error: true
         run: python scraper.py
 
       - name: Uložení a odeslání změn
@@ -80,3 +84,18 @@ jobs:
             git pull --rebase --autostash origin "${{ github.ref_name }}"
             git push origin "HEAD:${{ github.ref_name }}"
           fi
+
+      - name: Uložení ladicího HTML (jen při chybě scraperu)
+        if: steps.window.outputs.run == 'true' && steps.scrape.outcome == 'failure'
+        uses: actions/upload-artifact@v4
+        with:
+          name: debug-html
+          path: debug_*.html
+          if-no-files-found: ignore
+          retention-days: 7
+
+      - name: Označení běhu jako neúspěšného
+        if: steps.window.outputs.run == 'true' && steps.scrape.outcome == 'failure'
+        run: |
+          echo "::error::Scraper selhal. Podrobnosti jsou v logu kroku 'Spuštění scraperu'."
+          exit 1

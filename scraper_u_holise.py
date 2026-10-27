@@ -8,6 +8,7 @@ from playwright.sync_api import sync_playwright
 
 URL = "https://restauraceuholise.cz/cs/denni-menu/lacarte"
 OUTPUT = Path("u_holise.json")
+DEBUG_HTML = Path("debug_u_holise.html")
 
 ALLOWED_ALLERGENS = {
     "1", "1a", "1b", "1c", "1d", "1e", "1f", "1g",
@@ -28,6 +29,23 @@ def clean_text(text):
 
 def normalize_name(name):
     return clean_text(name).upper()
+
+
+def category_kind(category):
+    """Určí typ sekce podle názvu kategorie (tolerantně k drobným změnám).
+
+    Vrací "soup", "menu", "main" nebo None, když kategorii neznáme.
+    """
+    c = normalize_name(category)
+
+    if c.startswith("POLÉVK"):
+        return "soup"
+    if c.startswith("ZVÝHODNĚNÉ MENU"):
+        return "menu"
+    if c.startswith("HLAVNÍ"):
+        return "main"
+
+    return None
 
 
 def extract_price(text):
@@ -84,30 +102,36 @@ def download_html():
 
 def scrape():
     """Vrátí slovník s menu U Holiše. Při problému vyhodí výjimku."""
-    soup = BeautifulSoup(download_html(), "html.parser")
+    html = download_html()
+    soup = BeautifulSoup(html, "html.parser")
 
-    # ---- Datum
+    # ---- Datum (první nadpis, který obsahuje datum)
     date = None
-    heading = soup.find("h3")
 
-    if heading:
+    for heading in soup.find_all(["h1", "h2", "h3", "h4"]):
         match = re.search(
             r"(\d{1,2}\.\s*\d{1,2}\.\s*\d{4})",
             clean_text(heading.get_text(" ", strip=True)),
         )
         if match:
             date = match.group(1)
+            break
 
     # ---- Bloky menu
     wrappers = soup.select(".lc_block_wrapper")
 
     if not wrappers:
-        raise RuntimeError("U Holiše: nenalezeny žádné bloky menu.")
+        DEBUG_HTML.write_text(html, encoding="utf-8")
+        raise RuntimeError(
+            "U Holiše: nenalezeny žádné bloky menu. "
+            f"HTML uloženo do {DEBUG_HTML}."
+        )
 
     soups = []
     main_dishes = []
     menu_prices = {}          # cena zvýhodněného menu podle názvu jídla
     current_category = None
+    seen_categories = []      # pro diagnostiku při chybě
     menu_dish = None          # poslední hlavní jídlo ze zvýhodněného menu
 
     for wrapper in wrappers:
@@ -122,7 +146,12 @@ def scrape():
         if category and category != "-":
             current_category = category.upper()
 
-        if current_category == "POLÉVKA":
+            if current_category not in seen_categories:
+                seen_categories.append(current_category)
+
+        kind = category_kind(current_category) if current_category else None
+
+        if kind == "soup":
             if item:
                 soups.append({
                     "name": item,
@@ -131,10 +160,7 @@ def scrape():
                     "note": None,
                 })
 
-        elif current_category in (
-            "ZVÝHODNĚNÉ MENU JEDNA",
-            "ZVÝHODNĚNÉ MENU DVA",
-        ):
+        elif kind == "menu":
             if not item:
                 continue
 
@@ -152,7 +178,7 @@ def scrape():
 
             menu_dish = item
 
-        elif current_category == "HLAVNÍ CHODY":
+        elif kind == "main":
             if item:
                 main_dishes.append({
                     "name": item,
@@ -169,13 +195,23 @@ def scrape():
         if key in menu_prices:
             dish["price_menu"] = menu_prices[key]
 
-    # ---- Kontroly
+    # ---- Kontroly (při selhání se uloží HTML pro rozbor)
+    problem = None
+
     if not date:
-        raise RuntimeError("U Holiše: nenalezeno datum menu.")
-    if not soups:
-        raise RuntimeError("U Holiše: nenalezeny žádné polévky.")
-    if not main_dishes:
-        raise RuntimeError("U Holiše: nenalezena žádná hlavní jídla.")
+        problem = "nenalezeno datum menu"
+    elif not soups:
+        problem = "nenalezeny žádné polévky"
+    elif not main_dishes:
+        problem = "nenalezena žádná hlavní jídla"
+
+    if problem:
+        DEBUG_HTML.write_text(html, encoding="utf-8")
+        raise RuntimeError(
+            f"U Holiše: {problem} "
+            f"(bloků={len(wrappers)}, kategorie={seen_categories}). "
+            f"HTML uloženo do {DEBUG_HTML}."
+        )
 
     return {
         "restaurant": "U Holiše",

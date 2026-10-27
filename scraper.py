@@ -8,12 +8,23 @@ Pravidla:
   * pokud už dnes menu úspěšně získáno bylo a pozdější běh selže,
     zůstane dnešní menu zachováno.
 menu.json se přepíše jen když se obsah změnil (méně zbytečných commitů).
+
+Chyby scraperů:
+  * menu.json se vždy nejdřív uloží (úspěšná restaurace se zobrazí),
+  * pokud scraper SELHAL (výjimka) a restaurace skončila bez dnešního menu,
+    skript skončí s kódem 1, takže workflow na GitHubu selže a přijde e-mail,
+  * alarm se ale spustí až od ALERT_FROM (výchozí 10:30 pražského času), aby
+    nechodily falešné poplachy, když menu ještě prostě nebylo zveřejněno.
+    Dá se přepsat proměnnou prostředí ALERT_FROM (např. ALERT_FROM=00:00).
+  * Menu z jiného dne (stránka funguje, jen není aktualizovaná) chyba není.
 """
 
 import json
+import os
 import re
+import sys
 import traceback
-from datetime import datetime, timezone
+from datetime import datetime, time, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -22,6 +33,21 @@ import scraper_u_holise
 
 PRAGUE = ZoneInfo("Europe/Prague")
 OUTPUT_FILE = Path("menu.json")
+
+
+def _parse_alert_from():
+    """Čas (HH:MM, pražský), od kterého se selhání scraperu hlásí jako chyba."""
+    raw = os.environ.get("ALERT_FROM", "10:30")
+
+    try:
+        hour, minute = (int(x) for x in raw.split(":"))
+        return time(hour, minute)
+    except ValueError:
+        print(f"VAROVÁNÍ: neplatné ALERT_FROM={raw!r}, používám 10:30")
+        return time(10, 30)
+
+
+ALERT_FROM = _parse_alert_from()
 
 RESTAURANTS = [
     ("U Holiše", scraper_u_holise.scrape),
@@ -77,17 +103,25 @@ def unavailable_entry(name, today):
 
 
 def get_restaurant(name, scrape, today, previous_menu):
+    """Vrátí (záznam restaurace, chyba).
+
+    chyba je text výjimky, jen pokud scraper selhal A restaurace skončila bez
+    dnešního menu. Jinak je None.
+    """
     print()
     print("=" * 40)
     print(f"STAHUJI: {name.upper()}")
     print("=" * 40)
 
     data = None
+    error = None
 
     try:
         data = scrape()
     except Exception as e:
+        error = " ".join(str(e).split()) or type(e).__name__
         print(f"CHYBA: {e}")
+        print(f"::error title=Scraper {name}::{error}")
         traceback.print_exc()
 
     if data:
@@ -101,7 +135,7 @@ def get_restaurant(name, scrape, today, previous_menu):
                 f"OK: {len(data['soups'])} polévek, "
                 f"{len(data['main_dishes'])} hlavních jídel"
             )
-            return data
+            return data, None
 
         print(f"Menu na webu je z jiného dne ({data.get('date')}), nepoužito.")
 
@@ -114,20 +148,51 @@ def get_restaurant(name, scrape, today, previous_menu):
         and previous.get("status") == "fresh"
     ):
         print("Ponechávám dnešní menu z dřívějšího běhu.")
-        return previous
+        return previous, None
 
     print("Dnešní menu zatím není k dispozici.")
-    return unavailable_entry(name, today)
+    return unavailable_entry(name, today), error
 
 
-def main():
-    today = datetime.now(PRAGUE).date().isoformat()
+def exit_code_for(failures, now):
+    """0 = vše v pořádku (nebo ještě brzy na alarm), 1 = scraper je rozbitý."""
+    if not failures:
+        return 0
+
+    print()
+    print("=" * 40)
+    print("SELHÁNÍ SCRAPERU")
+    print("=" * 40)
+
+    for failure in failures:
+        print(f"  {failure}")
+
+    if now.time() < ALERT_FROM:
+        print(
+            f"Je před {ALERT_FROM:%H:%M}, chyba se zatím jen eviduje "
+            "(menu mohlo být prostě ještě nezveřejněno)."
+        )
+        return 0
+
+    return 1
+
+
+def main(now=None):
+    now = now or datetime.now(PRAGUE)
+    today = now.date().isoformat()
     previous_menu = load_previous_menu()
 
-    restaurants = [
-        get_restaurant(name, scrape, today, previous_menu)
-        for name, scrape in RESTAURANTS
-    ]
+    restaurants = []
+    failures = []
+
+    for name, scrape in RESTAURANTS:
+        entry, error = get_restaurant(name, scrape, today, previous_menu)
+        restaurants.append(entry)
+
+        if error:
+            failures.append(f"{name}: {error}")
+
+    exit_code = exit_code_for(failures, now)
 
     # Pokud se nic nezměnilo (kromě času), soubor nepřepisujeme.
     if (
@@ -137,7 +202,7 @@ def main():
     ):
         print()
         print("Menu se nezměnilo, menu.json zůstává beze změny.")
-        return
+        return exit_code
 
     updated_at = (
         datetime.now(timezone.utc)
@@ -166,6 +231,8 @@ def main():
     for restaurant in restaurants:
         print(f"  {restaurant['restaurant']}: {restaurant['status']}")
 
+    return exit_code
+
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
