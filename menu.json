@@ -1,51 +1,51 @@
 {
-  "date": "2026-10-26",
-  "updated_at": "2026-10-26T08:31:18Z",
+  "date": "2026-10-27",
+  "updated_at": "2026-10-27T05:16:09Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
-      "date": "2026-10-26",
+      "date": "2026-10-27",
       "soups": [
         {
           "name": "DRŮBEŽÍ VÝVAR S MASEM A ZELENINOU, VLASOVÉ NUDLE",
           "price": 49,
-          "allergens": "1a,7,9,12,3",
+          "allergens": "1a,7,3,9",
           "note": null
         },
         {
-          "name": "KRÉMOVÁ ČESNEKOVÁ, KRUTONY",
-          "price": 49,
-          "allergens": "1a,7,3",
+          "name": "ZELNÁ S KLOBÁSOU (podáváme s pečivem)",
+          "price": 55,
+          "allergens": "1a,3,7,9",
           "note": null
         }
       ],
       "main_dishes": [
         {
-          "name": "SMAŽENÝ KUŘECÍ CORDON BLEU, BRAMBOROVÁ KAŠE, RAJČATOVÝ SALÁTEK S MAJONÉZOU",
-          "price_single": 195,
-          "price_menu": 225,
-          "allergens": "7,1a,3,10,12",
+          "name": "HOLANDSKÝ ŘÍZEK SE SÝREM GOUDA, BRAMBOROVÁ KAŠE, NAKLÁDANÁ OKURKA",
+          "price_single": 190,
+          "price_menu": 220,
+          "allergens": "1a,3,7,10,12",
           "note": null
         },
         {
-          "name": "PLNĚNÉ BRAMBOROVÉ KNEDLÍKY UZENÝM MASEM, ČERVENÉ ZELÍ, CIBULKA NA SÁDLE",
-          "price_single": 195,
-          "price_menu": 225,
-          "allergens": "1a,7,3",
+          "name": "HOVĚZÍ FALEŠNÁ SVÍČKOVÁ NA ČERVENÉM VÍNĚ, RESTOVANÁ KOŘENOVÁ ZELENINA, DÝŇOVO-BRAMBOROVÉ PYRÉ",
+          "price_single": 210,
+          "price_menu": 240,
+          "allergens": "7,1a,3,9,12",
           "note": null
         },
         {
-          "name": "STROGANOV Z VEPŘOVÉ PANENKY (okurky, žampiony, červená cibule), DIVOKÁ RÝŽE",
+          "name": "FILÍROVANÉ KUŘECÍ PRSO, BRAMBOROVÉ GNOCCHI, RAJČATOVÁ OMÁČKA, RUKOLA, SÝR GRAN REGALE",
           "price_single": 195,
           "price_menu": null,
-          "allergens": "1a,7,3,12",
+          "allergens": "1a,3,7",
           "note": null
         },
         {
-          "name": "GRILOVANÝ HERMELÍN, ČERVENÁ ŘEPA, CHERRY RAJČATA, VLAŠSKÉ OŘECHY, MIX LISTOVÝCH SALÁTŮ, VINAIGRETTE, PEČIVO",
+          "name": "KACHNÍ JÁTRA NA CIBULCE, JASMÍNOVÁ RÝŽE",
           "price_single": 190,
           "price_menu": null,
-          "allergens": "1a,7,12,8",
+          "allergens": "1a",
           "note": null
         }
       ],
@@ -53,7 +53,7 @@
     },
     {
       "restaurant": "Holešovická Kozlovna",
-      "date": "2026-10-26",
+      "date": "2026-10-27",
       "soups": [],
       "main_dishes": [],
       "status": "unavailable"
