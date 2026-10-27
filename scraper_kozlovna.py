@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 
 URL = "https://www.holesovickakozlovna.cz/"
 OUTPUT = Path("kozlovna.json")
+DEBUG_HTML = Path("debug_kozlovna.html")
 
 HEADERS = {
     "User-Agent": (
@@ -35,6 +36,21 @@ def fetch_html(retries=3):
                 time.sleep(3 * attempt)
 
     raise RuntimeError(f"Kozlovnu se nepodařilo stáhnout: {last_error}")
+
+
+def find_line(lines, pattern, start=0):
+    """Index prvního řádku, který celý odpovídá regulárnímu výrazu.
+
+    Hledání je tolerantní: nezáleží na velikosti písmen a regulární výraz
+    si poradí s drobnými změnami (např. mezera před dvojtečkou).
+    """
+    rx = re.compile(pattern, re.IGNORECASE)
+
+    for i in range(start, len(lines)):
+        if rx.fullmatch(lines[i]):
+            return i
+
+    return None
 
 
 def parse_price(price_text):
@@ -85,17 +101,24 @@ def scrape():
             date = line
             break
 
+    # ---- Hranice sekcí (tolerantně k mezerám a dvojtečce)
+    i_soups = find_line(lines, r"Polévky\s*:?")
+    i_mains = find_line(lines, r"Hlavní\s+jídla\s*:?", (i_soups or 0) + 1)
+    i_end = find_line(
+        lines, r"Holešovická Kozlovna využívá\s+služby", (i_mains or 0) + 1
+    )
+    if i_end is None:
+        i_end = len(lines)
+
     # ---- Polévky
     soups = []
 
-    if "Polévky :" in lines:
-        i = lines.index("Polévky :") + 1
+    if i_soups is not None:
+        i = i_soups + 1
+        stop = i_mains if i_mains is not None else i_end
 
-        while i < len(lines):
+        while i < stop:
             line = lines[i]
-
-            if line == "Hlavní jídla :":
-                break
 
             if i + 1 < len(lines) and re.fullmatch(r"\d+\s*Kč", lines[i + 1]):
                 price = int(re.search(r"\d+", lines[i + 1]).group())
@@ -114,16 +137,11 @@ def scrape():
     # ---- Hlavní jídla
     main_dishes = []
 
-    if "Hlavní jídla :" in lines:
-        start = lines.index("Hlavní jídla :") + 1
+    if i_mains is not None:
+        start = i_mains + 1
 
-        for i in range(start, len(lines)):
-            line = lines[i]
-
-            if line == "Holešovická Kozlovna využívá služby":
-                break
-
-            price_single, price_menu = parse_price(line)
+        for i in range(start, i_end):
+            price_single, price_menu = parse_price(lines[i])
 
             if price_single is None or i - 1 < start:
                 continue
@@ -138,13 +156,23 @@ def scrape():
                 "note": note,
             })
 
-    # ---- Kontroly
+    # ---- Kontroly (při selhání se uloží HTML pro rozbor)
+    problem = None
+
     if not date:
-        raise RuntimeError("Kozlovna: nenalezeno datum menu.")
-    if not soups:
-        raise RuntimeError("Kozlovna: nenalezeny žádné polévky.")
-    if not main_dishes:
-        raise RuntimeError("Kozlovna: nenalezena žádná hlavní jídla.")
+        problem = "nenalezeno datum menu"
+    elif not soups:
+        problem = "nenalezeny žádné polévky"
+    elif not main_dishes:
+        problem = "nenalezena žádná hlavní jídla"
+
+    if problem:
+        DEBUG_HTML.write_text(html, encoding="utf-8")
+        raise RuntimeError(
+            f"Kozlovna: {problem} "
+            f"(sekce polévky={i_soups}, hlavní jídla={i_mains}, "
+            f"řádků={len(lines)}). HTML uloženo do {DEBUG_HTML}."
+        )
 
     return {
         "restaurant": "Holešovická Kozlovna",
