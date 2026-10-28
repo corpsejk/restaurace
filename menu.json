@@ -1,79 +1,31 @@
 {
-  "date": "2026-10-27",
-  "updated_at": "2026-10-27T09:45:56Z",
+  "date": "2026-10-28",
+  "updated_at": "2026-10-28T05:15:56Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
-      "date": "2026-10-27",
-      "soups": [
-        {
-          "name": "DRŮBEŽÍ VÝVAR S MASEM A ZELENINOU, VLASOVÉ NUDLE",
-          "price": 49,
-          "allergens": "1a,7,3,9",
-          "note": null
-        },
-        {
-          "name": "ZELNÁ S KLOBÁSOU (podáváme s pečivem)",
-          "price": 55,
-          "allergens": "1a,3,7,9",
-          "note": null
-        }
-      ],
-      "main_dishes": [
-        {
-          "name": "HOLANDSKÝ ŘÍZEK SE SÝREM GOUDA, BRAMBOROVÁ KAŠE, NAKLÁDANÁ OKURKA",
-          "price_single": 190,
-          "price_menu": 220,
-          "allergens": "1a,3,7,10,12",
-          "note": null
-        },
-        {
-          "name": "HOVĚZÍ FALEŠNÁ SVÍČKOVÁ NA ČERVENÉM VÍNĚ, RESTOVANÁ KOŘENOVÁ ZELENINA, DÝŇOVO-BRAMBOROVÉ PYRÉ",
-          "price_single": 210,
-          "price_menu": 240,
-          "allergens": "7,1a,3,9,12",
-          "note": null
-        },
-        {
-          "name": "FILÍROVANÉ KUŘECÍ PRSO, BRAMBOROVÉ GNOCCHI, RAJČATOVÁ OMÁČKA, RUKOLA, SÝR GRAN REGALE",
-          "price_single": 195,
-          "price_menu": null,
-          "allergens": "1a,3,7",
-          "note": null
-        },
-        {
-          "name": "KACHNÍ JÁTRA NA CIBULCE, JASMÍNOVÁ RÝŽE",
-          "price_single": 190,
-          "price_menu": null,
-          "allergens": "1a",
-          "note": null
-        }
-      ],
-      "status": "fresh"
+      "date": "2026-10-28",
+      "soups": [],
+      "main_dishes": [],
+      "status": "unavailable"
     },
     {
       "restaurant": "Holešovická Kozlovna",
-      "date": "2026-10-27",
+      "date": "2026-10-28",
       "soups": [
         {
           "name": "Frankfurtská s párkem",
           "price": 49,
           "allergens": "1,7,9",
           "note": null
-        },
-        {
-          "name": "Kuřecí vývar s masem, zeleninou a nudlemi",
-          "price": 49,
-          "allergens": "1,3,7,9",
-          "note": null
         }
       ],
       "main_dishes": [
         {
-          "name": "Vepřová líčka na červeném víně a kořenové zelenině, restované žampióny, slanina a perlové cibulky, čerstvá petrželka, bramborovo-celerové pyré",
-          "price_single": 199,
-          "price_menu": 235,
-          "allergens": "1,7,9,12",
+          "name": "Smažená treska, bramborová kaše, okurkový salátek, citrón",
+          "price_single": 189,
+          "price_menu": 225,
+          "allergens": "1,3,4,7",
           "note": null
         },
         {
@@ -88,20 +40,6 @@
           "price_single": 195,
           "price_menu": 230,
           "allergens": "1,3,7,9",
-          "note": null
-        },
-        {
-          "name": "Lasagne,,Bolognese\" s masovým ragů, se sýrovou omáčkou, sypané sýrem Gran Moravia, rukola",
-          "price_single": 189,
-          "price_menu": 225,
-          "allergens": "1,3,7,9",
-          "note": null
-        },
-        {
-          "name": "Grilovaný filet z candáta, espuma z holandské omáčky, vařené brambory grenaille,variace trhaných salátů, citrón",
-          "price_single": 239,
-          "price_menu": null,
-          "allergens": "3,4",
           "note": null
         }
       ],
