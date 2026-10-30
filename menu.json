@@ -1,58 +1,51 @@
 {
-  "date": "2026-10-29",
-  "updated_at": "2026-10-29T07:45:58Z",
+  "date": "2026-10-30",
+  "updated_at": "2026-10-30T05:16:02Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
-      "date": "2026-10-29",
+      "date": "2026-10-30",
       "soups": [
         {
           "name": "DRŮBEŽÍ VÝVAR S MASEM A ZELENINOU, VLASOVÉ NUDLE",
           "price": 49,
-          "allergens": "1a,7,9,12,3",
+          "allergens": "1a,7,3,9",
           "note": null
         },
         {
-          "name": "TOMATOVÁ S BAZALKOU A PARMAZÁNEM",
+          "name": "ČOČKOVÁ S UZENÝM MASEM",
           "price": 49,
-          "allergens": "1a,7",
+          "allergens": "1a,3,7,9",
           "note": null
         }
       ],
       "main_dishes": [
         {
-          "name": "SEKANÁ PEČENĚ, ŠŤOUCHANÝ BRAMBOR S ANGLICKOU SLANINOU A CIBULKOU, ZELNÝ SALÁTEK",
-          "price_single": 185,
-          "price_menu": 215,
-          "allergens": "7,1a,3,10,12",
+          "name": "SMAŽENÝ KUŘECÍ ŘÍZEK, BRAMBOROVÝ SALÁT, CITRON",
+          "price_single": 195,
+          "price_menu": 225,
+          "allergens": "1a,3,7,10,12",
           "note": null
         },
         {
-          "name": "FILÍROVANÁ VEPŘOVÁ PANENKA, PEPŘOVÁ OMÁČKA, GRATINOVANÝ BRAMBOR",
+          "name": "HOVĚZÍ ZNOJEMSKÁ PEČENĚ, JASMÍNOVÁ RÝŽE/HOUSKOVÝ KNEDLÍK",
           "price_single": 200,
           "price_menu": 230,
-          "allergens": "1a,7,3",
+          "allergens": "7,1a,3,9,12",
           "note": null
         },
         {
-          "name": "GULÁŠ Z HOVĚZÍHO KRKU, FEFERONKA, ČERVENÁ CIBULE, HOUSKOVÝ KNEDLÍK",
-          "price_single": 195,
+          "name": "KUŘECÍ STEHNO ALA KACHNA, ČERVENÉ ZELÍ, BRAMBOROVÝ KNEDLÍK",
+          "price_single": 185,
+          "price_menu": null,
+          "allergens": "1a,3,7,10,12",
+          "note": null
+        },
+        {
+          "name": "SEKANÁ PEČENĚ, ŠŤOUCHANÝ BRAMBOR S ANGLICKOU SLANINOU A CIBULKOU, ZELNÝ SALÁTEK",
+          "price_single": 185,
           "price_menu": null,
           "allergens": "1a,3,7",
-          "note": null
-        },
-        {
-          "name": "Z NAŠEHO GRILU: PŮLKA KUŘETE, KUSKUS S GRILOVANOU ZELENINOU, STUDENÁ BYLINKOVÁ OMÁČKA",
-          "price_single": 190,
-          "price_menu": null,
-          "allergens": "1a,7",
-          "note": null
-        },
-        {
-          "name": "Z NAŠEHO GRILU: CELÉ KUŘE, KUSKUS S GRILOVANOU ZELENINOU, STUDENÁ BYLINKOVÁ OMÁČKA",
-          "price_single": 245,
-          "price_menu": null,
-          "allergens": "1a,7",
           "note": null
         }
       ],
@@ -60,59 +53,10 @@
     },
     {
       "restaurant": "Holešovická Kozlovna",
-      "date": "2026-10-29",
-      "soups": [
-        {
-          "name": "Pórková s vejci",
-          "price": 49,
-          "allergens": "1,3,7",
-          "note": null
-        },
-        {
-          "name": "Kuřecí vývar s masem, zeleninou a nudlemi",
-          "price": 49,
-          "allergens": "1,3,7,9",
-          "note": null
-        }
-      ],
-      "main_dishes": [
-        {
-          "name": "Krůtí výpečky, červené zelí, bramborové knedlíky",
-          "price_single": 195,
-          "price_menu": 235,
-          "allergens": "1,3,7,9",
-          "note": null
-        },
-        {
-          "name": "Kuřecí stehenní nudličky, omáčka z protlaku se smetanou, žampiony a oregánem, jasmínová rýže",
-          "price_single": 189,
-          "price_menu": 225,
-          "allergens": "1,7",
-          "note": null
-        },
-        {
-          "name": "Grilované kančí medailonky, šípková omáčka, gratinované brambory",
-          "price_single": 205,
-          "price_menu": 240,
-          "allergens": "1,7,9",
-          "note": null
-        },
-        {
-          "name": "Smažený telecí řízek, vídeňský bramborový salát, citron",
-          "price_single": 219,
-          "price_menu": 255,
-          "allergens": "1,3,7,10",
-          "note": null
-        },
-        {
-          "name": "Grilovaný filet z candáta, espuma z holandské omáčky, vařené brambory grenaille,variace trhaných salátů, citrón",
-          "price_single": 239,
-          "price_menu": null,
-          "allergens": "3,4",
-          "note": null
-        }
-      ],
-      "status": "fresh"
+      "date": "2026-10-30",
+      "soups": [],
+      "main_dishes": [],
+      "status": "unavailable"
     }
   ]
 }
