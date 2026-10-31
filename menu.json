@@ -1,21 +1,21 @@
 {
-  "date": "2026-10-30",
-  "updated_at": "2026-10-30T07:46:28Z",
+  "date": "2026-10-31",
+  "updated_at": "2026-10-31T05:17:04Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
-      "date": "2026-10-30",
+      "date": "2026-10-31",
       "soups": [
-        {
-          "name": "DRŮBEŽÍ VÝVAR S MASEM A ZELENINOU, VLASOVÉ NUDLE",
-          "price": 49,
-          "allergens": "1a,7,3,9",
-          "note": null
-        },
         {
           "name": "ČOČKOVÁ S UZENÝM MASEM",
           "price": 49,
-          "allergens": "1a,3,7,9",
+          "allergens": "1a,7,9,12",
+          "note": null
+        },
+        {
+          "name": "TOMATOVÁ S BAZALKOU A PARMAZÁNEM",
+          "price": 49,
+          "allergens": "1a,7",
           "note": null
         }
       ],
@@ -23,27 +23,20 @@
         {
           "name": "SMAŽENÝ KUŘECÍ ŘÍZEK, BRAMBOROVÝ SALÁT, CITRON",
           "price_single": 195,
-          "price_menu": 225,
-          "allergens": "1a,3,7,10,12",
+          "price_menu": null,
+          "allergens": "7,1a,3,10,12",
           "note": null
         },
         {
           "name": "HOVĚZÍ ZNOJEMSKÁ PEČENĚ, JASMÍNOVÁ RÝŽE/HOUSKOVÝ KNEDLÍK",
           "price_single": 200,
-          "price_menu": 230,
-          "allergens": "7,1a,3,9,12",
-          "note": null
-        },
-        {
-          "name": "KUŘECÍ STEHNO ALA KACHNA, ČERVENÉ ZELÍ, BRAMBOROVÝ KNEDLÍK",
-          "price_single": 185,
           "price_menu": null,
-          "allergens": "1a,3,7,10,12",
+          "allergens": "1a,7,3,9,12",
           "note": null
         },
         {
-          "name": "SEKANÁ PEČENĚ, ŠŤOUCHANÝ BRAMBOR S ANGLICKOU SLANINOU A CIBULKOU, ZELNÝ SALÁTEK",
-          "price_single": 185,
+          "name": "FILÍROVANÁ VEPŘOVÁ PANENKA, PEPŘOVÁ OMÁČKA, HRANOLKY",
+          "price_single": 200,
           "price_menu": null,
           "allergens": "1a,3,7",
           "note": null
@@ -53,52 +46,10 @@
     },
     {
       "restaurant": "Holešovická Kozlovna",
-      "date": "2026-10-30",
-      "soups": [
-        {
-          "name": "Kulajda s hříbky",
-          "price": 49,
-          "allergens": "1,3,7",
-          "note": null
-        },
-        {
-          "name": "Hovězí vývar s masem, zeleninou a nudlemi",
-          "price": 49,
-          "allergens": "1,3,7,9",
-          "note": null
-        }
-      ],
-      "main_dishes": [
-        {
-          "name": "Znojemská hovězí pečeně, jasmínová rýže",
-          "price_single": 205,
-          "price_menu": 240,
-          "allergens": "1",
-          "note": null
-        },
-        {
-          "name": "Sekaný máslový řízek, bramborová kaše, okurkový salátek",
-          "price_single": 189,
-          "price_menu": 225,
-          "allergens": "1,3,7,9,10",
-          "note": null
-        },
-        {
-          "name": "Kuřecí steak gratinovaný mozzarellou a parmskou šunkou, opečené brambory, bazalkové pesto, pažitkový zákys",
-          "price_single": 199,
-          "price_menu": 235,
-          "allergens": "1,7,10",
-          "note": null
-        },
-        {
-          "name": "Kuřecí stehenní nudličky v tomatovo-smetanové omáčce se žampiony a oregánem, hranolky",
-          "price_single": 189,
-          "price_menu": 225,
-          "allergens": "1,7",
-          "note": null
-        }
-      ],
-      "status": "fresh"
+      "date": "2026-10-31",
+      "soups": [],
+      "main_dishes": [],
+      "status": "unavailable"
     }
   ]
 }
