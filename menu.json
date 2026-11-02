@@ -1,38 +1,107 @@
 {
-  "date": "2026-11-01",
-  "updated_at": "2026-11-01T05:16:01Z",
+  "date": "2026-11-02",
+  "updated_at": "2026-11-02T05:16:08Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
-      "date": "2026-11-01",
-      "soups": [],
-      "main_dishes": [],
-      "status": "unavailable"
-    },
-    {
-      "restaurant": "Holešovická Kozlovna",
-      "date": "2026-11-01",
+      "date": "2026-11-02",
       "soups": [
         {
-          "name": "Pórková s vejci",
+          "name": "HOVĚZÍ VÝVAR S MASEM A ZELENINOU, SMAŽENÝ HRÁŠEK",
           "price": 49,
-          "allergens": "1,3,7",
+          "allergens": "1a,7,3,9",
+          "note": null
+        },
+        {
+          "name": "GULÁŠOVÁ S MLETÝM MASEM A BRAMBOREM (pováváme s pečivem)",
+          "price": 55,
+          "allergens": "1a,3,7,9",
           "note": null
         }
       ],
       "main_dishes": [
         {
-          "name": "Stroganoff - nudličky z hovězí roštěné (kyselá okurka, žampióny, tomatovo-smetanová omáčka), hranolky",
-          "price_single": 205,
-          "price_menu": 240,
-          "allergens": "1,7,9",
+          "name": "WRAP S KUŘECÍM MASEM (čedar, kukuřice, paprika, ledový salát, bylinkový dip), HRANOLKY, TATARSKÁ OMÁČKA",
+          "price_single": 195,
+          "price_menu": 225,
+          "allergens": "1a,3,7,10,12",
           "note": null
         },
         {
-          "name": "Znojemská hovězí pečeně s jasmínovou rýží",
-          "price_single": 205,
-          "price_menu": 240,
+          "name": "HOVĚZÍ KOSTKY NA ČESNEKU, ŠPENÁT, BRAMBOROVÝ KNEDLÍK",
+          "price_single": 195,
+          "price_menu": 225,
+          "allergens": "7,1a,3,9,12",
+          "note": null
+        },
+        {
+          "name": "KRŮTÍ MEDAILONKY, HOUBOVÁ OMÁČKA SE SMETANOU, JASMÍNOVÁ RÝŽE",
+          "price_single": 200,
+          "price_menu": null,
+          "allergens": "1a,7,12,9",
+          "note": null
+        },
+        {
+          "name": "PEČENÁ JITRNICE, BÍLÉ ZELÍ, VAŘENÝ BRAMBOR, PLNOTUČNÁ HOŘČICE",
+          "price_single": 185,
+          "price_menu": null,
+          "allergens": "1a,3,7,10",
+          "note": null
+        }
+      ],
+      "status": "fresh"
+    },
+    {
+      "restaurant": "Holešovická Kozlovna",
+      "date": "2026-11-02",
+      "soups": [
+        {
+          "name": "Fazolová bílá s uzeninou a bramborem",
+          "price": 49,
           "allergens": "1",
+          "note": null
+        },
+        {
+          "name": "Kuřecí vývar s masem, zeleninou a nudlemi",
+          "price": 49,
+          "allergens": "1,3,7,9",
+          "note": null
+        }
+      ],
+      "main_dishes": [
+        {
+          "name": "Segedínský guláš s houskovými knedlíky",
+          "price_single": 189,
+          "price_menu": 225,
+          "allergens": "1,3,7,9",
+          "note": null
+        },
+        {
+          "name": "Asijský WOK -maso tří barev se zeleninou a bymbusovými výhonky v sojové omáčce, jasmínová rýže",
+          "price_single": 189,
+          "price_menu": 225,
+          "allergens": "1,6",
+          "note": null
+        },
+        {
+          "name": "Telecí smažený holandský řízek s bramborovou kaší, okurkový salát",
+          "price_single": 199,
+          "price_menu": 235,
+          "allergens": "1,3,7",
+          "note": null
+        },
+        {
+          "name": "Quesadilla s trhaným kuřecím masem, čedarem a kukuřicí, pažitkový zákys, variace trhaných salátů",
+          "price_single": 195,
+          "price_menu": 230,
+          "allergens": "1,7",
+          "note": null
+        },
+        {
+          "name": "Vepřová krkovice,,Duroc \" na grilu s volským okem, fazolové lusky na slanině, smažené brambory grenaille, rozmarýnová omáčka",
+          "price_single": 225,
+          "price_menu": null,
+          "allergens": "1,3,7,9",
           "note": null
         },
         {
