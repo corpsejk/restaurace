@@ -1,6 +1,6 @@
 {
   "date": "2026-11-02",
-  "updated_at": "2026-11-02T05:16:08Z",
+  "updated_at": "2026-11-02T07:16:06Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
@@ -56,7 +56,7 @@
       "date": "2026-11-02",
       "soups": [
         {
-          "name": "Fazolová bílá s uzeninou a bramborem",
+          "name": "Fazolová bílá s uzeninou a bramborami",
           "price": 49,
           "allergens": "1",
           "note": null
@@ -70,14 +70,14 @@
       ],
       "main_dishes": [
         {
-          "name": "Segedínský guláš s houskovými knedlíky",
+          "name": "Segedínský guláš, houskové knedlíky",
           "price_single": 189,
           "price_menu": 225,
           "allergens": "1,3,7,9",
           "note": null
         },
         {
-          "name": "Asijský WOK -maso tří barev se zeleninou a bymbusovými výhonky v sojové omáčce, jasmínová rýže",
+          "name": "Asijský WOK -maso tří barev se zeleninou a bambusovými výhonky v sojové omáčce, jasmínová rýže",
           "price_single": 189,
           "price_menu": 225,
           "allergens": "1,6",
@@ -105,8 +105,8 @@
           "note": null
         },
         {
-          "name": "Jablečný štrůdl s rozinkami a vlašskými ořechy, vanilková zmrzlina, šlehačka",
-          "price_single": 139,
+          "name": "Jablečný štrůdl s rozinkami a vlašskými ořechy, šlehačka",
+          "price_single": 89,
           "price_menu": null,
           "allergens": "1,3,7,8",
           "note": null
