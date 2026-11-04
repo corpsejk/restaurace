@@ -1,6 +1,6 @@
 {
   "date": "2026-11-04",
-  "updated_at": "2026-11-04T05:15:59Z",
+  "updated_at": "2026-11-04T08:16:03Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
@@ -67,9 +67,65 @@
     {
       "restaurant": "Holešovická Kozlovna",
       "date": "2026-11-04",
-      "soups": [],
-      "main_dishes": [],
-      "status": "unavailable"
+      "soups": [
+        {
+          "name": "Krémová pivní cibulačka se sýrovým toastem",
+          "price": 49,
+          "allergens": "1,3,7,10",
+          "note": null
+        },
+        {
+          "name": "Kuřecí vývar s masem, zeleninou a nudlemi",
+          "price": 49,
+          "allergens": "1,3,7,9",
+          "note": null
+        }
+      ],
+      "main_dishes": [
+        {
+          "name": "Vídeňská roštěná s osmaženou cibulkou, hranolky, silná masová šťáva, tatarská omáčka",
+          "price_single": 219,
+          "price_menu": 255,
+          "allergens": "1,3,7,10",
+          "note": null
+        },
+        {
+          "name": "Maminčino kuře-pečené stehno, široké nudle se žampiony a drůbežími játry, šťáva z výpeku",
+          "price_single": 189,
+          "price_menu": 225,
+          "allergens": "1,3,7",
+          "note": null
+        },
+        {
+          "name": "Trhané vepřové maso s čedarem, pita chléb, ledový salát s červenou cibulí a rajčaty, tzatziky",
+          "price_single": 195,
+          "price_menu": 230,
+          "allergens": "1,7",
+          "note": null
+        },
+        {
+          "name": "Brynzové halušky se slaninou, křupavá cibulka, pažitka",
+          "price_single": 185,
+          "price_menu": 220,
+          "allergens": "1,3,7",
+          "note": null
+        },
+        {
+          "name": "Vepřová krkovice,,Duroc \" na grilu s volským okem, fazolové lusky na slanině, smažené brambory grenaille, rozmarýnová omáčka",
+          "price_single": 225,
+          "price_menu": null,
+          "allergens": "1,3,7,9",
+          "note": null
+        },
+        {
+          "name": "Jablečný štrůdl s rozinkami a vlašskými ořechy, šlehačka",
+          "price_single": 89,
+          "price_menu": null,
+          "allergens": "1,3,7,8",
+          "note": null
+        }
+      ],
+      "status": "fresh"
     }
   ]
 }
