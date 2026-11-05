@@ -1,64 +1,44 @@
 {
-  "date": "2026-11-04",
-  "updated_at": "2026-11-04T08:16:03Z",
+  "date": "2026-11-05",
+  "updated_at": "2026-11-05T05:16:04Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
-      "date": "2026-11-04",
+      "date": "2026-11-05",
       "soups": [
         {
           "name": "HOVĚZÍ VÝVAR S MASEM A ZELENINOU, SMAŽENÝ HRÁŠEK",
           "price": 49,
-          "allergens": "1a,7,3,9",
+          "allergens": "1a,7,9,12",
           "note": null
         },
         {
-          "name": "HRÁŠKOVÝ KRÉM S KRUTONY",
-          "price": 49,
-          "allergens": "1a,3,7,9",
-          "note": null
-        },
-        {
-          "name": "GULÁŠOVÁ S BRAMBOREM (podáváme s pečivem)",
+          "name": "FRANKFURTSKÁ S PÁRKEM (podáváme s pečivem)",
           "price": 55,
-          "allergens": "1a,3,7",
+          "allergens": "1a,7",
           "note": null
         }
       ],
       "main_dishes": [
         {
-          "name": "HOVĚZÍ VAŘENÉ, KOPROVÁ OMÁČKA, HOUSKOVÝ KNEDLÍK/PEČENÉ BRAMBORY",
-          "price_single": 200,
-          "price_menu": null,
-          "allergens": "1a,3,7,10,12",
-          "note": null
-        },
-        {
-          "name": "VAŘENÉ VEJCE, KOPROVÁ OMÁČKA, PEČENÉ BRAMBORY",
-          "price_single": 165,
-          "price_menu": 195,
-          "allergens": "7,1a,3,12,10",
-          "note": null
-        },
-        {
-          "name": "HOLANDSKÝ ŘÍZEK SE SÝREM GOUDA, BRAMBOROVÁ KAŠE, SALÁTEK Z NAKLÁDANÉ ZELENINY",
+          "name": "SMAŽENÉ RYBÍ FILÉ (mořská štika), BRAMBOROVÁ KAŠE, CITRON, ŠOPSKÝ SALÁTEK",
           "price_single": 190,
           "price_menu": 220,
-          "allergens": "1a,7,12,3,10",
+          "allergens": "7,1a,3,10,12,4",
           "note": null
         },
         {
-          "name": "KUŘECÍ STEAK, OMÁČKA TIKKA MASALA, DIVOKÁ RÝŽE",
-          "price_single": 195,
-          "price_menu": null,
-          "allergens": "1a,3,7,10,4,6",
+          "name": "FILÍROVANÉ MEDAILONKY Z VEPŘOVÉ PANENKY, OMÁČKA Z PEČENÝCH PAPRIK, PEČENÉ BRAMBORY",
+          "price_single": 200,
+          "price_menu": 230,
+          "allergens": "1a,7",
           "note": null
         },
         {
-          "name": "GRILOVANÝ SÝR HALLOUMI, JAHODY, CHERRY RAJČATA, VLAŠSKÉ OŘECHY, TRHANÉ LISTY SALÁTŮ S RUKOLOU, VINAIGRETTE, ROZPEČENÁ BAGETA",
+          "name": "LASAGNE S BOLOŇSKÝM RAGŮ, BEŠAMEL, SÝR PARMAZÁNOVÉHO TYPU, RAJČATOVÁ OMÁČKA",
           "price_single": 190,
           "price_menu": null,
-          "allergens": "7,10,12",
+          "allergens": "1a,3,7,10,12",
           "note": null
         }
       ],
@@ -66,66 +46,10 @@
     },
     {
       "restaurant": "Holešovická Kozlovna",
-      "date": "2026-11-04",
-      "soups": [
-        {
-          "name": "Krémová pivní cibulačka se sýrovým toastem",
-          "price": 49,
-          "allergens": "1,3,7,10",
-          "note": null
-        },
-        {
-          "name": "Kuřecí vývar s masem, zeleninou a nudlemi",
-          "price": 49,
-          "allergens": "1,3,7,9",
-          "note": null
-        }
-      ],
-      "main_dishes": [
-        {
-          "name": "Vídeňská roštěná s osmaženou cibulkou, hranolky, silná masová šťáva, tatarská omáčka",
-          "price_single": 219,
-          "price_menu": 255,
-          "allergens": "1,3,7,10",
-          "note": null
-        },
-        {
-          "name": "Maminčino kuře-pečené stehno, široké nudle se žampiony a drůbežími játry, šťáva z výpeku",
-          "price_single": 189,
-          "price_menu": 225,
-          "allergens": "1,3,7",
-          "note": null
-        },
-        {
-          "name": "Trhané vepřové maso s čedarem, pita chléb, ledový salát s červenou cibulí a rajčaty, tzatziky",
-          "price_single": 195,
-          "price_menu": 230,
-          "allergens": "1,7",
-          "note": null
-        },
-        {
-          "name": "Brynzové halušky se slaninou, křupavá cibulka, pažitka",
-          "price_single": 185,
-          "price_menu": 220,
-          "allergens": "1,3,7",
-          "note": null
-        },
-        {
-          "name": "Vepřová krkovice,,Duroc \" na grilu s volským okem, fazolové lusky na slanině, smažené brambory grenaille, rozmarýnová omáčka",
-          "price_single": 225,
-          "price_menu": null,
-          "allergens": "1,3,7,9",
-          "note": null
-        },
-        {
-          "name": "Jablečný štrůdl s rozinkami a vlašskými ořechy, šlehačka",
-          "price_single": 89,
-          "price_menu": null,
-          "allergens": "1,3,7,8",
-          "note": null
-        }
-      ],
-      "status": "fresh"
+      "date": "2026-11-05",
+      "soups": [],
+      "main_dishes": [],
+      "status": "unavailable"
     }
   ]
 }
