@@ -1,6 +1,6 @@
 {
   "date": "2026-11-06",
-  "updated_at": "2026-11-06T05:16:14Z",
+  "updated_at": "2026-11-06T06:59:41Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
@@ -52,13 +52,6 @@
           "price_single": 190,
           "price_menu": null,
           "allergens": "1a,3,7,10,4,6",
-          "note": null
-        },
-        {
-          "name": "SMAŽENÝ SÝR, HRANOLKY, TATARSKÁ OMÁČKA, ZELNÝ SALÁTEK",
-          "price_single": 205,
-          "price_menu": null,
-          "allergens": "1a,3,7,10,12",
           "note": null
         }
       ],
