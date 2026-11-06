@@ -1,6 +1,6 @@
 {
   "date": "2026-11-06",
-  "updated_at": "2026-11-06T07:23:55Z",
+  "updated_at": "2026-11-06T08:00:16Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
@@ -67,9 +67,65 @@
     {
       "restaurant": "Holešovická Kozlovna",
       "date": "2026-11-06",
-      "soups": [],
-      "main_dishes": [],
-      "status": "unavailable"
+      "soups": [
+        {
+          "name": "Gulášová s masem a bramborami",
+          "price": 49,
+          "allergens": "1,9",
+          "note": null
+        },
+        {
+          "name": "Hovězí vývar s masem, zeleninou a nudlemi",
+          "price": 49,
+          "allergens": "1,3,7,9",
+          "note": null
+        }
+      ],
+      "main_dishes": [
+        {
+          "name": "Vepřový špalek na černém pivu od Kozla, bílé kysané zelí, chlupaté knedlíky",
+          "price_single": 189,
+          "price_menu": 225,
+          "allergens": "1,3,12",
+          "note": null
+        },
+        {
+          "name": "Filet z norského lososa na grilu, restovaná zelenina, opečená kukuřičná polenta",
+          "price_single": 209,
+          "price_menu": 245,
+          "allergens": "1,4,7",
+          "note": null
+        },
+        {
+          "name": "Kuřecí staek zapečený anglickou slaninou a nivou, americké brambory, masová šťáva, pikantní dresink, trhané saláty",
+          "price_single": 195,
+          "price_menu": 230,
+          "allergens": "1,3,7,9",
+          "note": null
+        },
+        {
+          "name": "Telecí játra na slanině s jasmínovou rýží",
+          "price_single": 189,
+          "price_menu": 225,
+          "allergens": "1",
+          "note": null
+        },
+        {
+          "name": "Vepřová krkovice,,Duroc \" na grilu s volským okem, fazolové lusky na slanině, smažené brambory grenaille, rozmarýnová omáčka",
+          "price_single": 225,
+          "price_menu": null,
+          "allergens": "1,3,7,9",
+          "note": null
+        },
+        {
+          "name": "Jablečný štrůdl s rozinkami a vlašskými ořechy, šlehačka",
+          "price_single": 89,
+          "price_menu": null,
+          "allergens": "1,3,7,8",
+          "note": null
+        }
+      ],
+      "status": "fresh"
     }
   ]
 }
