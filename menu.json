@@ -1,6 +1,6 @@
 {
   "date": "2026-11-09",
-  "updated_at": "2026-11-09T05:15:58Z",
+  "updated_at": "2026-11-09T07:15:59Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
@@ -54,9 +54,58 @@
     {
       "restaurant": "Holešovická Kozlovna",
       "date": "2026-11-09",
-      "soups": [],
-      "main_dishes": [],
-      "status": "unavailable"
+      "soups": [
+        {
+          "name": "Italská tomatová s kapkou smetany",
+          "price": 49,
+          "allergens": "1,7",
+          "note": null
+        },
+        {
+          "name": "Hovězí vývar s masem, zeleninou a nudlemi",
+          "price": 49,
+          "allergens": "1,3,7,9",
+          "note": null
+        }
+      ],
+      "main_dishes": [
+        {
+          "name": "Vepřové maso s glazovanou mrkví, šťouchané brambory s jarní cibulkou",
+          "price_single": 189,
+          "price_menu": 225,
+          "allergens": "1,7,9",
+          "note": null
+        },
+        {
+          "name": "Hovězí pečeně na hříbkách, houskové knedlíky",
+          "price_single": 199,
+          "price_menu": 235,
+          "allergens": "1,3,7",
+          "note": null
+        },
+        {
+          "name": "Kuřecí gyros, ledový salát s rajčaty, pita chléb, tzatziky",
+          "price_single": 195,
+          "price_menu": 230,
+          "allergens": "1,7",
+          "note": null
+        },
+        {
+          "name": "Opečená jitrnice a jelítko, lepenice, křupavá cibulka, hořčice",
+          "price_single": 189,
+          "price_menu": 225,
+          "allergens": "1,7,10",
+          "note": null
+        },
+        {
+          "name": "Kachní prso sous-vide po asijsku, jasmínová rýže, sezam, grilovaný salát Pak-Choi",
+          "price_single": 235,
+          "price_menu": null,
+          "allergens": "1,4,11",
+          "note": null
+        }
+      ],
+      "status": "fresh"
     }
   ]
 }
