@@ -1,35 +1,62 @@
 {
-  "date": "2026-11-08",
-  "updated_at": "2026-11-08T05:15:53Z",
+  "date": "2026-11-09",
+  "updated_at": "2026-11-09T05:15:58Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
-      "date": "2026-11-08",
-      "soups": [],
-      "main_dishes": [],
-      "status": "unavailable"
-    },
-    {
-      "restaurant": "Holešovická Kozlovna",
-      "date": "2026-11-08",
+      "date": "2026-11-09",
       "soups": [
         {
-          "name": "Hovězí vývar s masem, zeleninou a nudlemi",
+          "name": "KUŘECÍ VÝVAR S MASEM A ZELENINOU, MINI KOLÍNKA",
           "price": 49,
-          "allergens": "1,3,7,9",
+          "allergens": "1a,7,9,12,3",
+          "note": null
+        },
+        {
+          "name": "FAZOLOVÁ S KLOBÁSOU (podáváme s pečivem)",
+          "price": 55,
+          "allergens": "1a,7,3",
           "note": null
         }
       ],
       "main_dishes": [
         {
-          "name": "Pečený vepřový bok, listový špenát s česnekem a smetanou, bramborové knedlíky, šťáva z výpeku (1,3,7) (omezený počet)",
-          "price_single": 189,
-          "price_menu": 225,
-          "allergens": null,
+          "name": "KUŘECÍ QUESADILLA (čedar, kukuřice, ledový salát), JALAPENO, ZAKYSANÁ SMETANA, HRANOLKY, TATARSKÁ OMÁČKA",
+          "price_single": 190,
+          "price_menu": 220,
+          "allergens": "7,1a,3,10,12",
+          "note": null
+        },
+        {
+          "name": "SVÍČKOVÁ PEČENĚ Z FALEŠNÉ HOVĚZÍ SVÍČKOVÉ, BRUSINKOVÝ TERČ, HOUSKOVÝ KNEDLÍK",
+          "price_single": 205,
+          "price_menu": 235,
+          "allergens": "1a,7,3,10,12",
+          "note": null
+        },
+        {
+          "name": "KATŮV ŠLEH Z VEPŘOVÉ PANENKY, BRAMBORÁKOVÉ KROKETY/JASMÍNOVÁ RÝŽE",
+          "price_single": 195,
+          "price_menu": null,
+          "allergens": "1a,3,7",
+          "note": null
+        },
+        {
+          "name": "SMAŽENÝ KVĚTÁK, VAŘENÝ BRAMBOR, TATARSKÁ OMÁČKA",
+          "price_single": 185,
+          "price_menu": null,
+          "allergens": "1a,3,7,10,12",
           "note": null
         }
       ],
       "status": "fresh"
+    },
+    {
+      "restaurant": "Holešovická Kozlovna",
+      "date": "2026-11-09",
+      "soups": [],
+      "main_dishes": [],
+      "status": "unavailable"
     }
   ]
 }
