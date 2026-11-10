@@ -1,6 +1,6 @@
 {
   "date": "2026-11-10",
-  "updated_at": "2026-11-10T05:16:01Z",
+  "updated_at": "2026-11-10T08:45:53Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
@@ -54,9 +54,58 @@
     {
       "restaurant": "Holešovická Kozlovna",
       "date": "2026-11-10",
-      "soups": [],
-      "main_dishes": [],
-      "status": "unavailable"
+      "soups": [
+        {
+          "name": "Špenátový krém s krutony",
+          "price": 49,
+          "allergens": "1,3,7,9",
+          "note": null
+        },
+        {
+          "name": "Kuřecí vývar s masem, zeleninou a nudlemi",
+          "price": 49,
+          "allergens": "1,3,7,9",
+          "note": null
+        }
+      ],
+      "main_dishes": [
+        {
+          "name": "Pikantní vepřový guláš, bramborové placky",
+          "price_single": 195,
+          "price_menu": 230,
+          "allergens": "1,3,7,9",
+          "note": null
+        },
+        {
+          "name": "Špagety s restovanou zeleninou a grilovanými kousky tuňáka",
+          "price_single": 199,
+          "price_menu": 235,
+          "allergens": "1,3,4",
+          "note": null
+        },
+        {
+          "name": "Filírovaná vepřová panenka, chimichurri omáčka, pečené brambory, bylinková majonéza, trhané saláty",
+          "price_single": 205,
+          "price_menu": 240,
+          "allergens": "1",
+          "note": null
+        },
+        {
+          "name": "Smažené baby žampiony, vařené brambory, tatarská omáčka",
+          "price_single": 189,
+          "price_menu": 225,
+          "allergens": "1,3,7,10",
+          "note": null
+        },
+        {
+          "name": "Kachní prso sous-vide po asijsku, jasmínová rýže, sezam, grilovaný salát Pak-Choi",
+          "price_single": 235,
+          "price_menu": null,
+          "allergens": "1,4,11",
+          "note": null
+        }
+      ],
+      "status": "fresh"
     }
   ]
 }
