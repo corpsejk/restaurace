@@ -1,51 +1,51 @@
 {
-  "date": "2026-11-09",
-  "updated_at": "2026-11-09T07:15:59Z",
+  "date": "2026-11-10",
+  "updated_at": "2026-11-10T05:16:01Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
-      "date": "2026-11-09",
+      "date": "2026-11-10",
       "soups": [
         {
           "name": "KUŘECÍ VÝVAR S MASEM A ZELENINOU, MINI KOLÍNKA",
           "price": 49,
-          "allergens": "1a,7,9,12,3",
+          "allergens": "1a,7,3,9",
           "note": null
         },
         {
-          "name": "FAZOLOVÁ S KLOBÁSOU (podáváme s pečivem)",
-          "price": 55,
-          "allergens": "1a,7,3",
+          "name": "KVĚTÁKOVÁ S VEJCI A BRAMBOREM",
+          "price": 49,
+          "allergens": "1a,3,7,9",
           "note": null
         }
       ],
       "main_dishes": [
         {
-          "name": "KUŘECÍ QUESADILLA (čedar, kukuřice, ledový salát), JALAPENO, ZAKYSANÁ SMETANA, HRANOLKY, TATARSKÁ OMÁČKA",
-          "price_single": 190,
-          "price_menu": 220,
-          "allergens": "7,1a,3,10,12",
-          "note": null
-        },
-        {
-          "name": "SVÍČKOVÁ PEČENĚ Z FALEŠNÉ HOVĚZÍ SVÍČKOVÉ, BRUSINKOVÝ TERČ, HOUSKOVÝ KNEDLÍK",
-          "price_single": 205,
-          "price_menu": 235,
-          "allergens": "1a,7,3,10,12",
-          "note": null
-        },
-        {
-          "name": "KATŮV ŠLEH Z VEPŘOVÉ PANENKY, BRAMBORÁKOVÉ KROKETY/JASMÍNOVÁ RÝŽE",
+          "name": "ROZLÍTANÝ HOVĚZÍ PTÁČEK, JASMÍNOVÁ RÝŽE/HOUSKOVÝ KNEDLÍK",
           "price_single": 195,
-          "price_menu": null,
-          "allergens": "1a,3,7",
+          "price_menu": 225,
+          "allergens": "1a,3,7,10,9",
           "note": null
         },
         {
-          "name": "SMAŽENÝ KVĚTÁK, VAŘENÝ BRAMBOR, TATARSKÁ OMÁČKA",
+          "name": "KRŮTÍ MEDAILONKY, KUKUŘICE NA MÁSLE, KUKUŘIČNÝ KLAS, PEČENÉ GRENAILLE, ZAKYSANÁ SMETANA",
+          "price_single": 200,
+          "price_menu": null,
+          "allergens": "7,1a",
+          "note": null
+        },
+        {
+          "name": "ČEVABČIČI, BRAMBOROVÁ KAŠE, CIBULKA, PLNOTUČNÁ HOŘČICE, SALÁTEK COLESLAW",
           "price_single": 185,
           "price_menu": null,
-          "allergens": "1a,3,7,10,12",
+          "allergens": "1a,7,12,3,10",
+          "note": null
+        },
+        {
+          "name": "BRAMBOROVÉ GNOCCHI, GORGONZOLOVÁ OMÁČKA, ŠPENÁTOVÉ LISTY, SÝR PARMAZÁNOVÉHO TYPU",
+          "price_single": 190,
+          "price_menu": null,
+          "allergens": "1a,3,7",
           "note": null
         }
       ],
@@ -53,59 +53,10 @@
     },
     {
       "restaurant": "Holešovická Kozlovna",
-      "date": "2026-11-09",
-      "soups": [
-        {
-          "name": "Italská tomatová s kapkou smetany",
-          "price": 49,
-          "allergens": "1,7",
-          "note": null
-        },
-        {
-          "name": "Hovězí vývar s masem, zeleninou a nudlemi",
-          "price": 49,
-          "allergens": "1,3,7,9",
-          "note": null
-        }
-      ],
-      "main_dishes": [
-        {
-          "name": "Vepřové maso s glazovanou mrkví, šťouchané brambory s jarní cibulkou",
-          "price_single": 189,
-          "price_menu": 225,
-          "allergens": "1,7,9",
-          "note": null
-        },
-        {
-          "name": "Hovězí pečeně na hříbkách, houskové knedlíky",
-          "price_single": 199,
-          "price_menu": 235,
-          "allergens": "1,3,7",
-          "note": null
-        },
-        {
-          "name": "Kuřecí gyros, ledový salát s rajčaty, pita chléb, tzatziky",
-          "price_single": 195,
-          "price_menu": 230,
-          "allergens": "1,7",
-          "note": null
-        },
-        {
-          "name": "Opečená jitrnice a jelítko, lepenice, křupavá cibulka, hořčice",
-          "price_single": 189,
-          "price_menu": 225,
-          "allergens": "1,7,10",
-          "note": null
-        },
-        {
-          "name": "Kachní prso sous-vide po asijsku, jasmínová rýže, sezam, grilovaný salát Pak-Choi",
-          "price_single": 235,
-          "price_menu": null,
-          "allergens": "1,4,11",
-          "note": null
-        }
-      ],
-      "status": "fresh"
+      "date": "2026-11-10",
+      "soups": [],
+      "main_dishes": [],
+      "status": "unavailable"
     }
   ]
 }
