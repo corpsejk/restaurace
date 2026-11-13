@@ -1,6 +1,6 @@
 {
   "date": "2026-11-13",
-  "updated_at": "2026-11-13T07:59:58Z",
+  "updated_at": "2026-11-13T08:32:20Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
@@ -48,7 +48,7 @@
           "note": null
         },
         {
-          "name": "ZELENINOVÝ KUSKUS, ZAPEČENÁ RAJČATA S MOZZARELLOU, BAZALKOVÉ PESTO, PAŽITKOVÝ DIP",
+          "name": "ZELENINOVÝ KUSKUS, ZAPEČENÁ RAJČATA - 2ks S MOZZARELLOU, BAZALKOVÉ PESTO, PAŽITKOVÝ DIP",
           "price_single": 160,
           "price_menu": null,
           "allergens": "1a,7",
