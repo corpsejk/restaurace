@@ -1,6 +1,6 @@
 {
   "date": "2026-11-13",
-  "updated_at": "2026-11-13T05:16:25Z",
+  "updated_at": "2026-11-13T07:15:57Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
@@ -34,14 +34,14 @@
           "note": null
         },
         {
-          "name": "MIX GRIL (vepřová panenka, krůtí prso), PAPRIČKY PADRONE, PEČENÉ BRAMBORY, ZAKYSANÁ SMETANA",
+          "name": "300 g MIX GRIL (kuřecí prso, vepřová panenka, krůtí prso), PAPRIČKY PADRONE, PEČENÉ BRAMBORY, ZAKYSANÁ SMETANA",
           "price_single": 210,
           "price_menu": 240,
           "allergens": "7",
           "note": null
         },
         {
-          "name": "VEPŘOVÉ VÝPEČKY, BÍLÉ ZELÍ, HOUSKOVÝ A BRAMBOROVÝ KNEDLÍK",
+          "name": "VEPŘOVÉ VÝPEČKY, ČERVENÉ ZELÍ, HOUSKOVÝ A BRAMBOROVÝ KNEDLÍK",
           "price_single": 185,
           "price_menu": null,
           "allergens": "1a,7,3,10",
