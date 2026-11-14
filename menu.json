@@ -1,6 +1,6 @@
 {
   "date": "2026-11-14",
-  "updated_at": "2026-11-14T05:16:11Z",
+  "updated_at": "2026-11-14T08:16:12Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
@@ -48,9 +48,45 @@
     {
       "restaurant": "Holešovická Kozlovna",
       "date": "2026-11-14",
-      "soups": [],
-      "main_dishes": [],
-      "status": "unavailable"
+      "soups": [
+        {
+          "name": "Bílá zelná s klobásou",
+          "price": 49,
+          "allergens": "1,7,9",
+          "note": null
+        }
+      ],
+      "main_dishes": [
+        {
+          "name": "Segedínský guláš, houskové knedlíky",
+          "price_single": 189,
+          "price_menu": 225,
+          "allergens": "1,3,7,9",
+          "note": null
+        },
+        {
+          "name": "Pečená sekaná, bramborová kaše, šťáva z výpeku, kyselá okurka",
+          "price_single": 189,
+          "price_menu": 225,
+          "allergens": "1,3,7,9,10",
+          "note": null
+        },
+        {
+          "name": "Opečená jitrnice a jelítko, vařené brambory, studené bílé kysané zelí, hořčice",
+          "price_single": 185,
+          "price_menu": 220,
+          "allergens": "1,10",
+          "note": null
+        },
+        {
+          "name": "Kachní prso sous-vide s omáčkou hoisin, jasmínová rýže, sezam, variace trhaných listových salátů",
+          "price_single": 235,
+          "price_menu": 270,
+          "allergens": "1,4,11",
+          "note": null
+        }
+      ],
+      "status": "fresh"
     }
   ]
 }
