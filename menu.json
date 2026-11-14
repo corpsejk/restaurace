@@ -1,27 +1,15 @@
 {
-  "date": "2026-11-13",
-  "updated_at": "2026-11-13T08:32:20Z",
+  "date": "2026-11-14",
+  "updated_at": "2026-11-14T05:16:11Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
-      "date": "2026-11-13",
+      "date": "2026-11-14",
       "soups": [
         {
-          "name": "KUŘECÍ VÝVAR S MASEM A ZELENINOU, MINI KOLÍNKA",
+          "name": "ZELNÁ S KLOBÁSOU (podáváme s pečivem)",
           "price": 49,
-          "allergens": "1a,7,9,12,3",
-          "note": null
-        },
-        {
-          "name": "BUŘTGULÁŠOVÁ (podáváme s pečivem)",
-          "price": 55,
-          "allergens": "1a,7,3",
-          "note": null
-        },
-        {
-          "name": "HUSÍ KALDOUN S MASEM A ZELENINOU, JÁTROVÝ KNEDLÍČEK",
-          "price": 69,
-          "allergens": "1a,3,7,9,12",
+          "allergens": "1a,7,3,9",
           "note": null
         }
       ],
@@ -29,36 +17,29 @@
         {
           "name": "SMAŽENÝ KUŘECÍ ŘÍZEK, BRAMBOROVÝ SALÁT, CITRON",
           "price_single": 195,
-          "price_menu": 225,
-          "allergens": "7,1a,3,10,12,9",
-          "note": null
-        },
-        {
-          "name": "300 g MIX GRIL (kuřecí prso, vepřová panenka, krůtí prso), PAPRIČKY PADRONE, PEČENÉ BRAMBORY, ZAKYSANÁ SMETANA",
-          "price_single": 210,
-          "price_menu": 240,
-          "allergens": "7",
+          "price_menu": null,
+          "allergens": "1a,3,7,10,9",
           "note": null
         },
         {
           "name": "VEPŘOVÉ VÝPEČKY, ČERVENÉ ZELÍ, HOUSKOVÝ A BRAMBOROVÝ KNEDLÍK",
           "price_single": 185,
           "price_menu": null,
-          "allergens": "1a,7,3,10",
+          "allergens": "7,1a,3,10,12",
           "note": null
         },
         {
-          "name": "ZELENINOVÝ KUSKUS, ZAPEČENÁ RAJČATA - 2ks S MOZZARELLOU, BAZALKOVÉ PESTO, PAŽITKOVÝ DIP",
-          "price_single": 160,
+          "name": "ŠUNKOFLEKY S UZENÝM MASEM A PEČENÝMI PAPRIKAMI, NAKLÁDANÁ OKURKA",
+          "price_single": 185,
           "price_menu": null,
-          "allergens": "1a,7",
+          "allergens": "1a,7,12,3,10",
           "note": null
         },
         {
-          "name": "1/4 PEČENÉ HUSY, ČERVENÉ A BÍLÉ ZELÍ, BRAMBOROVÝ KNEDLÍK, BRAMBOROVÁ LOKŠE, SILNÁ ŠŤÁVA",
-          "price_single": 465,
+          "name": "VAŘENÉ HOVĚZÍ MASO, RAJSKÁ OMÁČKA, HOUSKOVÝ KNEDLÍK",
+          "price_single": 200,
           "price_menu": null,
-          "allergens": "1,4,1a,3,7,10,12",
+          "allergens": "1a,3,7,9",
           "note": null
         }
       ],
@@ -66,59 +47,10 @@
     },
     {
       "restaurant": "Holešovická Kozlovna",
-      "date": "2026-11-13",
-      "soups": [
-        {
-          "name": "Bílá zelná s klobásou",
-          "price": 49,
-          "allergens": "1,7,9",
-          "note": null
-        },
-        {
-          "name": "Hovězí vývar s masem, zeleninou a nudlemi",
-          "price": 49,
-          "allergens": "1,3,7,9",
-          "note": null
-        }
-      ],
-      "main_dishes": [
-        {
-          "name": "Segedínský guláš, houskové knedlíky",
-          "price_single": 189,
-          "price_menu": 225,
-          "allergens": "1,3,7,9",
-          "note": null
-        },
-        {
-          "name": "Pečená sekaná, bramborová kaše, šťáva z výpeku, kyselá okurka",
-          "price_single": 189,
-          "price_menu": 225,
-          "allergens": "1,3,7,9,10",
-          "note": null
-        },
-        {
-          "name": "Bramborové noky s kuřecími nudličkami, sýrovou omáčkou, rukola",
-          "price_single": 195,
-          "price_menu": 230,
-          "allergens": "1,3,7",
-          "note": null
-        },
-        {
-          "name": "Hovězí kostky na česneku, listový špenát se smetanou, bramborové knedlíky",
-          "price_single": 199,
-          "price_menu": 235,
-          "allergens": "1,3,7,9",
-          "note": null
-        },
-        {
-          "name": "VÍDEŇSKÁ CIBULE, ŠŤÁVA Z VÝPEKU",
-          "price_single": 495,
-          "price_menu": null,
-          "allergens": "1,3,7",
-          "note": null
-        }
-      ],
-      "status": "fresh"
+      "date": "2026-11-14",
+      "soups": [],
+      "main_dishes": [],
+      "status": "unavailable"
     }
   ]
 }
