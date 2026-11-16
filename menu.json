@@ -1,13 +1,55 @@
 {
   "date": "2026-11-16",
-  "updated_at": "2026-11-16T05:15:59Z",
+  "updated_at": "2026-11-16T06:16:05Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
       "date": "2026-11-16",
-      "soups": [],
-      "main_dishes": [],
-      "status": "unavailable"
+      "soups": [
+        {
+          "name": "HOVĚZÍ VÝVAR S MASEM A ZELENINOU, VLASOVÉ NUDLE",
+          "price": 49,
+          "allergens": "1a,7,9,12,3",
+          "note": null
+        },
+        {
+          "name": "ČOČKOVÁ S PÁRKEM",
+          "price": 49,
+          "allergens": "1a,7,3",
+          "note": null
+        }
+      ],
+      "main_dishes": [
+        {
+          "name": "HOVĚZÍ KOSTKY NA ČESNEKU, ŠPENÁT, HOUSKOVÝ A BRAMBOROVÝ KNEDLÍK",
+          "price_single": 195,
+          "price_menu": 225,
+          "allergens": "7,1a,3,12,9",
+          "note": null
+        },
+        {
+          "name": "TWISTER S KUŘECÍM MASEM (čedar, kukuřice, paprika, čínské zelí), HRANOLKY, ČESNEKOVÝ DIP",
+          "price_single": 195,
+          "price_menu": 225,
+          "allergens": "7,1a,3",
+          "note": null
+        },
+        {
+          "name": "FILÍROVANÁ VEPŘOVÁ PANENKA, FAZOLKY S ANGLICKOU SLANINOU, PEČENÉ BRAMBORY",
+          "price_single": 200,
+          "price_menu": null,
+          "allergens": "1a,7,12",
+          "note": null
+        },
+        {
+          "name": "ŠPAGETY AGLIO OLIO PEPERONCINO, SÝR PARMAZÁNOVÉH TYPU",
+          "price_single": 185,
+          "price_menu": null,
+          "allergens": "1a,7,3",
+          "note": null
+        }
+      ],
+      "status": "fresh"
     },
     {
       "restaurant": "Holešovická Kozlovna",
