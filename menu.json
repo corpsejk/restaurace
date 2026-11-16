@@ -1,6 +1,6 @@
 {
   "date": "2026-11-16",
-  "updated_at": "2026-11-16T06:16:05Z",
+  "updated_at": "2026-11-16T07:31:37Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
@@ -54,9 +54,58 @@
     {
       "restaurant": "Holešovická Kozlovna",
       "date": "2026-11-16",
-      "soups": [],
-      "main_dishes": [],
-      "status": "unavailable"
+      "soups": [
+        {
+          "name": "Šumavská bramboračka",
+          "price": 49,
+          "allergens": "1,7,9",
+          "note": null
+        },
+        {
+          "name": "Hovězí vývar s masem, zeleninou a nudlemi",
+          "price": 49,
+          "allergens": "1,3,7,9",
+          "note": null
+        }
+      ],
+      "main_dishes": [
+        {
+          "name": "Moravský vrabec s červeným zelím, bramborové knedlíky, šťáva z výpeku",
+          "price_single": 195,
+          "price_menu": 230,
+          "allergens": "1,3,7,9",
+          "note": null
+        },
+        {
+          "name": "Kuřecí medailonky v parmazánovém těstíčku, bramborová kaše, salát coleslaw",
+          "price_single": 199,
+          "price_menu": 235,
+          "allergens": "1,3,7,9,10",
+          "note": null
+        },
+        {
+          "name": "Špagety alá carbonara, sypané sýrem Gran moravia, petrželka",
+          "price_single": 189,
+          "price_menu": 225,
+          "allergens": "1,3,7",
+          "note": null
+        },
+        {
+          "name": "Grilovaný steak z tuňáka, opečená polenta, espuma z holandské omáčky, trhaný salát, citrón",
+          "price_single": 209,
+          "price_menu": 245,
+          "allergens": "1,3,4,7",
+          "note": null
+        },
+        {
+          "name": "Pečená kuřecí křídla,,SWEET CHILLI\", salát coleslaw, dresink z modrého sýra, rozpečená bageta",
+          "price_single": 215,
+          "price_menu": null,
+          "allergens": "1,3,7,10",
+          "note": null
+        }
+      ],
+      "status": "fresh"
     }
   ]
 }
