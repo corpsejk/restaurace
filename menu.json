@@ -1,21 +1,15 @@
 {
-  "date": "2026-11-16",
-  "updated_at": "2026-11-16T07:31:37Z",
+  "date": "2026-11-17",
+  "updated_at": "2026-11-17T05:16:00Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
-      "date": "2026-11-16",
+      "date": "2026-11-17",
       "soups": [
-        {
-          "name": "HOVĚZÍ VÝVAR S MASEM A ZELENINOU, VLASOVÉ NUDLE",
-          "price": 49,
-          "allergens": "1a,7,9,12,3",
-          "note": null
-        },
         {
           "name": "ČOČKOVÁ S PÁRKEM",
           "price": 49,
-          "allergens": "1a,7,3",
+          "allergens": "1a,7,3,9",
           "note": null
         }
       ],
@@ -23,22 +17,15 @@
         {
           "name": "HOVĚZÍ KOSTKY NA ČESNEKU, ŠPENÁT, HOUSKOVÝ A BRAMBOROVÝ KNEDLÍK",
           "price_single": 195,
-          "price_menu": 225,
-          "allergens": "7,1a,3,12,9",
-          "note": null
-        },
-        {
-          "name": "TWISTER S KUŘECÍM MASEM (čedar, kukuřice, paprika, čínské zelí), HRANOLKY, ČESNEKOVÝ DIP",
-          "price_single": 195,
-          "price_menu": 225,
-          "allergens": "7,1a,3",
-          "note": null
-        },
-        {
-          "name": "FILÍROVANÁ VEPŘOVÁ PANENKA, FAZOLKY S ANGLICKOU SLANINOU, PEČENÉ BRAMBORY",
-          "price_single": 200,
           "price_menu": null,
-          "allergens": "1a,7,12",
+          "allergens": "1a,3,7,9,12",
+          "note": null
+        },
+        {
+          "name": "QUESADILLA S KUŘECÍM MASEM (čedar, kukuřice, paprika, čínské zelí), HRANOLKY, ČESNEKOVÝ DIP",
+          "price_single": 195,
+          "price_menu": null,
+          "allergens": "7,1a,3",
           "note": null
         },
         {
@@ -53,18 +40,12 @@
     },
     {
       "restaurant": "Holešovická Kozlovna",
-      "date": "2026-11-16",
+      "date": "2026-11-17",
       "soups": [
         {
           "name": "Šumavská bramboračka",
           "price": 49,
           "allergens": "1,7,9",
-          "note": null
-        },
-        {
-          "name": "Hovězí vývar s masem, zeleninou a nudlemi",
-          "price": 49,
-          "allergens": "1,3,7,9",
           "note": null
         }
       ],
@@ -77,31 +58,17 @@
           "note": null
         },
         {
-          "name": "Kuřecí medailonky v parmazánovém těstíčku, bramborová kaše, salát coleslaw",
-          "price_single": 199,
-          "price_menu": 235,
+          "name": "Kuřecí medailonky, hříbková omáčka, jasmínová rýže",
+          "price_single": 195,
+          "price_menu": 230,
           "allergens": "1,3,7,9,10",
           "note": null
         },
         {
-          "name": "Špagety alá carbonara, sypané sýrem Gran moravia, petrželka",
-          "price_single": 189,
-          "price_menu": 225,
-          "allergens": "1,3,7",
-          "note": null
-        },
-        {
-          "name": "Grilovaný steak z tuňáka, opečená polenta, espuma z holandské omáčky, trhaný salát, citrón",
+          "name": "Grilovaný steak z tuňáka, opečená polenta, espuma z holandské omáčky, trhaný salát, citrón (1,3,4,7) (omezený počet)",
           "price_single": 209,
           "price_menu": 245,
-          "allergens": "1,3,4,7",
-          "note": null
-        },
-        {
-          "name": "Pečená kuřecí křídla,,SWEET CHILLI\", salát coleslaw, dresink z modrého sýra, rozpečená bageta",
-          "price_single": 215,
-          "price_menu": null,
-          "allergens": "1,3,7,10",
+          "allergens": null,
           "note": null
         }
       ],
