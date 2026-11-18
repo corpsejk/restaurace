@@ -1,6 +1,6 @@
 {
   "date": "2026-11-18",
-  "updated_at": "2026-11-18T05:16:04Z",
+  "updated_at": "2026-11-18T08:15:57Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
@@ -54,9 +54,58 @@
     {
       "restaurant": "Holešovická Kozlovna",
       "date": "2026-11-18",
-      "soups": [],
-      "main_dishes": [],
-      "status": "unavailable"
+      "soups": [
+        {
+          "name": "Frankfurtská s párkem",
+          "price": 49,
+          "allergens": "1,7",
+          "note": null
+        },
+        {
+          "name": "Kuřecí vývar s masem, zeleninou a nudlemi",
+          "price": 49,
+          "allergens": "1,3,7,9",
+          "note": null
+        }
+      ],
+      "main_dishes": [
+        {
+          "name": "Hovězí pečeně alá ptáček, jasmínová rýže",
+          "price_single": 205,
+          "price_menu": 240,
+          "allergens": "1,3,7,9,10",
+          "note": null
+        },
+        {
+          "name": "Mix gril (vepřová panenka, kuřecí prsa), smetanová omáčka s barevným pepřem, smažené bramborové krokety, trhaný salát",
+          "price_single": 199,
+          "price_menu": 235,
+          "allergens": "1,7",
+          "note": null
+        },
+        {
+          "name": "Smažený holandský řízek, bramborová kaše, okurkový salátek",
+          "price_single": 189,
+          "price_menu": 225,
+          "allergens": "1,3,7",
+          "note": null
+        },
+        {
+          "name": "Zapečené fleky s uzeným masem a vejci, nakládaná řepa",
+          "price_single": 185,
+          "price_menu": 220,
+          "allergens": "1,3,7",
+          "note": null
+        },
+        {
+          "name": "Pečená kuřecí křídla,,SWEET CHILLI\", salát coleslaw, dresink z modrého sýra, rozpečená bageta",
+          "price_single": 215,
+          "price_menu": null,
+          "allergens": "1,3,7,10",
+          "note": null
+        }
+      ],
+      "status": "fresh"
     }
   ]
 }
