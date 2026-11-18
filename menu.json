@@ -1,35 +1,48 @@
 {
-  "date": "2026-11-17",
-  "updated_at": "2026-11-17T05:16:00Z",
+  "date": "2026-11-18",
+  "updated_at": "2026-11-18T05:16:04Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
-      "date": "2026-11-17",
+      "date": "2026-11-18",
       "soups": [
         {
-          "name": "ČOČKOVÁ S PÁRKEM",
+          "name": "HOVĚZÍ VÝVAR S MASEM A ZELENINOU, VLASOVÉ NUDLE",
           "price": 49,
-          "allergens": "1a,7,3,9",
+          "allergens": "1a,7,9,12,3",
+          "note": null
+        },
+        {
+          "name": "KRÉMOVÁ ČESNEKOVÁ S TRHANÝM UZENÝM MASEM, KRUTONY",
+          "price": 49,
+          "allergens": "1a,7,3",
           "note": null
         }
       ],
       "main_dishes": [
         {
-          "name": "HOVĚZÍ KOSTKY NA ČESNEKU, ŠPENÁT, HOUSKOVÝ A BRAMBOROVÝ KNEDLÍK",
-          "price_single": 195,
-          "price_menu": null,
-          "allergens": "1a,3,7,9,12",
+          "name": "HOLANDSKÝ ŘÍZEK SE SÝREM GOUDA, BRAMBOROVÁ KAŠE, ZELNÝ SALÁTEK",
+          "price_single": 190,
+          "price_menu": 220,
+          "allergens": "7,1a,3,12",
           "note": null
         },
         {
-          "name": "QUESADILLA S KUŘECÍM MASEM (čedar, kukuřice, paprika, čínské zelí), HRANOLKY, ČESNEKOVÝ DIP",
+          "name": "PLNĚNÉ BRAMBOROVÉ KNEDLÍKY UZENÝM MASEM, ČERVENÉ ZELÍ, CIBULKA NA SÁDLE",
           "price_single": 195,
-          "price_menu": null,
-          "allergens": "7,1a,3",
+          "price_menu": 225,
+          "allergens": "7,1a,3,10,12",
           "note": null
         },
         {
-          "name": "ŠPAGETY AGLIO OLIO PEPERONCINO, SÝR PARMAZÁNOVÉH TYPU",
+          "name": "KUŘECÍ MEDAILONKY, HOUBOVÁ OMÁČKA SE SMETANOU, JASMÍNOVÁ RÝŽE",
+          "price_single": 195,
+          "price_menu": null,
+          "allergens": "1a,7,12",
+          "note": null
+        },
+        {
+          "name": "BRAMBOROVÉ GNOCCHI, SMETANOVO RAJČATOVÁ OMÁČKA, BAZALKA, STROUHANÁ MOZZARELLA",
           "price_single": 185,
           "price_menu": null,
           "allergens": "1a,7,3",
@@ -40,39 +53,10 @@
     },
     {
       "restaurant": "Holešovická Kozlovna",
-      "date": "2026-11-17",
-      "soups": [
-        {
-          "name": "Šumavská bramboračka",
-          "price": 49,
-          "allergens": "1,7,9",
-          "note": null
-        }
-      ],
-      "main_dishes": [
-        {
-          "name": "Moravský vrabec s červeným zelím, bramborové knedlíky, šťáva z výpeku",
-          "price_single": 195,
-          "price_menu": 230,
-          "allergens": "1,3,7,9",
-          "note": null
-        },
-        {
-          "name": "Kuřecí medailonky, hříbková omáčka, jasmínová rýže",
-          "price_single": 195,
-          "price_menu": 230,
-          "allergens": "1,3,7,9,10",
-          "note": null
-        },
-        {
-          "name": "Grilovaný steak z tuňáka, opečená polenta, espuma z holandské omáčky, trhaný salát, citrón (1,3,4,7) (omezený počet)",
-          "price_single": 209,
-          "price_menu": 245,
-          "allergens": null,
-          "note": null
-        }
-      ],
-      "status": "fresh"
+      "date": "2026-11-18",
+      "soups": [],
+      "main_dishes": [],
+      "status": "unavailable"
     }
   ]
 }
