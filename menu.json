@@ -1,6 +1,6 @@
 {
   "date": "2026-11-20",
-  "updated_at": "2026-11-20T05:16:13Z",
+  "updated_at": "2026-11-20T08:16:03Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
@@ -54,9 +54,58 @@
     {
       "restaurant": "Holešovická Kozlovna",
       "date": "2026-11-20",
-      "soups": [],
-      "main_dishes": [],
-      "status": "unavailable"
+      "soups": [
+        {
+          "name": "Čočková s uzeninou",
+          "price": 49,
+          "allergens": "1,9",
+          "note": null
+        },
+        {
+          "name": "Hovězí vývar s masem, zeleninou a nudlemi",
+          "price": 49,
+          "allergens": "1,3,7,9",
+          "note": null
+        }
+      ],
+      "main_dishes": [
+        {
+          "name": "Hovězí ořech s koprovou omáčkou, vařené brambory, zastřené vejce",
+          "price_single": 195,
+          "price_menu": 230,
+          "allergens": "1,3,7,9",
+          "note": null
+        },
+        {
+          "name": "Fish & chips - filátko z mořské tresky v pivním těstíčku s ančovičkou, hranolky, hráškové pyré a česnekový dip, opečený citron",
+          "price_single": 205,
+          "price_menu": 240,
+          "allergens": "1,3,4,7,9",
+          "note": null
+        },
+        {
+          "name": "Filírovaná vepřová panenka na italském krémovém rizotu s hříbky, sýr Gran moravia, rukola",
+          "price_single": 199,
+          "price_menu": 235,
+          "allergens": "1,3,7",
+          "note": null
+        },
+        {
+          "name": "Smažený kuřecí řízek, lehký bramborový salát se zeleninou, vejci a jogurtem, citrón",
+          "price_single": 199,
+          "price_menu": 235,
+          "allergens": "1,3,7,9,10",
+          "note": "Omezený počet"
+        },
+        {
+          "name": "Pečená kuřecí křídla,,SWEET CHILLI\", salát coleslaw, dresink z modrého sýra, rozpečená bageta",
+          "price_single": 215,
+          "price_menu": null,
+          "allergens": "1,3,7,10",
+          "note": null
+        }
+      ],
+      "status": "fresh"
     }
   ]
 }
