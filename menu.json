@@ -1,44 +1,51 @@
 {
-  "date": "2026-11-19",
-  "updated_at": "2026-11-19T07:46:02Z",
+  "date": "2026-11-20",
+  "updated_at": "2026-11-20T05:16:13Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
-      "date": "2026-11-19",
+      "date": "2026-11-20",
       "soups": [
         {
           "name": "HOVĚZÍ VÝVAR S MASEM A ZELENINOU, VLASOVÉ NUDLE",
           "price": 49,
-          "allergens": "1a,7,3,9",
+          "allergens": "1a,7,9,12,3",
           "note": null
         },
         {
-          "name": "BRAMBORAČKA S HOUBAMI",
+          "name": "HRACHOVÁ S KLOBÁSOU",
           "price": 49,
-          "allergens": "1a,3,7,9",
+          "allergens": "1a,7,3",
           "note": null
         }
       ],
       "main_dishes": [
         {
-          "name": "DUŠENÁ HOVĚZÍ FALEŠNÁ SVÍČKOVÁ NA CIBULI, VÍDEŇSKÁ CIBULKA, JASMÍNOVÁ RÝŽE/HRANOLKY",
-          "price_single": 205,
-          "price_menu": 235,
-          "allergens": "1a,3,7,9",
+          "name": "SMAŽENÝ KUŘECÍ ŘÍZEK, BRAMBOROVÝ SALÁT, CITRON",
+          "price_single": 195,
+          "price_menu": 225,
+          "allergens": "7,1a,3,12,9,10",
           "note": null
         },
         {
-          "name": "RAŽNIČI Z KUŘECÍCH PRSOU (paprika, cibule, klobása), PEČENÉ BRAMBORY, BYLINKOVÝ DIP",
-          "price_single": 190,
-          "price_menu": 220,
-          "allergens": "7,1a,3",
+          "name": "KANČÍ GULÁŠ, ČERVENÁ CIBULE, VARIACE HOUSKOVÉHO A ŠPEKOVÉHO KNEDLÍKU",
+          "price_single": 195,
+          "price_menu": 225,
+          "allergens": "7,1a,3,12,9",
           "note": null
         },
         {
-          "name": "SMAŽENÉ ŽAMPIONY, VAŘENÉ BRAMBORY, TATARSKÁ OMÁČKA",
-          "price_single": 185,
+          "name": "KRŮTÍ MEDAILONKY, OMÁČKA Z PEČENÝCH PAPRIK, GRATINOVANÝ BRAMBOR/JASMÍNOVÁ RÝŽE",
+          "price_single": 200,
           "price_menu": null,
-          "allergens": "1a,7,3,12",
+          "allergens": "1a,7,12,3",
+          "note": null
+        },
+        {
+          "name": "DUŠENÁ HOVĚZÍ FALEŠNÁ SVÍČKOVÁ NA CIBULI, VÍDEŇSKÁ CIBULKA, JASMÍNOVÁ RÝŽE/AMERICKÝ BRAMBOR, TATARSKÁ OMÁČKA",
+          "price_single": 205,
+          "price_menu": null,
+          "allergens": "1a,7,3,10",
           "note": null
         }
       ],
@@ -46,59 +53,10 @@
     },
     {
       "restaurant": "Holešovická Kozlovna",
-      "date": "2026-11-19",
-      "soups": [
-        {
-          "name": "Hráškový krém s krutóny",
-          "price": 49,
-          "allergens": "1,7",
-          "note": null
-        },
-        {
-          "name": "Kuřecí vývar s masem, zeleninou a nudlemi",
-          "price": 49,
-          "allergens": "1,3,7,9",
-          "note": null
-        }
-      ],
-      "main_dishes": [
-        {
-          "name": "Kuřecí stehno na paprice, houskové knedlíky",
-          "price_single": 189,
-          "price_menu": 225,
-          "allergens": "1,3,7",
-          "note": null
-        },
-        {
-          "name": "Ražničí z vepřové  panenky s cibulí a slaninou, šťouchané brambory, rozmarýnová omáčka, chipotle mayo",
-          "price_single": 199,
-          "price_menu": 235,
-          "allergens": "1,3,7,10",
-          "note": null
-        },
-        {
-          "name": "Krůtí řízečky v panko strouhance, lehký bramborový salát se zeleninou, vejci a jogurtem, citrón",
-          "price_single": 199,
-          "price_menu": 235,
-          "allergens": "1,3,7,9,10",
-          "note": null
-        },
-        {
-          "name": "Strapačky se zelím a uzeným masem, křupavá cibulka",
-          "price_single": 185,
-          "price_menu": 220,
-          "allergens": "1,3,7",
-          "note": null
-        },
-        {
-          "name": "Pečená kuřecí křídla,,SWEET CHILLI\", salát coleslaw, dresink z modrého sýra, rozpečená bageta",
-          "price_single": 215,
-          "price_menu": null,
-          "allergens": "1,3,7,10",
-          "note": null
-        }
-      ],
-      "status": "fresh"
+      "date": "2026-11-20",
+      "soups": [],
+      "main_dishes": [],
+      "status": "unavailable"
     }
   ]
 }
