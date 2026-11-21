@@ -1,51 +1,44 @@
 {
-  "date": "2026-11-20",
-  "updated_at": "2026-11-20T08:16:03Z",
+  "date": "2026-11-21",
+  "updated_at": "2026-11-21T05:16:04Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "soups": [
-        {
-          "name": "HOVĚZÍ VÝVAR S MASEM A ZELENINOU, VLASOVÉ NUDLE",
-          "price": 49,
-          "allergens": "1a,7,9,12,3",
-          "note": null
-        },
         {
           "name": "HRACHOVÁ S KLOBÁSOU",
           "price": 49,
-          "allergens": "1a,7,3",
+          "allergens": "1a,7,3,9",
+          "note": null
+        },
+        {
+          "name": "BRAMBORAČKA S HOUBAMI",
+          "price": 49,
+          "allergens": "1a,3,7,9",
           "note": null
         }
       ],
       "main_dishes": [
         {
-          "name": "SMAŽENÝ KUŘECÍ ŘÍZEK, BRAMBOROVÝ SALÁT, CITRON",
+          "name": "PLNĚNÉ BRAMBOROVÉ KNEDLÍKY UZENÝM MASEM, ČERVENÉ ZELÍ, CIBULKA NA SÁDLE",
           "price_single": 195,
-          "price_menu": 225,
-          "allergens": "7,1a,3,12,9,10",
+          "price_menu": null,
+          "allergens": "1a,3,7,10,12",
           "note": null
         },
         {
           "name": "KANČÍ GULÁŠ, ČERVENÁ CIBULE, VARIACE HOUSKOVÉHO A ŠPEKOVÉHO KNEDLÍKU",
           "price_single": 195,
-          "price_menu": 225,
-          "allergens": "7,1a,3,12,9",
+          "price_menu": null,
+          "allergens": "7,1a,3",
           "note": null
         },
         {
-          "name": "KRŮTÍ MEDAILONKY, OMÁČKA Z PEČENÝCH PAPRIK, GRATINOVANÝ BRAMBOR/JASMÍNOVÁ RÝŽE",
-          "price_single": 200,
+          "name": "SMAŽENÝ KUŘECÍ ŘÍZEK, BRAMBOROVÁ KAŠE, CITRON, SALÁTEK COLESLAW",
+          "price_single": 195,
           "price_menu": null,
-          "allergens": "1a,7,12,3",
-          "note": null
-        },
-        {
-          "name": "DUŠENÁ HOVĚZÍ FALEŠNÁ SVÍČKOVÁ NA CIBULI, VÍDEŇSKÁ CIBULKA, JASMÍNOVÁ RÝŽE/AMERICKÝ BRAMBOR, TATARSKÁ OMÁČKA",
-          "price_single": 205,
-          "price_menu": null,
-          "allergens": "1a,7,3,10",
+          "allergens": "1a,7,3,12,10",
           "note": null
         }
       ],
@@ -53,59 +46,10 @@
     },
     {
       "restaurant": "Holešovická Kozlovna",
-      "date": "2026-11-20",
-      "soups": [
-        {
-          "name": "Čočková s uzeninou",
-          "price": 49,
-          "allergens": "1,9",
-          "note": null
-        },
-        {
-          "name": "Hovězí vývar s masem, zeleninou a nudlemi",
-          "price": 49,
-          "allergens": "1,3,7,9",
-          "note": null
-        }
-      ],
-      "main_dishes": [
-        {
-          "name": "Hovězí ořech s koprovou omáčkou, vařené brambory, zastřené vejce",
-          "price_single": 195,
-          "price_menu": 230,
-          "allergens": "1,3,7,9",
-          "note": null
-        },
-        {
-          "name": "Fish & chips - filátko z mořské tresky v pivním těstíčku s ančovičkou, hranolky, hráškové pyré a česnekový dip, opečený citron",
-          "price_single": 205,
-          "price_menu": 240,
-          "allergens": "1,3,4,7,9",
-          "note": null
-        },
-        {
-          "name": "Filírovaná vepřová panenka na italském krémovém rizotu s hříbky, sýr Gran moravia, rukola",
-          "price_single": 199,
-          "price_menu": 235,
-          "allergens": "1,3,7",
-          "note": null
-        },
-        {
-          "name": "Smažený kuřecí řízek, lehký bramborový salát se zeleninou, vejci a jogurtem, citrón",
-          "price_single": 199,
-          "price_menu": 235,
-          "allergens": "1,3,7,9,10",
-          "note": "Omezený počet"
-        },
-        {
-          "name": "Pečená kuřecí křídla,,SWEET CHILLI\", salát coleslaw, dresink z modrého sýra, rozpečená bageta",
-          "price_single": 215,
-          "price_menu": null,
-          "allergens": "1,3,7,10",
-          "note": null
-        }
-      ],
-      "status": "fresh"
+      "date": "2026-11-21",
+      "soups": [],
+      "main_dishes": [],
+      "status": "unavailable"
     }
   ]
 }
