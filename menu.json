@@ -1,6 +1,6 @@
 {
   "date": "2026-11-22",
-  "updated_at": "2026-11-22T05:16:03Z",
+  "updated_at": "2026-11-22T08:59:42Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
@@ -12,9 +12,38 @@
     {
       "restaurant": "Holešovická Kozlovna",
       "date": "2026-11-22",
-      "soups": [],
-      "main_dishes": [],
-      "status": "unavailable"
+      "soups": [
+        {
+          "name": "Italská tomatová s kapkou smetany",
+          "price": 49,
+          "allergens": "1,7,9",
+          "note": null
+        }
+      ],
+      "main_dishes": [
+        {
+          "name": "Hovězí ořech s koprovou omáčkou, vařené brambory, zastřené vejce",
+          "price_single": 195,
+          "price_menu": 230,
+          "allergens": "1,3,7,9",
+          "note": null
+        },
+        {
+          "name": "Fish & chips - filátko z mořské tresky v pivním těstíčku s ančovičkou, hranolky, hráškové pyré a česnekový dip, opečený citron (1,3,4,7,9) (omezený počet)",
+          "price_single": 205,
+          "price_menu": 240,
+          "allergens": null,
+          "note": null
+        },
+        {
+          "name": "Hovězí pečeně alá ptáček, jasmínová rýže",
+          "price_single": 205,
+          "price_menu": 240,
+          "allergens": "1,3,7,9,10",
+          "note": null
+        }
+      ],
+      "status": "fresh"
     }
   ]
 }
