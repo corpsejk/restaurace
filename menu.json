@@ -1,84 +1,20 @@
 {
-  "date": "2026-11-21",
-  "updated_at": "2026-11-21T09:16:05Z",
+  "date": "2026-11-22",
+  "updated_at": "2026-11-22T05:16:03Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
-      "date": "2026-11-21",
-      "soups": [
-        {
-          "name": "HRACHOVÁ S KLOBÁSOU",
-          "price": 49,
-          "allergens": "1a,7,3,9",
-          "note": null
-        },
-        {
-          "name": "BRAMBORAČKA S HOUBAMI",
-          "price": 49,
-          "allergens": "1a,3,7,9",
-          "note": null
-        }
-      ],
-      "main_dishes": [
-        {
-          "name": "PLNĚNÉ BRAMBOROVÉ KNEDLÍKY UZENÝM MASEM, ČERVENÉ ZELÍ, CIBULKA NA SÁDLE",
-          "price_single": 195,
-          "price_menu": null,
-          "allergens": "1a,3,7,10,12",
-          "note": null
-        },
-        {
-          "name": "KANČÍ GULÁŠ, ČERVENÁ CIBULE, VARIACE HOUSKOVÉHO A ŠPEKOVÉHO KNEDLÍKU",
-          "price_single": 195,
-          "price_menu": null,
-          "allergens": "7,1a,3",
-          "note": null
-        },
-        {
-          "name": "SMAŽENÝ KUŘECÍ ŘÍZEK, BRAMBOROVÁ KAŠE, CITRON, SALÁTEK COLESLAW",
-          "price_single": 195,
-          "price_menu": null,
-          "allergens": "1a,7,3,12,10",
-          "note": null
-        }
-      ],
-      "status": "fresh"
+      "date": "2026-11-22",
+      "soups": [],
+      "main_dishes": [],
+      "status": "unavailable"
     },
     {
       "restaurant": "Holešovická Kozlovna",
-      "date": "2026-11-21",
-      "soups": [
-        {
-          "name": "Hráškový krém s krutóny",
-          "price": 49,
-          "allergens": "1,7",
-          "note": null
-        }
-      ],
-      "main_dishes": [
-        {
-          "name": "Hovězí ořech s koprovou omáčkou, vařené brambory, zastřené vejce",
-          "price_single": 195,
-          "price_menu": 230,
-          "allergens": "1,3,7,9",
-          "note": null
-        },
-        {
-          "name": "Fish & chips - filátko z mořské tresky v pivním těstíčku s ančovičkou, hranolky, hráškové pyré a česnekový dip, opečený citron",
-          "price_single": 205,
-          "price_menu": 240,
-          "allergens": "1,3,4,7,9",
-          "note": null
-        },
-        {
-          "name": "Kuřecí stehno na paprice, houskové knedlíky",
-          "price_single": 189,
-          "price_menu": 225,
-          "allergens": "1,3,7",
-          "note": null
-        }
-      ],
-      "status": "fresh"
+      "date": "2026-11-22",
+      "soups": [],
+      "main_dishes": [],
+      "status": "unavailable"
     }
   ]
 }
