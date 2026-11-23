@@ -1,49 +1,62 @@
 {
-  "date": "2026-11-22",
-  "updated_at": "2026-11-22T08:59:42Z",
+  "date": "2026-11-23",
+  "updated_at": "2026-11-23T05:15:59Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
-      "date": "2026-11-22",
-      "soups": [],
-      "main_dishes": [],
-      "status": "unavailable"
-    },
-    {
-      "restaurant": "Holešovická Kozlovna",
-      "date": "2026-11-22",
+      "date": "2026-11-23",
       "soups": [
         {
-          "name": "Italská tomatová s kapkou smetany",
+          "name": "KUŘECÍ VÝVAR S MASEM A ZELENINOU, VAJEČNÝ SVÍTEK",
           "price": 49,
-          "allergens": "1,7,9",
+          "allergens": "1a,7,9,12,3",
+          "note": null
+        },
+        {
+          "name": "ŽAMPIONOVÝ KRÉM, ČESNEKOVÉ KRUTONY",
+          "price": 49,
+          "allergens": "1a,7,3",
           "note": null
         }
       ],
       "main_dishes": [
         {
-          "name": "Hovězí ořech s koprovou omáčkou, vařené brambory, zastřené vejce",
+          "name": "HOVĚZÍ PEČENĚ NA SMETANĚ ''SVÍČKOVÁ'', HOUSKOVÝ KNEDLÍK, BRUSINKOVÝ TERČ",
+          "price_single": 205,
+          "price_menu": 235,
+          "allergens": "7,1a,3,12,9,10",
+          "note": null
+        },
+        {
+          "name": "GRILOVANÉ KUŘECÍ PRSO ZAPEČENÉ ŠUNKOU A HERMELÍNEM, PEČENÉ BRAMBORY, SALÁTEK COLESLAW, DIP Z PEČENÝCH PAPRIK",
           "price_single": 195,
-          "price_menu": 230,
-          "allergens": "1,3,7,9",
+          "price_menu": 225,
+          "allergens": "7,1a,3",
           "note": null
         },
         {
-          "name": "Fish & chips - filátko z mořské tresky v pivním těstíčku s ančovičkou, hranolky, hráškové pyré a česnekový dip, opečený citron (1,3,4,7,9) (omezený počet)",
-          "price_single": 205,
-          "price_menu": 240,
-          "allergens": null,
+          "name": "PEČENÉ ČEVABČIČI, BRAMBOROVÁ KAŠE, ČERVENÁ CIBULE, HRUBOZRNNÁ HOŘČICE, SALÁTEK COLESLAW",
+          "price_single": 185,
+          "price_menu": null,
+          "allergens": "1a,7,3,10",
           "note": null
         },
         {
-          "name": "Hovězí pečeně alá ptáček, jasmínová rýže",
-          "price_single": 205,
-          "price_menu": 240,
-          "allergens": "1,3,7,9,10",
+          "name": "PIKANTNÍ KUŘECÍ SMĚS ''KATŮV ŠLEH'' SE ZELENINOU A KLOBÁSOU, SYPANÁ STROUHANÝM SÝREM, BRAMBORÁČKY/JASMÍNOVÁ RÝŽE",
+          "price_single": 190,
+          "price_menu": null,
+          "allergens": "1a,7,3,10,9",
           "note": null
         }
       ],
       "status": "fresh"
+    },
+    {
+      "restaurant": "Holešovická Kozlovna",
+      "date": "2026-11-23",
+      "soups": [],
+      "main_dishes": [],
+      "status": "unavailable"
     }
   ]
 }
