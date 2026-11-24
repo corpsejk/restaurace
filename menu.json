@@ -1,6 +1,6 @@
 {
   "date": "2026-11-24",
-  "updated_at": "2026-11-24T05:16:00Z",
+  "updated_at": "2026-11-24T07:46:02Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
@@ -54,9 +54,58 @@
     {
       "restaurant": "Holešovická Kozlovna",
       "date": "2026-11-24",
-      "soups": [],
-      "main_dishes": [],
-      "status": "unavailable"
+      "soups": [
+        {
+          "name": "Dýňový krém s krutóny",
+          "price": 49,
+          "allergens": "1,7",
+          "note": null
+        },
+        {
+          "name": "Kuřecí vývar s masem, zeleninou a těstovinou",
+          "price": 49,
+          "allergens": "1,3,7,9",
+          "note": null
+        }
+      ],
+      "main_dishes": [
+        {
+          "name": "Chilli con carne se zakysanou smetanou, sýrová quesadilla",
+          "price_single": 195,
+          "price_menu": 230,
+          "allergens": "1,7,9",
+          "note": null
+        },
+        {
+          "name": "Plněné bramborové knedlíky s uzeným masem, bílé kysané zelí, osmažená cibulka",
+          "price_single": 195,
+          "price_menu": 230,
+          "allergens": "1,3",
+          "note": null
+        },
+        {
+          "name": "Filírovaná vepřová panenka s omáčkou blue cheese, jasmínová rýže, rukola",
+          "price_single": 205,
+          "price_menu": 240,
+          "allergens": "7",
+          "note": null
+        },
+        {
+          "name": "Pikantní smažené kuřecí stripsy, bramborová kaše, rajčatový salátek",
+          "price_single": 199,
+          "price_menu": 235,
+          "allergens": "1,7",
+          "note": null
+        },
+        {
+          "name": "Grilovaná vepřová krkovice ,,Duroc\", pikantní kovbojské fazole, pečená brambora ve slupce, pažitkový zákys",
+          "price_single": 219,
+          "price_menu": null,
+          "allergens": "1,7",
+          "note": null
+        }
+      ],
+      "status": "fresh"
     }
   ]
 }
