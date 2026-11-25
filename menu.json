@@ -1,51 +1,51 @@
 {
-  "date": "2026-11-24",
-  "updated_at": "2026-11-24T07:46:02Z",
+  "date": "2026-11-25",
+  "updated_at": "2026-11-25T05:16:32Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
-      "date": "2026-11-24",
+      "date": "2026-11-25",
       "soups": [
         {
           "name": "KUŘECÍ VÝVAR S MASEM A ZELENINOU, VAJEČNÝ SVÍTEK",
           "price": 49,
-          "allergens": "1a,7,3,9",
+          "allergens": "1a,7,9,12,3",
           "note": null
         },
         {
-          "name": "FRANKFURTSKÁ S PÁRKEM (podáváme s pečivem)",
-          "price": 55,
-          "allergens": "1a,3,7,9",
+          "name": "HRÁŠKOVÝ KRÉM, ČESNEKOVO-MÁSLOVÉ KRUTONY",
+          "price": 49,
+          "allergens": "1a,7,3",
           "note": null
         }
       ],
       "main_dishes": [
         {
-          "name": "HOLANDSKÝ ŘÍZEK SE SÝREM GOUDA, BRAMBOROVÁ KAŠE, OKURKOVÝ SALÁTEK",
-          "price_single": 190,
-          "price_menu": 220,
-          "allergens": "1a,3,7,10,12",
+          "name": "HOVĚZÍ PEČENĚ PO BURGUNDSKU, MÁSLOVÁ BRAMBOROVÁ KAŠE, PEČENÁ KOŘENOVÁ ZELENINA",
+          "price_single": 200,
+          "price_menu": 230,
+          "allergens": "7,1a,12,9,3,10",
           "note": null
         },
         {
-          "name": "ŠPANĚLSKÝ PTÁČEK Z HOVĚZÍ ROŠTĚNÉ, JASMÍNOVÁ RÝŽE/HOUSKOVÝ KNEDLÍK",
-          "price_single": 205,
-          "price_menu": 235,
-          "allergens": "7,1a,3,9,10,12",
+          "name": "FILÍROVANÁ VEPŘOVÁ PANENKA, PEČENÉ BRAMBORY, PEPŘOVÁ OMÁČKA, LISTOVÝ SALÁTEK S ŘEDKVÍ A MRKVÍ",
+          "price_single": 200,
+          "price_menu": 230,
+          "allergens": "7,1a,9,12",
           "note": null
         },
         {
-          "name": "GRILOVANÝ FILET LOSOSA, PEČENÁ ZELENINA, GRILOVANÝ BRAMBOR, STUDENÁ CITRONOVÁ OMÁČKA",
-          "price_single": 215,
+          "name": "KUŘECÍ SATAY S ARAŠÍDOVOU OMÁČKOU A SEZAMEM, JASMÍNOVÁ RÝŽE, KORIANDR",
+          "price_single": 195,
           "price_menu": null,
-          "allergens": "1a,7,3,4",
+          "allergens": "1a,2,3,4,5,6,7,8,10,11,12",
           "note": null
         },
         {
-          "name": "ČOČKA NA KYSELO, UZENÁ VEPŘOVÁ KRKOVICE, SÁZENÉ VEJCE, CIBULKA NA SÁDLE, NAKLÁDANÁ OKURKA,",
+          "name": "LINQUINE ALA ''ARRABBIATA'' S PIKANTNÍ TOMATOVOU OMÁČKOU A OLIVAMI, BAZALKA, SÝR PECORINO ROMANO",
           "price_single": 185,
           "price_menu": null,
-          "allergens": "1a,3,7,9,10,12",
+          "allergens": "1a,7,3,12",
           "note": null
         }
       ],
@@ -53,59 +53,10 @@
     },
     {
       "restaurant": "Holešovická Kozlovna",
-      "date": "2026-11-24",
-      "soups": [
-        {
-          "name": "Dýňový krém s krutóny",
-          "price": 49,
-          "allergens": "1,7",
-          "note": null
-        },
-        {
-          "name": "Kuřecí vývar s masem, zeleninou a těstovinou",
-          "price": 49,
-          "allergens": "1,3,7,9",
-          "note": null
-        }
-      ],
-      "main_dishes": [
-        {
-          "name": "Chilli con carne se zakysanou smetanou, sýrová quesadilla",
-          "price_single": 195,
-          "price_menu": 230,
-          "allergens": "1,7,9",
-          "note": null
-        },
-        {
-          "name": "Plněné bramborové knedlíky s uzeným masem, bílé kysané zelí, osmažená cibulka",
-          "price_single": 195,
-          "price_menu": 230,
-          "allergens": "1,3",
-          "note": null
-        },
-        {
-          "name": "Filírovaná vepřová panenka s omáčkou blue cheese, jasmínová rýže, rukola",
-          "price_single": 205,
-          "price_menu": 240,
-          "allergens": "7",
-          "note": null
-        },
-        {
-          "name": "Pikantní smažené kuřecí stripsy, bramborová kaše, rajčatový salátek",
-          "price_single": 199,
-          "price_menu": 235,
-          "allergens": "1,7",
-          "note": null
-        },
-        {
-          "name": "Grilovaná vepřová krkovice ,,Duroc\", pikantní kovbojské fazole, pečená brambora ve slupce, pažitkový zákys",
-          "price_single": 219,
-          "price_menu": null,
-          "allergens": "1,7",
-          "note": null
-        }
-      ],
-      "status": "fresh"
+      "date": "2026-11-25",
+      "soups": [],
+      "main_dishes": [],
+      "status": "unavailable"
     }
   ]
 }
