@@ -1,6 +1,6 @@
 {
   "date": "2026-11-25",
-  "updated_at": "2026-11-25T05:16:32Z",
+  "updated_at": "2026-11-25T08:59:46Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
@@ -54,9 +54,58 @@
     {
       "restaurant": "Holešovická Kozlovna",
       "date": "2026-11-25",
-      "soups": [],
-      "main_dishes": [],
-      "status": "unavailable"
+      "soups": [
+        {
+          "name": "Kulajda s hříbky",
+          "price": 49,
+          "allergens": "1,3,7",
+          "note": null
+        },
+        {
+          "name": "Kuřecí vývar s masem, zeleninou a nudlemi",
+          "price": 49,
+          "allergens": "1,3,7,9",
+          "note": null
+        }
+      ],
+      "main_dishes": [
+        {
+          "name": "400g Pečené krůtí stehno alá bažant, červené zelí, bramborové knedlíky",
+          "price_single": 205,
+          "price_menu": 240,
+          "allergens": "1,3,7,9",
+          "note": null
+        },
+        {
+          "name": "Penne s kuřecími nudličkami, listovým špenátem a smetanou, sýr Gran Moravia",
+          "price_single": 189,
+          "price_menu": 225,
+          "allergens": "1,3,7",
+          "note": null
+        },
+        {
+          "name": "Burger s trhaným vepřovým masem a grilovaným sýrem Halloumi, římský salát, rajče, citrusový zákys, pečené brambory na bylinkách",
+          "price_single": 205,
+          "price_menu": 240,
+          "allergens": "1,3,7",
+          "note": null
+        },
+        {
+          "name": "Pečené karbanátky, pažitkové brambory, hořčice, červená cibulka",
+          "price_single": 189,
+          "price_menu": 225,
+          "allergens": "1,3,7,10",
+          "note": null
+        },
+        {
+          "name": "Grilovaná vepřová krkovice ,,Duroc\", pikantní kovbojské fazole, pečená brambora ve slupce, pažitkový zákys",
+          "price_single": 219,
+          "price_menu": null,
+          "allergens": "1,7",
+          "note": null
+        }
+      ],
+      "status": "fresh"
     }
   ]
 }
