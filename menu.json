@@ -1,6 +1,6 @@
 {
   "date": "2026-11-26",
-  "updated_at": "2026-11-26T05:16:07Z",
+  "updated_at": "2026-11-26T07:16:00Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
@@ -21,7 +21,7 @@
       ],
       "main_dishes": [
         {
-          "name": "SMAŽENÝ HERMELÍN PLNĚNÝ ŠUNKOU, VAŘENÝ BRAMBOR S MÁSLEM A PAŽITKOU, TATARSKÁ OMÁČKA",
+          "name": "SMAŽENÝ HERMELÍN PLNĚNÝ ŠUNKOU, ŠŤOUCHANÝ BRAMBOR S MÁSLEM A CIBULKOU, TATARSKÁ OMÁČKA",
           "price_single": 190,
           "price_menu": 220,
           "allergens": "1a,3,7,10",
