@@ -1,6 +1,6 @@
 {
   "date": "2026-11-27",
-  "updated_at": "2026-11-27T08:15:59Z",
+  "updated_at": "2026-11-27T08:45:58Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
@@ -16,6 +16,12 @@
           "name": "KRÉMOVÁ ČESNEČKA S UZENÝM MASEM, KRUTONY",
           "price": 49,
           "allergens": "1a,7,3",
+          "note": null
+        },
+        {
+          "name": "ZELŇAČKA S UZENÝM MASEM",
+          "price": 49,
+          "allergens": "1a,7,9",
           "note": null
         }
       ],
