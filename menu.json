@@ -1,44 +1,51 @@
 {
-  "date": "2026-11-26",
-  "updated_at": "2026-11-26T08:31:21Z",
+  "date": "2026-11-27",
+  "updated_at": "2026-11-27T05:16:35Z",
   "restaurants": [
     {
       "restaurant": "U Holiše",
-      "date": "2026-11-26",
+      "date": "2026-11-27",
       "soups": [
         {
           "name": "KUŘECÍ VÝVAR S MASEM A ZELENINOU, VAJEČNÝ SVÍTEK",
           "price": 49,
-          "allergens": "1a,7,3,9",
+          "allergens": "1a,7,9,12,3",
           "note": null
         },
         {
-          "name": "ZELŇAČKA S UZENÝM MASEM (podáváme s pečivem)",
-          "price": 55,
-          "allergens": "1a,7,9",
+          "name": "KRÉMOVÁ ČESNEČKA S UZENÝM MASEM, KRUTONY",
+          "price": 49,
+          "allergens": "1a,7,3",
           "note": null
         }
       ],
       "main_dishes": [
         {
-          "name": "SMAŽENÝ HERMELÍN PLNĚNÝ ŠUNKOU, ŠŤOUCHANÝ BRAMBOR S MÁSLEM A CIBULKOU, TATARSKÁ OMÁČKA",
-          "price_single": 190,
-          "price_menu": 220,
-          "allergens": "1a,3,7,10",
+          "name": "SMAŽENÝ KUŘECÍ ŘÍZEK, BRAMBOROVÝ SALÁT, CITRON",
+          "price_single": 195,
+          "price_menu": 225,
+          "allergens": "7,1a,12,9,3,10",
           "note": null
         },
         {
-          "name": "DANČÍ PEČENĚ SE ŠÍPKOVOU OMÁČKOU, BRUSINKY, VARIACE HOUSKOVÉHO A ŠPEKOVÉHO KNEDLÍKU",
+          "name": "MIX GRIL (krůtí prso, kuřecí prso, vepřová panenka), HRANOLKY, ČESNEKOVÝ DIP, MÍCHANÝ ZELENINOVÝ SALÁTEK",
           "price_single": 205,
           "price_menu": 235,
-          "allergens": "7,1a,3,9,10,12",
+          "allergens": "1a,7",
           "note": null
         },
         {
-          "name": "FILÍROVANÉ KUŘECÍ PRSO ŠPIKOVANÉ PAPRIKOU, PAPRIKÁŠOVÁ OMÁČKA, ZAKYSANÁ SMETANA, OPEČENÉ BRAMBOROVÉ NOKY/JASMÍNOVÁ RÝŽE",
-          "price_single": 195,
+          "name": "PŘÍRODNÍ PEČENÝ KARBANÁTEK, BRAMBOROVÁ KAŠE, ZELNÝ SALÁTEK S MRKVÍ",
+          "price_single": 185,
           "price_menu": null,
-          "allergens": "1a,7,3,4",
+          "allergens": "1a,3,7,10,12",
+          "note": null
+        },
+        {
+          "name": "KUŘE ALA BAŽANT, JASMÍNOVÁ RÝŽE, HRÁŠEK NA MÁSLE",
+          "price_single": 185,
+          "price_menu": null,
+          "allergens": "1a,7,12",
           "note": null
         }
       ],
@@ -46,59 +53,10 @@
     },
     {
       "restaurant": "Holešovická Kozlovna",
-      "date": "2026-11-26",
-      "soups": [
-        {
-          "name": "Zelňačka s paprikovou klobásou",
-          "price": 49,
-          "allergens": "1,3,7",
-          "note": null
-        },
-        {
-          "name": "Kuřecí vývar s masem, zeleninou a nudlemi",
-          "price": 49,
-          "allergens": "1,3,7,9",
-          "note": null
-        }
-      ],
-      "main_dishes": [
-        {
-          "name": "Jelení guláš se špekovými knedlíky, červená cibulka",
-          "price_single": 199,
-          "price_menu": 235,
-          "allergens": "1,3,7,9",
-          "note": null
-        },
-        {
-          "name": "Kuřecí kung pao s jasmínovou rýží",
-          "price_single": 195,
-          "price_menu": 230,
-          "allergens": "4,5,6,9",
-          "note": null
-        },
-        {
-          "name": "Tortilla plněná vepřovými nudličkami, čerstvou zeleninou a čedarem, chipotle mayo, hranolky",
-          "price_single": 199,
-          "price_menu": 235,
-          "allergens": "1,7,10",
-          "note": null
-        },
-        {
-          "name": "Smažený kuřecí řízek plněný bylinkovým máslem, bramborová kaše, kyselá okurka",
-          "price_single": 199,
-          "price_menu": 235,
-          "allergens": "1,3,7",
-          "note": null
-        },
-        {
-          "name": "Grilovaná vepřová krkovice ,,Duroc\", pikantní kovbojské fazole, pečená brambora ve slupce, pažitkový zákys",
-          "price_single": 219,
-          "price_menu": null,
-          "allergens": "1,7",
-          "note": null
-        }
-      ],
-      "status": "fresh"
+      "date": "2026-11-27",
+      "soups": [],
+      "main_dishes": [],
+      "status": "unavailable"
     }
   ]
 }
